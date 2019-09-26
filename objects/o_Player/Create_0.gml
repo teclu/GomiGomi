@@ -8,7 +8,7 @@ walkAcceleration = 2.5;
 jumpSpeed = 10.0;
 horizontalFrictionGround = 2.5;
 horizontalFrictionAir = 1.0;
-gravityExperienced = 0.9; 
+gravityExperienced = 0.5; 
 
 // Player States
 state = State.Normal;

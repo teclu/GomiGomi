@@ -46,6 +46,6 @@ switch (state)
 		playerState = "Reeling";
 		break;
 }
-draw_text(x + 25, y - 10, playerState);
+draw_text(x + 35, y - 10, playerState);
 
 draw_self();
