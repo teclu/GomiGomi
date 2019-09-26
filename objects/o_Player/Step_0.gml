@@ -26,11 +26,6 @@ switch (state)
 	// This is when the Player doing anything unrelated to grappling.
 	case State.Normal:
 	{
-		if (isGrounded && hasJumped)
-		{
-			hasJumped = false;	
-		}
-		
 		// Visually reel back the line to the Player.
 		ropeLength = point_distance(x, y, grappleToX, grappleToY);
 		if (ropeLength > ropeLengthThreshold)
@@ -59,7 +54,6 @@ switch (state)
 		
 		var moveDirection = key_right - key_left;
 		horizontalSpeed += moveDirection * walkAcceleration;
-		
 		if (moveDirection == 0)
 		{
 			var horizontalFriction = horizontalFrictionGround;
@@ -72,9 +66,9 @@ switch (state)
 		horizontalSpeed = clamp(horizontalSpeed, -walkSpeed, walkSpeed);
 		verticalSpeed += gravityExperienced;
 		
-		if (key_jump && isGrounded && !hasJumped)
+		if (key_jump && isGrounded)
 		{
-			hasJumped = true;
+			show_debug_message("hello");
 			verticalSpeedFraction = 0.0;
 			verticalSpeed = -jumpSpeed;
 		}
@@ -101,11 +95,6 @@ switch (state)
 	
 	case State.Shooting:
 	{
-		if (isGrounded && hasJumped)
-		{
-			hasJumped = false;	
-		}
-		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
 		verticalSpeed += gravityExperienced;
 		grappleToXCheck += grappleToXSpeed;
@@ -126,7 +115,6 @@ switch (state)
 			grappleFromY = y;
 			ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
 			ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
-			hasJumped = false;
 			ropeAngleVelocity = 0;		
 			state = State.Swinging;
 		}
@@ -137,7 +125,8 @@ switch (state)
 	{
 		// Allow horizontal movement while swinging.
 		var moveDirection = key_right - key_left;
-		grappleFromX += moveDirection * walkAcceleration;
+		var toMoveX = moveDirection * walkAcceleration;
+		grappleFromX += (!place_meeting(x + toMoveX, y, o_Wall)) ? toMoveX : 0;
 		ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
 		ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
 		
@@ -160,16 +149,15 @@ switch (state)
 				grappleToYSpeed += (grappleToY - grappleFromY) * grappleReelInPlayerMultiplier;
 			}
 			state = State.Reeling;
-			return;
+			break;
 		}
 
-		if (key_jump && !hasJumped && !isGrounded)
+		if (key_jump && !isGrounded)
 		{
-			hasJumped = true;
 			verticalSpeedFraction = 0;
 			verticalSpeed = -jumpSpeed;
 			state = State.Normal;
-			return;
+			break;
 		}
 	}
 	break;
@@ -199,18 +187,18 @@ switch (state)
 			break;
 		}
 		
-		if (key_jump && !hasJumped)
+		if (key_jump && !isGrounded)
 		{
-			hasJumped = true;
 			verticalSpeedFraction = 0;
 			verticalSpeed = -jumpSpeed;
 			state = State.Normal;
-			return;
+			break;
 		}
 	}
 	break;
 }
 
+// Resolve and apply the speed of the Player.
 horizontalSpeed += horizontalSpeedFraction;
 verticalSpeed += verticalSpeedFraction;
 horizontalSpeedFraction = frac(horizontalSpeed);
