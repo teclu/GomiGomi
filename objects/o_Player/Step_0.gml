@@ -30,24 +30,18 @@ switch (state)
 		ropeLength = point_distance(x, y, grappleToX, grappleToY);
 		if (ropeLength > ropeLengthThreshold)
 		{			
-			// Slightly Faster Reeling
-			if (ropeLength > 2 * ropeLengthThreshold)
-			{
-				grappleReelInRopeMultiplier = 0.125;	
-			}
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleSpeed)
+			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleReelInSpeed)
 			{
-				grappleToXSpeed += (x - grappleToX) * grappleReelInRopeMultiplier;
-				grappleToYSpeed += (y - grappleToY) * grappleReelInRopeMultiplier;
+				grappleToXSpeed += (x - grappleToX) * 0.01;
+				grappleToYSpeed += (y - grappleToY) * 0.01;
 			}
 			grappleToX += grappleToXSpeed;
 			grappleToY += grappleToYSpeed;
 		}
 		else
 		{
-			grappleReelInRopeMultiplier = 0.075;
 			grappleToX = x;
 			grappleToY = y;
 		}
@@ -68,7 +62,6 @@ switch (state)
 		
 		if (key_jump && isGrounded)
 		{
-			show_debug_message("hello");
 			verticalSpeedFraction = 0.0;
 			verticalSpeed = -jumpSpeed;
 		}
@@ -83,10 +76,10 @@ switch (state)
 			grappleToYCheck = grappleFromY;
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleSpeed)
+			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleShootOutSpeed)
 			{
-				grappleToXSpeed += (grappleToX - grappleToXCheck) * grappleShootOutMultiplier;
-				grappleToYSpeed += (grappleToY - grappleToYCheck) * grappleShootOutMultiplier;
+				grappleToXSpeed += (grappleToX - grappleToXCheck) * 0.01;
+				grappleToYSpeed += (grappleToY - grappleToYCheck) * 0.01;
 			}
 			state = State.Shooting;
 		}
@@ -134,8 +127,8 @@ switch (state)
 		ropeAngleVelocity += (!isGrounded) ? ropeAngleAcceleration : 0;
 		ropeAngle += ropeAngleVelocity;
 		ropeAngleVelocity *= 0.99;
-		grappleFromX = grappleToX + lengthdir_x(ropeLength, ropeAngle);
-		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle) - abs(moveDirection * dcos(ropeAngle));
+		grappleFromX = (!place_meeting(x + toMoveX, y, o_Wall)) ? grappleToX + lengthdir_x(ropeLength, ropeAngle) : x;
+		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle) - ((!isGrounded) ? 0.01 * dcos(ropeAngle) : 0);
 		horizontalSpeed = grappleFromX - x;
 		verticalSpeed = grappleFromY - y;
 		
@@ -143,16 +136,16 @@ switch (state)
 		{
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleSpeed)
+			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleReelToSpeed)
 			{
-				grappleToXSpeed += (grappleToX - grappleFromX) * grappleReelInPlayerMultiplier;
-				grappleToYSpeed += (grappleToY - grappleFromY) * grappleReelInPlayerMultiplier;
+				grappleToXSpeed += (grappleToX - grappleFromX) * 0.01;
+				grappleToYSpeed += (grappleToY - grappleFromY) * 0.01;
 			}
 			state = State.Reeling;
 			break;
 		}
 
-		if (key_jump && !isGrounded)
+		if (key_jump)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = -jumpSpeed;
@@ -170,12 +163,10 @@ switch (state)
 		ropeAngleVelocity += ropeAngleAcceleration;
 		ropeAngle += ropeAngleVelocity;
 		ropeAngleVelocity *= 0.99;
-		grappleFromX = grappleToX + lengthdir_x(ropeLength, ropeAngle);
-		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle);
 		grappleFromX += grappleToXSpeed;
 		grappleFromY += grappleToYSpeed;
-		horizontalSpeed = (grappleFromX - x);
-		verticalSpeed = (grappleFromY - y);
+		horizontalSpeed = (!place_meeting(x + sign(horizontalSpeed), y, o_Wall)) ? (grappleFromX - x) : 0;
+		verticalSpeed = (!place_meeting(x, y + sign(verticalSpeed), o_Wall)) ? (grappleFromY - y) : 0;
 		
 		if (ropeLength <= ropeLengthThreshold)
 		{
@@ -183,11 +174,12 @@ switch (state)
 			grappleFromY = y;
 			ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
 			ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
+			ropeAngleVelocity = 0;
 			state = State.Swinging;
 			break;
 		}
 		
-		if (key_jump && !isGrounded)
+		if (key_jump)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = -jumpSpeed;
@@ -209,39 +201,47 @@ verticalSpeed -= verticalSpeedFraction;
 if (place_meeting(x + horizontalSpeed, y, o_Wall))
 {
 	var horizontalStep = sign(horizontalSpeed);
-	horizontalSpeed = 0;
-	horizontalSpeedFraction = 0.0;
 	while (!place_meeting(x + horizontalStep, y, o_Wall))
 	{
 		x += horizontalStep;	
 	}
+	
 	if (state == State.Swinging || state == State.Reeling)
 	{
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
-		if (state == State.Reeling) {
+		
+		if (place_meeting(x + sign(horizontalSpeed), y, o_Wall) && abs(horizontalSpeed) > grappleReelInSpeed)
+		{
+			show_debug_message(horizontalSpeed);
 			state = State.Swinging;	
 		}
 	}
+	horizontalSpeed = 0;
+	horizontalSpeedFraction = 0.0;
 }
 x += horizontalSpeed;
 
 if (place_meeting(x, y + verticalSpeed, o_Wall))
 {
 	var verticalStep = sign(verticalSpeed);
-	verticalSpeed = 0;
-	verticalSpeedFraction = 0.0;
 	while (!place_meeting(x, y + verticalStep, o_Wall))
 	{
 		y += verticalStep;	
 	}
+	
 	if (state == State.Swinging || state == State.Reeling)
 	{
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
-		if (state == State.Reeling) {
+		
+		if (place_meeting(x, y + sign(verticalSpeed), o_Wall) && abs(verticalSpeed) > grappleReelInSpeed)
+		{
+			show_debug_message(verticalSpeed);
 			state = State.Swinging;	
 		}
 	}
+	verticalSpeed = 0;
+	verticalSpeedFraction = 0.0;
 }
 y += verticalSpeed;
