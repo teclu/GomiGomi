@@ -104,10 +104,6 @@ switch (state)
 				grappleToX -= grappleToXSpeed * 0.01;
 				grappleToY -= grappleToYSpeed * 0.01;
 			}
-			grappleFromX = x;
-			grappleFromY = y;
-			ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
-			ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
 			ropeAngleVelocity = 0;		
 			state = State.Swinging;
 		}
@@ -117,6 +113,9 @@ switch (state)
 	case State.Swinging:
 	{
 		// Allow horizontal movement while swinging.
+		grappleFromX = x;
+		grappleFromY = y;
+		
 		var moveDirection = key_right - key_left;
 		var toMoveX = moveDirection * walkAcceleration;
 		grappleFromX += (!place_meeting(x + toMoveX, y, o_Wall)) ? toMoveX : 0;
@@ -130,7 +129,7 @@ switch (state)
 		grappleFromX = (!place_meeting(x + toMoveX, y, o_Wall)) ? grappleToX + lengthdir_x(ropeLength, ropeAngle) : x;
 		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle) - ((!isGrounded) ? 0.01 * dcos(ropeAngle) : 0);
 		horizontalSpeed = grappleFromX - x;
-		verticalSpeed = grappleFromY - y;
+		verticalSpeed = (y <= grappleToY) ? (verticalSpeed + gravityExperienced) : approach(verticalSpeed, grappleFromY - y, horizontalFrictionAir);
 		
 		if (mouse_left)
 		{
@@ -148,7 +147,7 @@ switch (state)
 		if (key_jump)
 		{
 			verticalSpeedFraction = 0;
-			verticalSpeed = -jumpSpeed;
+			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
 			state = State.Normal;
 			break;
 		}
@@ -166,14 +165,10 @@ switch (state)
 		grappleFromX += grappleToXSpeed;
 		grappleFromY += grappleToYSpeed;
 		horizontalSpeed = (!place_meeting(x + sign(horizontalSpeed), y, o_Wall)) ? (grappleFromX - x) : 0;
-		verticalSpeed = (!place_meeting(x, y + sign(verticalSpeed), o_Wall)) ? (grappleFromY - y) : 0;
+		verticalSpeed = (!place_meeting(x, y + sign(verticalSpeed), o_Wall)) ? ((y < grappleToY) ? (verticalSpeed + gravityExperienced) : (grappleFromY - y)) : 0;
 		
 		if (ropeLength <= ropeLengthThreshold)
 		{
-			grappleFromX = x;
-			grappleFromY = y;
-			ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
-			ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
 			ropeAngleVelocity = 0;
 			state = State.Swinging;
 			break;
@@ -182,7 +177,7 @@ switch (state)
 		if (key_jump)
 		{
 			verticalSpeedFraction = 0;
-			verticalSpeed = -jumpSpeed;
+			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
 			state = State.Normal;
 			break;
 		}
@@ -211,10 +206,10 @@ if (place_meeting(x + horizontalSpeed, y, o_Wall))
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
 		
+		// Phasing Prevention
 		if (place_meeting(x + sign(horizontalSpeed), y, o_Wall) && abs(horizontalSpeed) > grappleReelInSpeed)
 		{
-			show_debug_message(horizontalSpeed);
-			state = State.Swinging;	
+			state = State.Swinging;
 		}
 	}
 	horizontalSpeed = 0;
@@ -235,9 +230,9 @@ if (place_meeting(x, y + verticalSpeed, o_Wall))
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
 		
+		// Phasing Prevention
 		if (place_meeting(x, y + sign(verticalSpeed), o_Wall) && abs(verticalSpeed) > grappleReelInSpeed)
 		{
-			show_debug_message(verticalSpeed);
 			state = State.Swinging;	
 		}
 	}
