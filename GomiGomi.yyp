@@ -138,7 +138,7 @@
             "Key": "782592fc-217a-45d9-a6b7-d417d2ec6a41",
             "Value": {
                 "id": "d4b54027-a473-46a0-8a65-54b85d7b34a7",
-                "resourcePath": "sprites\\sp_Saw\\sp_Saw.yy",
+                "resourcePath": "sprites\\sp_BushThing\\sp_BushThing.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -148,6 +148,14 @@
                 "id": "ff295219-2085-4aed-b412-acb4eabe2d0a",
                 "resourcePath": "views\\79000cba-40f0-4c0c-b897-02e97dd47585.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
+            "Value": {
+                "id": "ff0c7306-40e5-488f-9e11-043f790ecda4",
+                "resourcePath": "sprites\\sp_Saw\\sp_Saw.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
