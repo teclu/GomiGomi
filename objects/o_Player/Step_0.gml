@@ -10,16 +10,6 @@ var mouse_left = mouse_check_button_pressed(mb_left);
 // Boolean Checks
 isGrounded = place_meeting(x, y + 1, o_Wall);
 
-// The Player Sprite Appearance
-if (mouse_x > x || key_right)
-{
-	sprite_index = sp_Player_Right;	
-}
-else if (mouse_x < x || key_left)
-{
-	sprite_index = sp_Player_Left;	
-}
-
 // The Player State Machine
 switch (state)
 {
@@ -211,6 +201,16 @@ switch (state)
 		return;	
 	}
 	break;
+}
+
+// The Player Sprite Appearance
+if (mouse_x > x || key_right)
+{
+	sprite_index = sp_Player_Right;	
+}
+else if (mouse_x < x || key_left)
+{
+	sprite_index = sp_Player_Left;	
 }
 
 // Resolve and apply the speed of the Player.
