@@ -17,30 +17,31 @@ else if (state == State.Normal)
 // Target Reticle
 draw_circle_color(mouse_x, mouse_y, 5, c_red, c_red, true);
 
-// Current Player State (For Debugging)
-var playerState = "";
+// Current Player Details (For Debugging)
+var playerDetails = "";
 switch (state)
 {
 	case State.Normal:
-		playerState = "Normal (";
+		playerDetails = "Normal (";
 		if (!isGrounded) {
-			playerState += "Air)"
+			playerDetails += "Air)"
 		}
 		else
 		{
-			playerState += "Grounded)"
+			playerDetails += "Grounded)"
 		}
 		break;
 	case State.Shooting:
-		playerState = "Shooting";
+		playerDetails = "Shooting";
 		break;
 	case State.Swinging:
-		playerState = "Swinging";
+		playerDetails = "Swinging";
 		break;
 	case State.Reeling:
-		playerState = "Reeling";
+		playerDetails = "Reeling";
 		break;
 }
-draw_text(x + 35, y - 10, playerState);
+playerDetails += " " + string(coyoteTimeCounter);
+draw_text(x + 35, y - 10, playerDetails);
 
 draw_self();

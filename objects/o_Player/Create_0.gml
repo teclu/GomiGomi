@@ -10,6 +10,11 @@ horizontalFrictionGround = 2.5;
 horizontalFrictionAir = 1.0;
 gravityExperienced = 0.5; 
 
+// Coyote Time Variables
+coyoteTimeDuration = 60;
+coyoteTimeCounter = coyoteTimeDuration;
+show_debug_message(room_speed);
+
 // Player States
 state = State.Normal;
 

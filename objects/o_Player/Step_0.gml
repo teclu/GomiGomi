@@ -26,6 +26,16 @@ switch (state)
 	// This is when the Player doing anything unrelated to grappling.
 	case State.Normal:
 	{
+		// Coyote Time for Jumping
+		if (!isGrounded && coyoteTimeCounter > 0)
+		{
+			coyoteTimeCounter--;
+		}
+		else if (isGrounded && coyoteTimeCounter < coyoteTimeDuration)
+		{
+			coyoteTimeCounter = coyoteTimeDuration;	
+		}
+		
 		// Visually reel back the line to the Player.
 		ropeLength = point_distance(x, y, grappleToX, grappleToY);
 		if (ropeLength > ropeLengthThreshold)
@@ -60,8 +70,9 @@ switch (state)
 		horizontalSpeed = clamp(horizontalSpeed, -walkSpeed, walkSpeed);
 		verticalSpeed += gravityExperienced;
 		
-		if (key_jump && isGrounded)
+		if (key_jump && (isGrounded || coyoteTimeCounter > 0))
 		{
+			coyoteTimeCounter = 0;
 			verticalSpeedFraction = 0.0;
 			verticalSpeed = -jumpSpeed;
 		}
