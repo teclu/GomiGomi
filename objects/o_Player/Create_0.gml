@@ -22,7 +22,8 @@ enum State {
 	Normal,
 	Shooting,
 	Swinging,
-	Reeling
+	Reeling,
+	Dead
 }
 
 // Grapple Variables

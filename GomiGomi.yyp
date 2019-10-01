@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9",
+            "Value": {
+                "id": "5ae9c050-7c33-4555-9b68-7d84fdf5c4e9",
+                "resourcePath": "objects\\o_Flag_Goal\\o_Flag_Goal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0f4dc777-2f66-44af-adce-ea97ab881c9d",
             "Value": {
                 "id": "5379d4f4-1e4e-4096-86c8-e95d253ebc22",
@@ -52,6 +60,14 @@
                 "id": "f0c00bb3-3a42-4f30-8add-61e4eac1a44b",
                 "resourcePath": "views\\150c5318-12d1-40bb-9b31-45df6b3f7f6f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "18dd39fe-514f-403b-bc88-3b258587849e",
+            "Value": {
+                "id": "ac94d8e8-795f-4344-a55b-f2a639783f81",
+                "resourcePath": "objects\\o_Flag_Spawn\\o_Flag_Spawn.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -199,6 +215,22 @@
             }
         },
         {
+            "Key": "aeeb6dd0-6d3f-4b6d-adeb-362e6ae869de",
+            "Value": {
+                "id": "8bd021a1-b33e-4343-a105-1a8c2f6bb8b6",
+                "resourcePath": "sprites\\sp_Flag_Spawn\\sp_Flag_Spawn.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b08dc028-0e1e-4a89-b18d-fcb321e3c481",
+            "Value": {
+                "id": "ee65c558-0953-4b65-8f1f-82ee954baee8",
+                "resourcePath": "scripts\\kill_player\\kill_player.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bfc7e639-bc0e-496d-8738-8c358fb0204e",
             "Value": {
                 "id": "65d2393f-4045-428f-a314-a4eabfbb76d6",
@@ -212,6 +244,14 @@
                 "id": "2af4d6b1-8db3-4292-a8bf-eae27ae85848",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "e84fa423-1160-4808-a209-5af5e9c8d70d",
+            "Value": {
+                "id": "80489db2-cbd9-4a99-9000-04beec02ec87",
+                "resourcePath": "sprites\\sp_Flag_Goal\\sp_Flag_Goal.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -248,7 +288,8 @@
         }
     ],
     "script_order": [
-        "6a263ca3-bfad-4647-9512-130f42dbc45e"
+        "6a263ca3-bfad-4647-9512-130f42dbc45e",
+        "b08dc028-0e1e-4a89-b18d-fcb321e3c481"
     ],
     "tutorial": ""
 }

@@ -200,6 +200,17 @@ switch (state)
 		}
 	}
 	break;
+	
+	case State.Dead:
+	{
+		var key_r = keyboard_check(ord("R"));		
+		if (key_r)
+		{
+			room_restart();
+		}
+		return;	
+	}
+	break;
 }
 
 // Resolve and apply the speed of the Player.

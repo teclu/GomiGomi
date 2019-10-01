@@ -1,1 +1,1 @@
-game_restart();
+kill_player();

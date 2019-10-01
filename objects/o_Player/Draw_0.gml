@@ -40,6 +40,9 @@ switch (state)
 	case State.Reeling:
 		playerDetails = "Reeling";
 		break;
+	case State.Dead:
+		playerDetails = "Dead";
+		break;
 }
 playerDetails += " " + string(coyoteTimeCounter);
 draw_text(x + 35, y - 10, playerDetails);
