@@ -82,7 +82,7 @@
             "Key": "207a8217-b59c-4dd1-a2a4-8445d5c19fd4",
             "Value": {
                 "id": "695a42ec-c527-4821-bbb5-029b99dc4bdc",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level\\r_Tutorial_Level.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -183,11 +183,27 @@
             }
         },
         {
+            "Key": "92ff772d-a567-49dd-a6fe-d3bb68822477",
+            "Value": {
+                "id": "121ef3bb-0b72-4c3f-baba-710712c333cd",
+                "resourcePath": "rooms\\r_Test_Next_Level\\r_Test_Next_Level.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "96706030-4ad2-418c-b56d-b7f4a0e54942",
             "Value": {
                 "id": "ee13e64a-f58c-4450-829d-e0c80c94ab40",
                 "resourcePath": "views\\96706030-4ad2-418c-b56d-b7f4a0e54942.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9c3845dd-d2ba-445e-b1fe-b01ace162c28",
+            "Value": {
+                "id": "b3fd6b8b-ca3f-4008-8641-ddb2636545a7",
+                "resourcePath": "rooms\\r_empty\\r_empty.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
