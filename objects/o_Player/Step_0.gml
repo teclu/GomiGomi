@@ -88,11 +88,17 @@ switch (state)
 	
 	case State.Shooting:
 	{
-		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
+		var horizontalFriction = horizontalFrictionGround;
+		if (!isGrounded)
+		{
+			horizontalFriction = horizontalFrictionAir;	
+		}
+		horizontalSpeed = approach(horizontalSpeed, 0, horizontalFriction);
 		verticalSpeed += gravityExperienced;
 		grappleToXCheck += grappleToXSpeed;
 		grappleToYCheck += grappleToYSpeed;
 		
+		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
 		var collision_object = collision_line(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck, o_Wall, true, true);
 		if (collision_object != noone)
 		{
