@@ -23,6 +23,16 @@
             "enumb": 0,
             "eventtype": 0,
             "m_owner": "7a19e109-d3f9-4e24-9739-ae3f8b382e73"
+        },
+        {
+            "id": "1295997d-38ef-4a61-b32e-5da156367780",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "5616d61b-b814-4d2f-891c-394029eb60ee",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "7a19e109-d3f9-4e24-9739-ae3f8b382e73"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -52,22 +62,8 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "False",
+            "value": "True",
             "varName": "is_moving_horizontally",
-            "varType": 3
-        },
-        {
-            "id": "8bf2b7e8-84bb-4eb3-86fd-1f716974661e",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "is_moving_vertically",
             "varType": 3
         },
         {
@@ -82,20 +78,6 @@
             "resourceFilter": 1023,
             "value": "1",
             "varName": "horizontal_direction",
-            "varType": 1
-        },
-        {
-            "id": "11919843-d01a-481a-bf0d-2c438089ec5a",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "1",
-            "varName": "vertical_direction",
             "varType": 1
         },
         {

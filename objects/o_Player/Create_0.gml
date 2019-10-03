@@ -39,9 +39,11 @@ grappleReelToSpeed = 15.0;
 grappleShootOutSpeed = 25.0;
 grappleFromX = x;
 grappleFromY = y;
+ropeLengthStart = 0;
 ropeLengthMinimum = 128.0; // Powers of 2; for reference, 1 Wall is 64 pixels in width.
 ropeLengthThreshold = 256.0 // A check to slow down the reel-to speed.
 ropeLengthMaximum = 512.0;
+objectGrappled = noone;
 
 
 // Coyote Time Variables
