@@ -1,3 +1,5 @@
+/// @description Initialising Variables
+
 // Player States
 // The "state machine" of the player.
 state = State.Normal;

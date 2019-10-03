@@ -1,3 +1,5 @@
+/// @description Grappling Visuals
+
 // Rope Visuals
 if (state == State.Swinging || state == State.Reeling || (state == State.Normal && ropeLength > ropeLengthMinimum))
 {

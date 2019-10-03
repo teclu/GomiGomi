@@ -1,3 +1,5 @@
+/// @description Player State and Controls
+
 // Player Keyboard and Mouse Inputs
 var key_up = keyboard_check(ord("W"));
 var key_left = keyboard_check(ord("A"));
@@ -8,7 +10,7 @@ var mouse_left = mouse_check_button_pressed(mb_left);
 var mouse_right = mouse_check_button_pressed(mb_right);
 
 // Boolean Checks
-isGrounded = place_meeting(x, y + 1, o_Wall);
+isGrounded = is_solid_object_at_position(x, y + 1);
 
 // The Player State Machine
 switch (state)
@@ -128,15 +130,15 @@ switch (state)
 		}
 		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
-		// Right now we are grappling only to o_Wall; this will change in the future.
-		if (can_grapple_to(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck))
+		var collision_object = can_grapple_to(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck);
+		if (collision_object != noone)
 		{		
 			// Grapple to the surface contact; handle any "overshooting".
 			grappleToX = grappleToXCheck;
 			grappleToY = grappleToYCheck;
 			
 			// This while-loop makes sure that the contact point appears on the surface of the object.
-			while (position_meeting(grappleToX, grappleToY, o_Wall))
+			while (position_meeting(grappleToX, grappleToY, collision_object))
 			{
 				grappleToX -= grappleToXSpeed * 0.01;
 				grappleToY -= grappleToYSpeed * 0.01;
@@ -270,10 +272,10 @@ horizontalSpeed -= horizontalSpeedFraction;
 verticalSpeed -= verticalSpeedFraction;
 
 // If we encounter any walls while moving horizontally, stop translation in that direction.
-if (place_meeting(x + horizontalSpeed, y, o_Wall))
+if (is_solid_object_at_position(x + horizontalSpeed, y))
 {
 	var horizontalStep = sign(horizontalSpeed);
-	while (!place_meeting(x + horizontalStep, y, o_Wall))
+	while (!is_solid_object_at_position(x + horizontalStep, y))
 	{
 		x += horizontalStep;	
 	}
@@ -285,7 +287,7 @@ if (place_meeting(x + horizontalSpeed, y, o_Wall))
 		ropeAngleVelocity = 0;
 		
 		// Prevent phasing through walls and make the player go back to swinging state.
-		if (place_meeting(x + sign(horizontalSpeed), y, o_Wall) && abs(horizontalSpeed) > grappleReelInSpeed)
+		if (is_solid_object_at_position(x + sign(horizontalSpeed), y) && abs(horizontalSpeed) > grappleReelInSpeed)
 		{
 			state = State.Swinging;
 		}
@@ -296,10 +298,10 @@ if (place_meeting(x + horizontalSpeed, y, o_Wall))
 x += horizontalSpeed;
 
 // If we encounter any walls while moving vertically, stop translation in that direction.
-if (place_meeting(x, y + verticalSpeed, o_Wall))
+if (is_solid_object_at_position(x, y + verticalSpeed))
 {
 	var verticalStep = sign(verticalSpeed);
-	while (!place_meeting(x, y + verticalStep, o_Wall))
+	while (!is_solid_object_at_position(x, y + verticalStep))
 	{
 		y += verticalStep;	
 	}
@@ -311,7 +313,7 @@ if (place_meeting(x, y + verticalSpeed, o_Wall))
 		ropeAngleVelocity = 0;
 		
 		// Prevent phasing through walls and make the player go back to swinging state.
-		if (place_meeting(x, y + sign(verticalSpeed), o_Wall) && abs(verticalSpeed) > grappleReelInSpeed)
+		if (is_solid_object_at_position(x, y + sign(verticalSpeed)) && abs(verticalSpeed) > grappleReelInSpeed)
 		{
 			state = State.Swinging;	
 		}
