@@ -159,6 +159,7 @@ switch (state)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
+			coyoteTimeCounter = 0;
 			state = State.Normal;
 			break;
 		}
@@ -190,6 +191,7 @@ switch (state)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
+			coyoteTimeCounter = 0;
 			state = State.Normal;
 			break;
 		}
