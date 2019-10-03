@@ -129,8 +129,7 @@ switch (state)
 		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
 		// Right now we are grappling only to o_Wall; this will change in the future.
-		var collision_object = collision_line(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck, o_Wall, true, true);
-		if (collision_object != noone)
+		if (can_grapple_to(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck))
 		{		
 			// Grapple to the surface contact; handle any "overshooting".
 			grappleToX = grappleToXCheck;
