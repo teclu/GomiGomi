@@ -1,11 +1,11 @@
 // Player Keyboard and Mouse Inputs
+var key_up = keyboard_check(ord("W"));
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
-var key_jump = keyboard_check(vk_space);
-var mouse_left = mouse_check_button_pressed(mb_left);
-// var key_up = keyboard_check(ord("W")); <-- Unused.
+var key_space = keyboard_check(vk_space);
 // var key_down = keyboard_check(ord("S")); <-- Unused.
-// var mouse_right = mouse_check_button_pressed(mb_right); <-- Unused.
+var mouse_left = mouse_check_button_pressed(mb_left);
+var mouse_right = mouse_check_button_pressed(mb_right);
 
 // Boolean Checks
 isGrounded = place_meeting(x, y + 1, o_Wall);
@@ -60,13 +60,14 @@ switch (state)
 		horizontalSpeed = clamp(horizontalSpeed, -walkSpeed, walkSpeed);
 		verticalSpeed += gravityExperienced;
 		
-		if (key_jump && (isGrounded || coyoteTimeCounter > 0))
+		if (key_space && (isGrounded || coyoteTimeCounter > 0))
 		{
 			coyoteTimeCounter = 0;
 			verticalSpeedFraction = 0.0;
 			verticalSpeed = -jumpSpeed;
 		}
 		
+		// Shoot the Grapple.
 		if (mouse_left)
 		{
 			grappleToX = mouse_x;
@@ -100,6 +101,7 @@ switch (state)
 		grappleToYCheck += grappleToYSpeed;
 		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
+		// Right now we are grappling only to o_Wall; this will change in the future.
 		var collision_object = collision_line(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck, o_Wall, true, true);
 		if (collision_object != noone)
 		{
@@ -138,7 +140,8 @@ switch (state)
 		horizontalSpeed = grappleFromX - x;
 		verticalSpeed = (y <= grappleToY) ? (verticalSpeed + gravityExperienced) : approach(verticalSpeed, grappleFromY - y, horizontalFrictionAir);
 		
-		if (mouse_left)
+		// Reel towards the Grapple.
+		if (key_up)
 		{
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
@@ -150,8 +153,9 @@ switch (state)
 			state = State.Reeling;
 			break;
 		}
-
-		if (key_jump)
+		
+		// Release the Grapple.
+		if (mouse_right)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
@@ -181,7 +185,8 @@ switch (state)
 			break;
 		}
 		
-		if (key_jump)
+		// Release the Grapple.
+		if (mouse_right)
 		{
 			verticalSpeedFraction = 0;
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
