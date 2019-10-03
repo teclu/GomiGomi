@@ -133,7 +133,7 @@ switch (state)
 		}
 		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
-		var objectGrappledCheck = can_grapple_to(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck);
+		var objectGrappledCheck = can_grapple_to(grappleToXCheck, grappleToYCheck);
 		if (objectGrappledCheck != noone)
 		{		
 			// Grapple to the surface contact; handle any "overshooting".
