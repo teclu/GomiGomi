@@ -199,10 +199,18 @@
             }
         },
         {
+            "Key": "9b685d60-c1cd-44ce-b525-066dcb123db4",
+            "Value": {
+                "id": "4797d15d-8002-45af-abfc-5a79341ecd2d",
+                "resourcePath": "rooms\\r_Duplicate_Me_Empty\\r_Duplicate_Me_Empty.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "9c3845dd-d2ba-445e-b1fe-b01ace162c28",
             "Value": {
                 "id": "b3fd6b8b-ca3f-4008-8641-ddb2636545a7",
-                "resourcePath": "rooms\\r_empty\\r_empty.yy",
+                "resourcePath": "rooms\\r_The_End\\r_The_End.yy",
                 "resourceType": "GMRoom"
             }
         },
