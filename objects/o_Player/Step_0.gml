@@ -28,7 +28,7 @@ switch (state)
 		
 		// Visually reel back the line to the Player.
 		ropeLength = point_distance(x, y, grappleToX, grappleToY);
-		if (ropeLength > ropeLengthThreshold)
+		if (ropeLength > ropeLengthMinimum)
 		{			
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
@@ -46,6 +46,7 @@ switch (state)
 			grappleToY = y;
 		}
 		
+		// Determine the Horizontal and Vertical speeds.
 		var moveDirection = key_right - key_left;
 		horizontalSpeed += moveDirection * walkAcceleration;
 		if (moveDirection == 0)
@@ -58,8 +59,14 @@ switch (state)
 			horizontalSpeed = approach(horizontalSpeed, 0, horizontalFriction);
 		}
 		horizontalSpeed = clamp(horizontalSpeed, -walkSpeed, walkSpeed);
-		verticalSpeed += gravityExperienced;
 		
+		// If the player is not grounded, apply gravity.
+		if (!isGrounded)
+		{
+			verticalSpeed += gravityExperienced;
+		}
+		
+		// If the player is grounded or there is Coyote Time remaining, perform the jump.
 		if (key_space && (isGrounded || coyoteTimeCounter > 0))
 		{
 			coyoteTimeCounter = 0;
@@ -67,7 +74,7 @@ switch (state)
 			verticalSpeed = -jumpSpeed;
 		}
 		
-		// Shoot the Grapple.
+		// Attempt to shoot the Grapple.
 		if (mouse_left)
 		{
 			grappleToX = mouse_x;
@@ -78,6 +85,8 @@ switch (state)
 			grappleToYCheck = grappleFromY;
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
+			
+			// Smoothing of the grappling speed so that it looks visually consistent.
 			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleShootOutSpeed)
 			{
 				grappleToXSpeed += (grappleToX - grappleToXCheck) * 0.01;
@@ -90,24 +99,44 @@ switch (state)
 	
 	case State.Shooting:
 	{
+		// Determine the Horizontal and Vertical speeds. In this case, the Player is not moving.
 		var horizontalFriction = horizontalFrictionGround;
 		if (!isGrounded)
 		{
 			horizontalFriction = horizontalFrictionAir;	
 		}
 		horizontalSpeed = approach(horizontalSpeed, 0, horizontalFriction);
-		verticalSpeed += gravityExperienced;
+
+		// If the player is not grounded, apply gravity.
+		if (!isGrounded)
+		{
+			verticalSpeed += gravityExperienced;
+		}
+		
+		// Increment the grapple-to check; this can be visually seen.
 		grappleToXCheck += grappleToXSpeed;
-		grappleToYCheck += grappleToYSpeed;
+		grappleToYCheck += (grappleToYSpeed + ((!isGrounded) ? verticalSpeed : 0));
+		
+		// If the rope is going beyond its maximum distance, then stop the shooting and go back to the Normal State. Else, proceed with the grappling. 
+		if (point_distance(grappleToXCheck, grappleToYCheck, x, y) > ropeLengthMaximum)
+		{
+			grappleToX = grappleToXCheck;
+			grappleToY = grappleToYCheck;
+			coyoteTimeCounter = 0;
+			state = State.Normal;
+			break;
+		}
 		
 		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
 		// Right now we are grappling only to o_Wall; this will change in the future.
 		var collision_object = collision_line(grappleFromX, grappleFromY, grappleToXCheck, grappleToYCheck, o_Wall, true, true);
 		if (collision_object != noone)
-		{
+		{		
 			// Grapple to the surface contact; handle any "overshooting".
 			grappleToX = grappleToXCheck;
 			grappleToY = grappleToYCheck;
+			
+			// This while-loop makes sure that the contact point appears on the surface of the object.
 			while (position_meeting(grappleToX, grappleToY, o_Wall))
 			{
 				grappleToX -= grappleToXSpeed * 0.01;
@@ -131,6 +160,7 @@ switch (state)
 		ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
 		ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
 		
+		// Determine the Horizontal and Vertical speeds based on the grapple swinging.
 		var ropeAngleAcceleration = -0.1 * dcos(ropeAngle);
 		ropeAngleVelocity += (!isGrounded) ? ropeAngleAcceleration : 0;
 		ropeAngle += ropeAngleVelocity;
@@ -145,10 +175,14 @@ switch (state)
 		{
 			grappleToXSpeed = 0;
 			grappleToYSpeed = 0;
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleReelToSpeed)
+			
+			// Make the grapple-to speed approximately equal or greater to our defined speed limit.
+			var grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
+			while (grappleToSpeed < grappleReelToSpeed)
 			{
 				grappleToXSpeed += (grappleToX - grappleFromX) * 0.01;
 				grappleToYSpeed += (grappleToY - grappleFromY) * 0.01;
+				grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
 			}
 			state = State.Reeling;
 			break;
@@ -161,13 +195,13 @@ switch (state)
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
 			coyoteTimeCounter = 0;
 			state = State.Normal;
-			break;
 		}
 	}
 	break;
 	
 	case State.Reeling:
 	{
+		// Determine the Horizontal and Vertical speeds based on the grapple reeling.
 		var ropeAngleAcceleration = -0.1 * dcos(ropeAngle);
 		ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
 		ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
@@ -179,8 +213,18 @@ switch (state)
 		horizontalSpeed = (!place_meeting(x + sign(horizontalSpeed), y, o_Wall)) ? (grappleFromX - x) : 0;
 		verticalSpeed = (!place_meeting(x, y + sign(verticalSpeed), o_Wall)) ? ((y < grappleToY) ? (verticalSpeed + gravityExperienced) : (grappleFromY - y)) : 0;
 		
-		if (ropeLength <= ropeLengthThreshold)
+		// Start slowing down the reel-to speed when the rope is shorter than the threshold. This also makes it feel smoother rather than abrupt.
+		var grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
+		if (ropeLength <= ropeLengthThreshold && grappleToSpeed > 4.0)
 		{
+			grappleToXSpeed -= grappleToXSpeed * 0.1;
+			grappleToYSpeed -= grappleToYSpeed * 0.1;
+		}
+		
+		// If we have reeled in sufficiently, stop and go back to the swinging state.
+		if (ropeLength <= ropeLengthMinimum)
+		{
+			ropeLength = ropeLengthMinimum;
 			ropeAngleVelocity = 0;
 			state = State.Swinging;
 			break;
@@ -193,7 +237,6 @@ switch (state)
 			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
 			coyoteTimeCounter = 0;
 			state = State.Normal;
-			break;
 		}
 	}
 	break;
@@ -207,10 +250,9 @@ switch (state)
 		}
 		return;	
 	}
-	break;
 }
 
-// The Player Sprite Appearance
+// The Player Sprite Appearance, which is currently mouse or key press dependent.
 if (mouse_x > x || key_right)
 {
 	sprite_index = sp_Player_Right;	
@@ -220,7 +262,7 @@ else if (mouse_x < x || key_left)
 	sprite_index = sp_Player_Left;	
 }
 
-// Resolve and apply the speed of the Player.
+// Finally, resolve and apply the "true" speed of the Player.
 horizontalSpeed += horizontalSpeedFraction;
 verticalSpeed += verticalSpeedFraction;
 horizontalSpeedFraction = frac(horizontalSpeed);
@@ -228,6 +270,7 @@ verticalSpeedFraction = frac(verticalSpeed);
 horizontalSpeed -= horizontalSpeedFraction;
 verticalSpeed -= verticalSpeedFraction;
 
+// If we encounter any walls while moving horizontally, stop translation in that direction.
 if (place_meeting(x + horizontalSpeed, y, o_Wall))
 {
 	var horizontalStep = sign(horizontalSpeed);
@@ -236,12 +279,13 @@ if (place_meeting(x + horizontalSpeed, y, o_Wall))
 		x += horizontalStep;	
 	}
 	
+	// If we happen to be grappling, ensure that the rope variables are reset.
 	if (state == State.Swinging || state == State.Reeling)
 	{
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
 		
-		// Phasing Prevention
+		// Prevent phasing through walls and make the player go back to swinging state.
 		if (place_meeting(x + sign(horizontalSpeed), y, o_Wall) && abs(horizontalSpeed) > grappleReelInSpeed)
 		{
 			state = State.Swinging;
@@ -252,6 +296,7 @@ if (place_meeting(x + horizontalSpeed, y, o_Wall))
 }
 x += horizontalSpeed;
 
+// If we encounter any walls while moving vertically, stop translation in that direction.
 if (place_meeting(x, y + verticalSpeed, o_Wall))
 {
 	var verticalStep = sign(verticalSpeed);
@@ -260,12 +305,13 @@ if (place_meeting(x, y + verticalSpeed, o_Wall))
 		y += verticalStep;	
 	}
 	
+	// If we happen to be grappling, ensure that the rope variables are reset.
 	if (state == State.Swinging || state == State.Reeling)
 	{
 		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
 		ropeAngleVelocity = 0;
 		
-		// Phasing Prevention
+		// Prevent phasing through walls and make the player go back to swinging state.
 		if (place_meeting(x, y + sign(verticalSpeed), o_Wall) && abs(verticalSpeed) > grappleReelInSpeed)
 		{
 			state = State.Swinging;	
