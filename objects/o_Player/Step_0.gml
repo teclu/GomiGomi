@@ -5,12 +5,13 @@ var key_up = keyboard_check(ord("W"));
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
 var key_space = keyboard_check(vk_space);
-// var key_down = keyboard_check(ord("S")); <-- Unused.
+var key_down = keyboard_check(ord("S"));
 var mouse_left = mouse_check_button_pressed(mb_left);
 var mouse_right = mouse_check_button_pressed(mb_right);
 
 // Boolean Checks
-isGrounded = is_solid_object_at_position(x, y + 1);
+isStandingOnLadder = place_meeting(x, y + 1.5, o_Ladder) && state != State.Laddering;
+isGrounded = is_solid_object_at_position(x, y + 1) || isStandingOnLadder;
 
 // The Player State Machine
 switch (state)
@@ -99,6 +100,14 @@ switch (state)
 				grappleToYSpeed += (grappleToY - grappleToYCheck) * 0.01;
 			}
 			state = State.Shooting;
+		}
+		
+		// Player chooses to climb ladder.
+		var climbDirection = key_down - key_up;
+		if (climbDirection != 0 && place_meeting(x, y + climbDirection, o_Ladder))
+		{
+			show_debug_message(climbDirection);
+			state = State.Laddering;
 		}
 	}
 	break;
@@ -262,6 +271,23 @@ switch (state)
 	}
 	break;
 	
+	case State.Laddering:
+	{
+		// Determine the Horizontal and Vertical speeds.
+		var horizontalMoveDirection = key_right - key_left;
+		horizontalSpeed = horizontalMoveDirection * walkSpeed;
+		
+		var verticalMoveDirection = key_down - key_up;
+		verticalSpeed = verticalMoveDirection * walkSpeed;
+		
+		// No longer on the ladder.
+		if (!place_meeting(x, y, o_Ladder))
+		{
+			state = State.Normal;
+		}
+	}
+	break;
+	
 	case State.Dead:
 	{
 		var key_r = keyboard_check(ord("R"));		
@@ -302,7 +328,7 @@ if (movingPlatformStanding != noone)
 	}
 }
 
-// If we encounter any walls while moving horizontally, stop translation in that direction.
+// If we encounter any solid objects while moving horizontally, stop translation in that direction.
 if (is_solid_object_at_position(x + horizontalSpeed, y))
 {
 	var horizontalStep = sign(horizontalSpeed);
@@ -328,10 +354,11 @@ if (is_solid_object_at_position(x + horizontalSpeed, y))
 }
 x += horizontalSpeed;
 
-// If we encounter any walls while moving vertically, stop translation in that direction.
+// If we encounter any solid objects while moving vertically, stop translation in that direction.
+var verticalStep = sign(verticalSpeed);
+
 if (is_solid_object_at_position(x, y + verticalSpeed))
 {
-	var verticalStep = sign(verticalSpeed);
 	while (!is_solid_object_at_position(x, y + verticalStep))
 	{
 		y += verticalStep;	
@@ -348,6 +375,17 @@ if (is_solid_object_at_position(x, y + verticalSpeed))
 		{
 			state = State.Swinging;	
 		}
+	}
+	verticalSpeed = 0;
+	verticalSpeedFraction = 0.0;
+}
+
+// Don't move vertically if player is "standing" on the ladder.
+if (!key_space && isStandingOnLadder)
+{	 
+	while (!isStandingOnLadder)
+	{
+		y += verticalStep;	
 	}
 	verticalSpeed = 0;
 	verticalSpeedFraction = 0.0;

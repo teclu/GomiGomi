@@ -25,7 +25,7 @@ switch (state)
 {
 	case State.Normal:
 		playerDetails = "Normal (";
-		if (!isGrounded) {
+		if (!isGrounded && !isStandingOnLadder) {
 			playerDetails += "Air)"
 		}
 		else
@@ -41,6 +41,9 @@ switch (state)
 		break;
 	case State.Reeling:
 		playerDetails = "Reeling";
+		break;
+	case State.Laddering:
+		playerDetails = "Laddering";
 		break;
 	case State.Dead:
 		playerDetails = "Dead";

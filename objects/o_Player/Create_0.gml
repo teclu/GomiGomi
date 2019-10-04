@@ -9,6 +9,7 @@ enum State {
 	Shooting,
 	Swinging,
 	Reeling,
+	Laddering,
 	Dead
 }
 
