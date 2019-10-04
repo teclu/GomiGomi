@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "93bee4ba-0f89-4877-beaa-05826d752742",
+            "Value": {
+                "id": "cbd22022-7d53-4e4a-a79a-5c5e4d256f3f",
+                "resourcePath": "objects\\o_Corrosive_Gas_Pool\\o_Corrosive_Gas_Pool.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "96706030-4ad2-418c-b56d-b7f4a0e54942",
             "Value": {
                 "id": "ee13e64a-f58c-4450-829d-e0c80c94ab40",
@@ -292,6 +300,14 @@
                 "id": "ee65c558-0953-4b65-8f1f-82ee954baee8",
                 "resourcePath": "scripts\\kill_player\\kill_player.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "bd583bd4-432d-4c8b-bfbc-ee9c08403a37",
+            "Value": {
+                "id": "7579ccd7-d95e-40c0-bbda-a44fdbfae37b",
+                "resourcePath": "sprites\\sp_Corrosive_Gas_Pool\\sp_Corrosive_Gas_Pool.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
