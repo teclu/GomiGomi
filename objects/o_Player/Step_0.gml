@@ -291,6 +291,17 @@ verticalSpeedFraction = frac(verticalSpeed);
 horizontalSpeed -= horizontalSpeedFraction;
 verticalSpeed -= verticalSpeedFraction;
 
+// If player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
+var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, false, true);
+if (movingPlatformStanding != noone)
+{
+	var toTranslate = movingPlatformStanding.horizontal_direction * movingPlatformStanding.movespeed;
+	if (!is_solid_object_at_position(x + toTranslate, y))
+	{
+		x += toTranslate;
+	}
+}
+
 // If we encounter any walls while moving horizontally, stop translation in that direction.
 if (is_solid_object_at_position(x + horizontalSpeed, y))
 {
@@ -316,13 +327,6 @@ if (is_solid_object_at_position(x + horizontalSpeed, y))
 	horizontalSpeedFraction = 0.0;
 }
 x += horizontalSpeed;
-
-// If player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
-var movingPlatformStanding = collision_line(x, y, x, y + 32, o_Moving_Platform, false, true);
-if (movingPlatformStanding != noone)
-{
-	x += movingPlatformStanding.horizontal_direction * movingPlatformStanding.movespeed;
-}
 
 // If we encounter any walls while moving vertically, stop translation in that direction.
 if (is_solid_object_at_position(x, y + verticalSpeed))

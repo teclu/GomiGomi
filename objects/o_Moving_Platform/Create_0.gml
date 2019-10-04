@@ -1,2 +1,3 @@
 /// @description Initialise Variables
-distanceCovered = 0;
+startX = x;
+endX = x + horizontal_direction * distance;

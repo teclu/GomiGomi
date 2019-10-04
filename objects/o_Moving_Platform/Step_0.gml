@@ -2,15 +2,22 @@
 
 if (is_moving_horizontally)
 {
-	if (distanceCovered + movespeed <= distance)
+	var toMove = movespeed * horizontal_direction;
+	if (x + toMove >= startX && x + toMove <= endX)
 	{
-		distanceCovered += movespeed;
-		x += movespeed * horizontal_direction;	
+		x += toMove;
 	}
-	
-	if (distanceCovered == distance)
+	else
 	{
-		distanceCovered = 0;
+		// Make sure that the platform remains in the same position.
+		if (x < startX)
+		{
+			x = startX;	 
+		}
+		else if (x > endX)
+		{
+			x = endX;
+		}
 		horizontal_direction *= -1;
 	}
 }
