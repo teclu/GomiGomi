@@ -42,7 +42,7 @@
             "Key": "09d2aaea-db93-4805-9f4c-98bce6f71d8a",
             "Value": {
                 "id": "07df8584-645b-4c76-b5e1-59b9c5e00ebb",
-                "resourcePath": "rooms\\r_Tutorial_Level_2\\r_Tutorial_Level_2.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level_2_O\\r_Tutorial_Level_2_O.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -60,6 +60,22 @@
                 "id": "5379d4f4-1e4e-4096-86c8-e95d253ebc22",
                 "resourcePath": "views\\0f4dc777-2f66-44af-adce-ea97ab881c9d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1010a15f-0826-4c34-8c6a-e74f560fddf6",
+            "Value": {
+                "id": "f35e1052-ae3a-4a50-aeaa-e3235cf01560",
+                "resourcePath": "rooms\\r_Tutorial_Level_12\\r_Tutorial_Level_12.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "129ce08a-2bbc-4874-8ff8-cf54d0b205c8",
+            "Value": {
+                "id": "c5e8cc36-43a2-411c-a069-c60334357141",
+                "resourcePath": "rooms\\r_Tutorial_Level_16\\r_Tutorial_Level_16.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -111,6 +127,14 @@
             }
         },
         {
+            "Key": "21440be0-7e08-4275-b2dd-ac2592dd372a",
+            "Value": {
+                "id": "eb76cba0-0068-4459-a006-39a2811ec86e",
+                "resourcePath": "rooms\\r_Tutorial_Level_9\\r_Tutorial_Level_9.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "235ea724-f7a8-4f69-bd4a-49c93e00254d",
             "Value": {
                 "id": "5a8f6f9e-bb10-4f49-9936-6c62bfcbf41c",
@@ -127,11 +151,51 @@
             }
         },
         {
+            "Key": "2be4ce91-55c5-462f-a3f0-9bd3f24bbf75",
+            "Value": {
+                "id": "f0ea9ea5-924f-41b3-a73e-3a6a2e7ff8ff",
+                "resourcePath": "rooms\\r_Tutorial_Level_6\\r_Tutorial_Level_6.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "2d03047e-8d6b-403e-bbb6-b634b454d9f4",
+            "Value": {
+                "id": "f2fbd817-ab42-4652-a717-c9dcf647a25c",
+                "resourcePath": "rooms\\r_Tutorial_Level_13\\r_Tutorial_Level_13.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "2e620b47-ff53-4097-9eee-8bed6ee15acc",
+            "Value": {
+                "id": "920bb484-83e1-4c0b-b0ed-ce16cd4fcbae",
+                "resourcePath": "rooms\\r_Tutorial_Level_7\\r_Tutorial_Level_7.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "33c17af0-1117-4ce4-8958-e1fc8e7d7ee7",
+            "Value": {
+                "id": "2b113cd5-d03c-4974-8a28-81b14eb7421c",
+                "resourcePath": "rooms\\r_Tutorial_Level_10\\r_Tutorial_Level_10.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "3b3dfa72-2b49-4266-aad3-d614c75d58bb",
             "Value": {
                 "id": "20c49dc0-1129-47ce-a9d4-48e082d75cd3",
                 "resourcePath": "objects\\o_Ladder\\o_Ladder.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3ea0b476-fd5e-4995-a548-3650ea0ae761",
+            "Value": {
+                "id": "c1a06485-058b-4d07-9277-50e942df6fef",
+                "resourcePath": "rooms\\r_Tutorial_Level_2_E\\r_Tutorial_Level_2_E.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -146,7 +210,7 @@
             "Key": "42709a5f-54c9-4be4-be39-e3964cc7720f",
             "Value": {
                 "id": "6706a286-17bf-4cb8-96c8-a8b7c8f78278",
-                "resourcePath": "rooms\\r_Tutorial_Level_1\\r_Tutorial_Level_1.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level_1_O\\r_Tutorial_Level_1_O.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -210,7 +274,7 @@
             "Key": "72e96098-b3d5-4f05-877b-33852eae8a21",
             "Value": {
                 "id": "54d43d70-c894-4d81-9e03-a95ebe8154aa",
-                "resourcePath": "rooms\\r_Tutorial_Level_3\\r_Tutorial_Level_3.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level_3_O\\r_Tutorial_Level_3_O.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -319,6 +383,14 @@
             }
         },
         {
+            "Key": "a0b48a57-d3d1-4ebe-bf2a-d9e48643e0e3",
+            "Value": {
+                "id": "f612cb44-b48b-49e8-8954-6a95fc1c3be9",
+                "resourcePath": "rooms\\r_Tutorial_Level_5\\r_Tutorial_Level_5.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "a8a1376f-182c-4af6-8295-7297b04dd796",
             "Value": {
                 "id": "7b739779-3aff-40df-a5ea-c160bfb83482",
@@ -351,6 +423,22 @@
             }
         },
         {
+            "Key": "b36aeebe-7406-4cba-9bf1-a8f57d84bf3d",
+            "Value": {
+                "id": "885d80a3-66fe-420b-a757-123bcf4de029",
+                "resourcePath": "rooms\\r_Tutorial_Level_15\\r_Tutorial_Level_15.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bd246487-18c6-4cd2-941e-6da428136de6",
+            "Value": {
+                "id": "61174926-90fe-457f-85ec-4915761a7694",
+                "resourcePath": "rooms\\r_Tutorial_Level_14\\r_Tutorial_Level_14.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "bd583bd4-432d-4c8b-bfbc-ee9c08403a37",
             "Value": {
                 "id": "7579ccd7-d95e-40c0-bbda-a44fdbfae37b",
@@ -367,11 +455,27 @@
             }
         },
         {
+            "Key": "c8231101-ac3f-4d48-878d-e31521a5606b",
+            "Value": {
+                "id": "e8bbe3fc-a893-4b8f-a38a-418a99f98de2",
+                "resourcePath": "rooms\\r_Tutorial_Level_3_E\\r_Tutorial_Level_3_E.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "2af4d6b1-8db3-4292-a8bf-eae27ae85848",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "e391c98a-0178-4c17-86d5-27114c4c8b30",
+            "Value": {
+                "id": "86621f5f-40a7-4030-a9cf-e98a561fffcd",
+                "resourcePath": "rooms\\r_Tutorial_Level_11\\r_Tutorial_Level_11.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -404,6 +508,22 @@
                 "id": "a91b355d-254e-4af3-a63d-03fe34e1ecca",
                 "resourcePath": "views\\f42681bd-a735-460f-8fca-ea299b04614f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f541b841-036e-4b8a-974b-d294bdd60553",
+            "Value": {
+                "id": "aefb4f20-6707-4a2d-8a45-1f90aa782313",
+                "resourcePath": "rooms\\r_Tutorial_Level_8\\r_Tutorial_Level_8.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "f555d448-d736-4b52-90e4-d16ea1f117b1",
+            "Value": {
+                "id": "e00c86a7-1493-4207-bd41-1ae59670fb12",
+                "resourcePath": "rooms\\r_Tutorial_Level_1_E\\r_Tutorial_Level_1_E.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
