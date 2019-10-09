@@ -4,18 +4,19 @@ image_angle += 5;
 if (is_moving_horizontally)
 {
 	var toMoveX = movespeed * horizontal_direction;
-	if (x + toMoveX >= startX && x + toMoveX <= endX)
+	if ((starting_horizontal_direction > 0 && x + toMoveX >= startX && x + toMoveX <= endX) ||
+		(starting_horizontal_direction < 0 && x + toMoveX <= startX && x + toMoveX >= endX))
 	{
 		x += toMoveX;
 	}
 	else
 	{
 		// Make sure that the platform remains in the same position.
-		if (x < startX)
+		if ((starting_horizontal_direction > 0 && x < startX) || (starting_horizontal_direction < 0 && x > startX))
 		{
 			x = startX;	 
 		}
-		else if (x > endX)
+		else if ((starting_horizontal_direction > 0 && x > endX) || (starting_horizontal_direction < 0 && x < endX))
 		{
 			x = endX;
 		}
@@ -26,18 +27,19 @@ if (is_moving_horizontally)
 if (is_moving_vertically)
 {
 	var toMoveY = movespeed * vertical_direction;
-	if (y + toMoveY <= startY && y + toMoveY >= endY)
+	if ((starting_vertical_direction < 0 && y + toMoveY <= startY && y + toMoveY >= endY) ||
+		(starting_vertical_direction > 0 && y + toMoveY >= startY && y + toMoveY <= endY))
 	{
 		y += toMoveY;
 	}
 	else
 	{
 		// Make sure that the platform remains in the same position.
-		if (y > startY)
+		if ((starting_vertical_direction < 0 && y > startY) || (starting_vertical_direction > 0 && y < startY))
 		{
 			y = startY;	 
 		}
-		else if (y < endY)
+		else if ((starting_vertical_direction < 0 && y < endY) || (starting_vertical_direction > 0 && y > endY))
 		{
 			y = endY;
 		}
