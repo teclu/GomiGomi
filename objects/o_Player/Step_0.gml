@@ -13,22 +13,22 @@ var mouse_right = mouse_check_button_pressed(mb_right);
 isStandingOnLadder = place_meeting(x, y + 1.5, o_Ladder) && state != State.Laddering;
 isGrounded = is_solid_object_at_position(x, y + 1) || isStandingOnLadder;
 
+// Coyote Time for Jumping
+if (!isGrounded && coyoteTimeCounter > 0)
+{
+	coyoteTimeCounter--;
+}
+else if (isGrounded && coyoteTimeCounter < coyoteTimeDuration)
+{
+	coyoteTimeCounter = coyoteTimeDuration;	
+}
+
 // The Player State Machine
 switch (state)
 {
 	// This is when the Player doing anything unrelated to grappling.
 	case State.Normal:
 	{
-		// Coyote Time for Jumping
-		if (!isGrounded && coyoteTimeCounter > 0)
-		{
-			coyoteTimeCounter--;
-		}
-		else if (isGrounded && coyoteTimeCounter < coyoteTimeDuration)
-		{
-			coyoteTimeCounter = coyoteTimeDuration;	
-		}
-		
 		// Visually reel back the line to the Player.
 		ropeLength = point_distance(x, y, grappleToX, grappleToY);
 		if (ropeLength > ropeLengthMinimum)
@@ -192,7 +192,7 @@ switch (state)
 		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle);
 		horizontalSpeed = 1.25 * (grappleFromX - x);
 		verticalSpeed = (y < grappleToY) ? verticalSpeed + gravityExperienced : approach(verticalSpeed, 0.125 * (grappleFromY - y), horizontalFrictionAir);
-		show_debug_message(verticalSpeed);
+
 		// Reel towards the Grapple.
 		if (key_up && ropeLength > ropeLengthMinimum)
 		{
@@ -209,6 +209,14 @@ switch (state)
 			}
 			state = State.Reeling;
 			break;
+		}
+		
+		// If the player is grounded or there is Coyote Time remaining, perform the jump.
+		if (key_space && (isGrounded || coyoteTimeCounter > 0))
+		{
+			coyoteTimeCounter = 0;
+			verticalSpeedFraction = 0.0;
+			verticalSpeed = -jumpSpeed;
 		}
 		
 		// Release the Grapple.
