@@ -129,7 +129,9 @@ switch (state)
 		
 		// Increment the grapple-to check; this can be visually seen.
 		grappleToXCheck += grappleToXSpeed;
-		grappleToYCheck += (grappleToYSpeed + ((!isGrounded) ? verticalSpeed : 0));
+		grappleToYCheck += grappleToYSpeed; // Uncomment this for real world physics, + ((!isGrounded) ? verticalSpeed : 0));
+		grappleFromX = x;
+		grappleFromY = y;
 		
 		// If the rope is going beyond its maximum distance, then stop the shooting and go back to the Normal State. Else, proceed with the grappling. 
 		if (point_distance(grappleToXCheck, grappleToYCheck, x, y) > ropeLengthMaximum)
@@ -188,9 +190,9 @@ switch (state)
 		ropeAngleVelocity *= 0.99;
 		grappleFromX = (!is_solid_object_at_position(x + toMoveX, y)) ? grappleToX + lengthdir_x(ropeLength, ropeAngle) : x;
 		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle);
-		horizontalSpeed = grappleFromX - x;
+		horizontalSpeed = 1.25 * (grappleFromX - x);
 		verticalSpeed = (y < grappleToY) ? verticalSpeed + gravityExperienced : approach(verticalSpeed, 0.125 * (grappleFromY - y), horizontalFrictionAir);
-		
+		show_debug_message(verticalSpeed);
 		// Reel towards the Grapple.
 		if (key_up && ropeLength > ropeLengthMinimum)
 		{
