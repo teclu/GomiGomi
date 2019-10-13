@@ -5,11 +5,11 @@
     "name": "o_Corrosive_Gas_Pool",
     "eventList": [
         {
-            "id": "018f6a30-d982-408e-9cfe-5124f66791c3",
+            "id": "cd099c51-6c64-4f4a-a28d-3af5421b445d",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "5616d61b-b814-4d2f-891c-394029eb60ee",
+            "collisionObjectId": "7bc0f3a7-0be5-4861-9756-32b8dfe43b4e",
             "enumb": 0,
             "eventtype": 4,
             "m_owner": "93bee4ba-0f89-4877-beaa-05826d752742"

@@ -1,4 +1,4 @@
-/// @description Player State and Controls
+/// @description 
 
 // Player Keyboard and Mouse Inputs
 var key_up = keyboard_check(ord("W"));
@@ -10,295 +10,208 @@ var mouse_left = mouse_check_button_pressed(mb_left);
 var mouse_right = mouse_check_button_pressed(mb_right);
 
 // Boolean Checks
-isStandingOnLadder = place_meeting(x, y + 1.5, o_Ladder) && state != State.Laddering;
-isGrounded = is_solid_object_at_position(x, y + 1) || isStandingOnLadder;
-
-// Coyote Time for Jumping
-if (!isGrounded && coyoteTimeCounter > 0)
-{
-	coyoteTimeCounter--;
-}
-else if (isGrounded && coyoteTimeCounter < coyoteTimeDuration)
-{
-	coyoteTimeCounter = coyoteTimeDuration;	
-}
+var isGrounded = is_solid_object_at_position(x, y + 1);
 
 // The Player State Machine
-switch (state)
+switch (playerState)
 {
-	// This is when the Player doing anything unrelated to grappling.
-	case State.Normal:
+	case PlayerState.Normal:
 	{
-		// Visually reel back the line to the Player.
-		ropeLength = point_distance(x, y, grappleToX, grappleToY);
-		if (ropeLength > ropeLengthMinimum)
-		{			
-			grappleToXSpeed = 0;
-			grappleToYSpeed = 0;
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleReelInSpeed)
-			{
-				grappleToXSpeed += (x - grappleToX) * 0.01;
-				grappleToYSpeed += (y - grappleToY) * 0.01;
-			}
-			grappleToX += grappleToXSpeed;
-			grappleToY += grappleToYSpeed;
-		}
-		else
-		{
-			grappleToX = x;
-			grappleToY = y;
-		}
-		
-		// Determine the Horizontal and Vertical speeds.
+		// Resolve Horizontal and Vertical Translation
 		var moveDirection = key_right - key_left;
-		horizontalSpeed += moveDirection * walkAcceleration;
-		if (moveDirection == 0)
-		{
-			var horizontalFriction = horizontalFrictionGround;
-			if (!isGrounded)
-			{
-				horizontalFriction = horizontalFrictionAir;	
-			}
-			horizontalSpeed = approach(horizontalSpeed, 0, horizontalFriction);
-		}
-		horizontalSpeed = clamp(horizontalSpeed, -walkSpeed, walkSpeed);
+		horizontalSpeed += moveDirection * horizontalWalkAcceleration;
 		
 		// If the player is not grounded, apply gravity.
 		if (!isGrounded)
 		{
+			if (moveDirection == 0)
+			{
+				horizontalSpeed = approach(horizontalSpeed, 0, horizontalAirFriction);
+			}
+			horizontalSpeed = clamp(horizontalSpeed, -1.5 * horizontalWalkSpeedMaximum, 1.5 * horizontalWalkSpeedMaximum);
 			verticalSpeed += gravityExperienced;
+			
+			// Decrement the Coyote Time Counter.
+			if (coyoteTimeCounter > 0)
+			{
+				coyoteTimeCounter--;	
+			}
 		}
+		// Else the player is grounded, so don't apply gravity.
 		else
 		{
-			verticalSpeed = 0;
+			if (moveDirection == 0)
+			{
+				horizontalSpeed = approach(horizontalSpeed, 0, horizontalWalkFriction);
+			}
+			horizontalSpeed = clamp(horizontalSpeed, -horizontalWalkSpeedMaximum, horizontalWalkSpeedMaximum);
+			verticalSpeed = 0.0;
+			
+			// Reset the Coyote Time Counter when Grounded.
+			if (coyoteTimeCounter < coyoteTimeDuration)
+			{
+				coyoteTimeCounter = coyoteTimeDuration;	
+			}
 		}
 		
 		// If the player is grounded or there is Coyote Time remaining, perform the jump.
 		if (key_space && (isGrounded || coyoteTimeCounter > 0))
 		{
+			verticalSpeed = verticalInitialJumpSpeed;
 			coyoteTimeCounter = 0;
-			verticalSpeedFraction = 0.0;
-			verticalSpeed = -jumpSpeed;
 		}
 		
-		// Attempt to shoot the Grapple.
-		if (mouse_left)
+		// If the player presses the left mouse button and the grapple is unused, shoot the grapple.
+		if (grappleState == GrappleState.Unused && mouse_left)
 		{
-			grappleToX = mouse_x;
-			grappleToY = mouse_y;
-			grappleFromX = x;
-			grappleFromY = y;
-			grappleToXCheck = grappleFromX;
-			grappleToYCheck = grappleFromY;
-			grappleToXSpeed = 0;
-			grappleToYSpeed = 0;
+			// Calculate the Direction Unit Vector.
+			grappleToMouseX = mouse_x;
+			grappleToMouseY = mouse_y;
+			grappleToXDirection = grappleToMouseX - x;
+			grappleToYDirection = grappleToMouseY - y;
+			grappleToDirectionMagnitude = sqrt(grappleToXDirection * grappleToXDirection + grappleToYDirection * grappleToYDirection);
+			grappleToXDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
+			grappleToYDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
 			
-			// Smoothing of the grappling speed so that it looks visually consistent.
-			while (sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed) < grappleShootOutSpeed)
-			{
-				grappleToXSpeed += (grappleToX - grappleToXCheck) * 0.01;
-				grappleToYSpeed += (grappleToY - grappleToYCheck) * 0.01;
-			}
-			state = State.Shooting;
+			// Initialise the grapple starting position.
+			grappleToX = x;
+			grappleToY = y;
+			grappleState = GrappleState.Projecting;
 		}
 		
-		// Player chooses to climb ladder.
-		var climbDirection = key_down - key_up;
-		if (climbDirection != 0 && place_meeting(x, y + climbDirection, o_Ladder))
+		// Handle the grapple translation and collision if any.
+		if (grappleState == GrappleState.Projecting)
 		{
-			show_debug_message(climbDirection);
-			state = State.Laddering;
-		}
-	}
-	break;
-	
-	case State.Shooting:
-	{
-		// Determine the Horizontal and Vertical speeds. In this case, the Player is not allowed to move anymore.
-		var horizontalFriction = horizontalFrictionGround;
-		if (!isGrounded)
-		{
-			horizontalFriction = horizontalFrictionAir;	
-			verticalSpeed += gravityExperienced;
-		}
-		else
-		{
-			verticalSpeed = 0;	
-		}
-		horizontalSpeed = approach(horizontalSpeed, 0, horizontalFriction);
-		
-		// Increment the grapple-to check; this can be visually seen.
-		grappleToXCheck += grappleToXSpeed;
-		grappleToYCheck += grappleToYSpeed; // Uncomment this for real world physics, + ((!isGrounded) ? verticalSpeed : 0));
-		grappleFromX = x;
-		grappleFromY = y;
-		
-		// If the rope is going beyond its maximum distance, then stop the shooting and go back to the Normal State. Else, proceed with the grappling. 
-		if (point_distance(grappleToXCheck, grappleToYCheck, x, y) > ropeLengthMaximum)
-		{
-			grappleToX = grappleToXCheck;
-			grappleToY = grappleToYCheck;
-			coyoteTimeCounter = 0;
-			state = State.Normal;
-			break;
-		}
-		
-		// Only grapple if the closet object that is in-between or at the position we clicked is grappable to.
-		var objectGrappledCheck = can_grapple_to(grappleToXCheck, grappleToYCheck);
-		if (objectGrappledCheck != noone)
-		{		
-			// Grapple to the surface contact; handle any "overshooting".
-			objectGrappled = objectGrappledCheck;
-			grappleToX = grappleToXCheck;
-			grappleToY = grappleToYCheck;
+			// Calculate the Direction Unit Vector.
+			grappleToXDirection = grappleToMouseX - x;
+			grappleToYDirection = grappleToMouseY - y;
+			grappleToDirectionMagnitude = sqrt(grappleToXDirection * grappleToXDirection + grappleToYDirection * grappleToYDirection);
+			grappleToXDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
+			grappleToYDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
 			
-			// This while-loop makes sure that the contact point appears on the surface of the object.
-			while (position_meeting(grappleToX, grappleToY, objectGrappled))
+			// Move the grapple position.
+			grappleToX += grappleToXDirection;
+			grappleToY += grappleToYDirection;
+			
+			// If the Grapple collides into something, stop the Grapple Shot Translation.
+			if (is_grappable_to_at_position(grappleToX, grappleToY))
 			{
-				grappleToX -= grappleToXSpeed * 0.01;
-				grappleToY -= grappleToYSpeed * 0.01;
+				// Visual Cleaning of Grapple Position
+				while (is_grappable_to_at_position(grappleToX, grappleToY))
+				{
+					grappleToX -= grappleToXDirection * 0.01;
+					grappleToY -= grappleToYDirection * 0.01;
+				}
+				grappleSwingingVelocity = 0.0;
+				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
+				grappleLength = point_distance(grappleToX, grappleToY, x, y);
+				playerState = PlayerState.Swinging;
+				grappleState = GrappleState.Attached;
+				break;
 			}
-			ropeAngleVelocity = 0;
-			ropeLengthStart = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
-			state = State.Swinging;
+			
+			// If we have reached the maximum grapple distance, retract the grapple.
+			if (distance_to_point(grappleToX, grappleToY) >= grappleLengthMaximum)
+			{				
+				grappleState = GrappleState.Retracting
+			}
 		}
-	}
-	break;
-	
-	case State.Swinging:
-	{	
-		grappleFromX = x;
-		grappleFromY = y;
 		
-		// If the player is grappled to the moving platform, make sure that the grapple moves as well; this indirectly moves the player.
-		if (objectGrappled.type == o_Moving_Platform)
+		if (grappleState == GrappleState.Retracting)
 		{
-			grappleToX += objectGrappled.horizontal_direction * objectGrappled.movespeed;
-		}
-		
-		// Allow horizontal movement while swinging.
-		var moveDirection = key_right - key_left;
-		var toMoveX = moveDirection * walkAcceleration;
-		grappleFromX += (!is_solid_object_at_position(x + toMoveX, y)) ? toMoveX : 0;
-		ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
-		ropeLength = (point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY) < ropeLengthStart) ? point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY) : ropeLengthStart;
-		
-		// Determine the Horizontal and Vertical speeds based on the grapple swinging.
-		var ropeAngleAcceleration = -0.1 * dcos(ropeAngle);
-		ropeAngleVelocity += (!isGrounded) ? ropeAngleAcceleration : 0;
-		ropeAngle += ropeAngleVelocity;
-		ropeAngleVelocity *= 0.99;
-		grappleFromX = (!is_solid_object_at_position(x + toMoveX, y)) ? grappleToX + lengthdir_x(ropeLength, ropeAngle) : x;
-		grappleFromY = grappleToY + lengthdir_y(ropeLength, ropeAngle);
-		horizontalSpeed = 1.25 * (grappleFromX - x);
-		verticalSpeed = (y < grappleToY) ? verticalSpeed + gravityExperienced : approach(verticalSpeed, 0.125 * (grappleFromY - y), horizontalFrictionAir);
+			// Calculate the Direction Unit Vector.
+			grappleToXDirection = x - grappleToX;
+			grappleToYDirection = y - grappleToY;
+			grappleToDirectionMagnitude = sqrt(grappleToXDirection * grappleToXDirection + grappleToYDirection * grappleToYDirection);
+			grappleToXDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
+			grappleToYDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
+			
+			// Move the grapple position.
+			grappleToX += grappleToXDirection;
+			grappleToY += grappleToYDirection;
 
-		// Reel towards the Grapple.
-		if (key_up && ropeLength > ropeLengthMinimum)
-		{
-			grappleToXSpeed = 0;
-			grappleToYSpeed = 0;
-			
-			// Make the grapple-to speed approximately equal or greater to our defined speed limit.
-			var grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
-			while (grappleToSpeed < grappleReelToSpeed)
+			// If we have reached the minimum grapple distance, hide the grapple.
+			if (distance_to_point(grappleToX, grappleToY) <= grappleLengthRetractMinimum)
 			{
-				grappleToXSpeed += (grappleToX - grappleFromX) * 0.01;
-				grappleToYSpeed += (grappleToY - grappleFromY) * 0.01;
-				grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
+				grappleToX = x;
+				grappleToY = y;
+				grappleState = GrappleState.Unused;
 			}
-			state = State.Reeling;
-			break;
+		}
+	}
+	break;
+	
+	case PlayerState.Swinging:
+	{
+		// Calculate the swinging speeds.
+		var grappleSwingingAcceleration = -0.2 * dcos(grappleAngle);
+		grappleSwingingVelocity += grappleSwingingAcceleration + ((grappleAngle > 247.5 && grappleAngle < 292.5) ? 0.05 * (key_right - key_left) : 0);
+		grappleSwingingVelocity = clamp(grappleSwingingVelocity, -grappleSwingingVelocityMaximum, grappleSwingingVelocityMaximum);
+		grappleAngle += grappleSwingingVelocity;
+		grappleSwingingVelocity *= 0.99;
+		horizontalSpeed = grappleToX + lengthdir_x(grappleLength, grappleAngle) - x;
+		verticalSpeed = grappleToY + lengthdir_y(grappleLength, grappleAngle) - y
+		
+		// If the grapple is attached.
+		if (grappleState == GrappleState.Attached)
+		{
+			// And the player presses the right mouse button or space bar, retract the grapple.
+			if (mouse_right || key_space)
+			{
+				// If it was the space bar pressed down, give a slight jump.
+				if (key_space)
+				{
+					verticalSpeed = 0.5 * verticalInitialJumpSpeed;
+					coyoteTimeCounter = 0;
+				}
+				horizontalSpeedOnSwingingExit = horizontalSpeed;
+				playerState = PlayerState.Normal;
+				grappleState = GrappleState.Retracting;
+				break;
+			}
+			
+			// And the player presses W, reel towards the grapple.
+			if (key_up && grappleLength > grappleLengthRetractThreshold)
+			{
+				// Calculate the Direction Unit Vector.
+				grappleToXDirection = grappleToX - x;
+				grappleToYDirection = grappleToY - y;
+				grappleToDirectionMagnitude = sqrt(grappleToXDirection * grappleToXDirection + grappleToYDirection * grappleToYDirection);
+				grappleToXDirection *= grappleReelingSpeedFactor / grappleToDirectionMagnitude;
+				grappleToYDirection *= grappleReelingSpeedFactor / grappleToDirectionMagnitude;
+				horizontalSpeed = 0.0;
+				verticalSpeed = 0.0;
+				playerState = PlayerState.Reeling;
+				break;
+			}
 		}
 		
 		// If the player is grounded or there is Coyote Time remaining, perform the jump.
-		if (key_space && (isGrounded || coyoteTimeCounter > 0))
+		if (key_space && isGrounded)
 		{
-			coyoteTimeCounter = 0;
-			verticalSpeedFraction = 0.0;
-			verticalSpeed = -jumpSpeed;
-		}
-		
-		// Release the Grapple.
-		if (mouse_right)
-		{
-			objectGrappled = noone;
-			verticalSpeedFraction = 0;
-			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
-			coyoteTimeCounter = 0;
-			state = State.Normal;
+			verticalSpeed = verticalInitialJumpSpeed;
 		}
 	}
 	break;
 	
-	case State.Reeling:
+	case PlayerState.Reeling:
 	{
-			// If the player is grappled to the moving platform, make sure that the grapple moves as well; this indirectly moves the player.
-		if (objectGrappled.type == o_Moving_Platform)
-		{
-			grappleToX += objectGrappled.horizontal_direction * objectGrappled.movespeed;
-		}
+		grappleLength = point_distance(grappleToX, grappleToY, x, y);
+		horizontalSpeed = approach(horizontalSpeed, grappleToXDirection, 0.125 * abs(grappleToXDirection));
+		verticalSpeed = approach(verticalSpeed, grappleToYDirection, 0.125 * abs(grappleToYDirection));
 		
-		// Determine the Horizontal and Vertical speeds based on the grapple reeling.
-		var ropeAngleAcceleration = -0.1 * dcos(ropeAngle);
-		ropeAngle = point_direction(grappleToX, grappleToY, grappleFromX, grappleFromY);
-		ropeLength = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
-		ropeAngleVelocity += ropeAngleAcceleration;
-		ropeAngle += ropeAngleVelocity;
-		ropeAngleVelocity *= 0.99;
-		grappleFromX += grappleToXSpeed;
-		grappleFromY += grappleToYSpeed;
-		horizontalSpeed = (!is_solid_object_at_position(x + sign(horizontalSpeed), y)) ? (grappleFromX - x) : 0;
-		verticalSpeed = (!is_solid_object_at_position(x, y + sign(verticalSpeed))) ? ((y < grappleToY) ? (verticalSpeed + gravityExperienced) : 0.125 * (grappleFromY - y)) : 0;
-		
-		// Start slowing down the reel-to speed when the rope is shorter than the threshold. This also makes it feel smoother rather than abrupt.
-		var grappleToSpeed = sqrt(grappleToXSpeed * grappleToXSpeed + grappleToYSpeed * grappleToYSpeed);
-		if (ropeLength <= ropeLengthThreshold && grappleToSpeed > 4.0)
+		// If the player is not holding the up key or the grapple has reached the threshold, stop the reeling.
+		if (grappleLength <= grappleLengthRetractThreshold)
 		{
-			grappleToXSpeed -= grappleToXSpeed * 0.25;
-			grappleToYSpeed -= grappleToYSpeed * 0.25;
-		}
-		
-		// If we have reeled in sufficiently, stop and go back to the swinging state.
-		if (ropeLength <= ropeLengthMinimum)
-		{
-			ropeLength = ropeLengthMinimum;
-			ropeLengthStart = point_distance(grappleToX, grappleToY, grappleFromX, grappleFromY);
-			ropeAngleVelocity = 0;
-			state = State.Swinging;
-			break;
-		}
-		
-		// Release the Grapple.
-		if (mouse_right)
-		{
-			objectGrappled = noone;
-			verticalSpeedFraction = 0;
-			verticalSpeed = (verticalSpeed - jumpSpeed) / 2;
-			coyoteTimeCounter = 0;
-			state = State.Normal;
+			grappleAngle = point_direction(grappleToX, grappleToY, x, y);
+			horizontalSpeed = 0.0;
+			verticalSpeed = 0.0;
+			playerState = PlayerState.Swinging;
 		}
 	}
 	break;
 	
-	case State.Laddering:
-	{
-		// Determine the Horizontal and Vertical speeds.
-		var horizontalMoveDirection = key_right - key_left;
-		horizontalSpeed = horizontalMoveDirection * walkSpeed;
-		
-		var verticalMoveDirection = key_down - key_up;
-		verticalSpeed = verticalMoveDirection * walkSpeed;
-		
-		// No longer on the ladder.
-		if (!place_meeting(x, y, o_Ladder))
-		{
-			state = State.Normal;
-		}
-	}
-	break;
-	
-	case State.Dead:
+	case PlayerState.Dead:
 	{
 		var key_r = keyboard_check(ord("R"));		
 		if (key_r)
@@ -319,15 +232,7 @@ else if (mouse_x < x || key_left)
 	sprite_index = sp_Player_Left;	
 }
 
-// Finally, resolve and apply the "true" speed of the Player.
-horizontalSpeed += horizontalSpeedFraction;
-verticalSpeed += verticalSpeedFraction;
-horizontalSpeedFraction = frac(horizontalSpeed);
-verticalSpeedFraction = frac(verticalSpeed);
-horizontalSpeed -= horizontalSpeedFraction;
-verticalSpeed -= verticalSpeedFraction;
-
-// If player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
+// If the player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
 var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, false, true);
 if (movingPlatformStanding != noone)
 {
@@ -338,66 +243,46 @@ if (movingPlatformStanding != noone)
 	}
 }
 
-// If we encounter any solid objects while moving horizontally, stop translation in that direction.
+// If the player encounters any solid objects while moving horizontally, stop translation in that direction.
 if (is_solid_object_at_position(x + horizontalSpeed, y))
 {
 	var horizontalStep = sign(horizontalSpeed);
+	horizontalSpeed = 0.0;
 	while (!is_solid_object_at_position(x + horizontalStep, y))
 	{		
 		x += horizontalStep;
 	}
-	
-	// If we happen to be grappling, ensure that the rope variables are reset.
-	if (state == State.Swinging || state == State.Reeling)
+	if (playerState == PlayerState.Swinging || playerState == PlayerState.Reeling)
 	{
-		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
-		ropeAngleVelocity = 0;
+		grappleAngle = point_direction(grappleToX, grappleToY, x, y);
+		grappleSwingingVelocity = 0.0;
 		
-		// Prevent phasing through walls and make the player go back to swinging state.
-		if (is_solid_object_at_position(x + sign(horizontalSpeed), y) && abs(horizontalSpeed) > grappleReelInSpeed)
+		if (playerState == PlayerState.Reeling)
 		{
-			state = State.Swinging;
+			playerState = PlayerState.Swinging;
 		}
 	}
-	horizontalSpeed = 0;
-	horizontalSpeedFraction = 0.0;
 }
 x += horizontalSpeed;
 
-// If we encounter any solid objects while moving vertically, stop translation in that direction.
-var verticalStep = sign(verticalSpeed);
-
+// If the player encounters any solid objects while moving vertically, stop translation in that direction.
 if (is_solid_object_at_position(x, y + verticalSpeed))
 {
+	var verticalStep = sign(verticalSpeed);
+	verticalSpeed = 0.0;
 	while (!is_solid_object_at_position(x, y + verticalStep))
-	{
-		y += verticalStep;	
+	{		
+		y += verticalStep;
 	}
-	
-	// If we happen to be grappling, ensure that the rope variables are reset.
-	if (state == State.Swinging || state == State.Reeling)
+	if (playerState == PlayerState.Swinging || playerState == PlayerState.Reeling)
 	{
-		ropeAngle = point_direction(grappleToX, grappleToY, x, y);
-		ropeAngleVelocity = 0;
+		grappleAngle = point_direction(grappleToX, grappleToY, x, y);
+		grappleSwingingVelocity = 0.0;
 		
-		// Prevent phasing through walls and make the player go back to swinging state.
-		if (is_solid_object_at_position(x, y + sign(verticalSpeed)) && abs(verticalSpeed) > grappleReelInSpeed)
+		if (playerState == PlayerState.Reeling)
 		{
-			state = State.Swinging;	
+			playerState = PlayerState.Swinging;
 		}
 	}
-	verticalSpeed = 0;
-	verticalSpeedFraction = 0.0;
-}
-
-// Don't move vertically if player is "standing" on the ladder.
-if (!key_space && isStandingOnLadder)
-{	 
-	while (!isStandingOnLadder)
-	{
-		y += verticalStep;	
-	}
-	verticalSpeed = 0;
-	verticalSpeedFraction = 0.0;
 }
 y += verticalSpeed;

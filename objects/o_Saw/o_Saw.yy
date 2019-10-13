@@ -5,16 +5,6 @@
     "name": "o_Saw",
     "eventList": [
         {
-            "id": "8c09b120-23aa-41d9-a4a2-9f3d45614961",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "5616d61b-b814-4d2f-891c-394029eb60ee",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "9e0c746d-3069-4f51-afd8-910a54fe7713"
-        },
-        {
             "id": "8229e500-5418-4704-a4a0-3e22899ac847",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -32,6 +22,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
+            "m_owner": "9e0c746d-3069-4f51-afd8-910a54fe7713"
+        },
+        {
+            "id": "249855ff-7249-41e3-ba1f-3338dbc00720",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "7bc0f3a7-0be5-4861-9756-32b8dfe43b4e",
+            "enumb": 0,
+            "eventtype": 4,
             "m_owner": "9e0c746d-3069-4f51-afd8-910a54fe7713"
         }
     ],

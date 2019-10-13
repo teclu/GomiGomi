@@ -15,4 +15,5 @@ for (var i = 0; i < ds_list_size(solid_objects_list); i++)
 		return true;	
 	}
 }
+
 return false;

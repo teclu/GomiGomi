@@ -1,53 +1,49 @@
-/// @description Initialising Variables
+/// @description Initialise Variables
+horizontalSpeed = 0.0;
+horizontalWalkAcceleration = 2.5;
+horizontalWalkSpeedMaximum = 7.5;
+horizontalWalkFriction = 1.25;
+horizontalAirFriction = 1.0;
+horizontalSpeedOnSwingingExit = 0.0;
 
-// Player States
-// The "state machine" of the player.
-state = State.Normal;
+verticalSpeed = 0.0;
+verticalInitialJumpSpeed = -12.0;
+gravityExperienced = 1.0;
 
-enum State {
+coyoteTimeDuration = 30;
+coyoteTimeCounter = coyoteTimeDuration;
+
+grappleShotSpeedFactor = 32.0;
+grappleSwingingVelocity = 0.0;
+grappleSwingingVelocityMaximum = 3.0;
+grappleAngle = 0.0;
+grappleLength = 0.0;
+grappleToX = 0.0;
+grappleToY = 0.0;
+grappleToMouseX = 0.0;
+grappleToMouseY = 0.0;
+grappleToXDirection = 0.0;
+grappleToYDirection = 0.0;
+grappleToDirectionMagnitude = 0.0;
+grappleReelingSpeedFactor = 14.0;
+grappleLengthRetractMinimum = 32.0;
+grappleLengthRetractThreshold = 84.0;
+grappleLengthMaximum = 480.0;
+
+playerState = PlayerState.Normal;
+enum PlayerState
+{
 	Normal,
-	Shooting,
 	Swinging,
 	Reeling,
-	Laddering,
 	Dead
 }
 
-// Player Variables
-// These variables are measured in Pixels per Tick.
-// Take note that the default room speed is 60 ticks, which equivalent to 1 second. 
-horizontalSpeed = 0.0;
-verticalSpeed = 0.0;
-horizontalSpeedFraction = 0.0;
-verticalSpeedFraction = 0.0;
-walkSpeed = 7.5;
-walkAcceleration = 2.5;
-jumpSpeed = 10.0;
-horizontalFrictionGround = 2.5;
-horizontalFrictionAir = 1.0;
-gravityExperienced = 0.5; 
-
-// Grapple Variables
-// These variables are measured in Pixels per Tick.
-grappleToX = x;
-grappleToY = y;
-grappleToXCheck = x;
-grappleToYCheck = y;
-grappleToXSpeed = 0.0;
-grappleToYSpeed = 0.0;
-grappleReelInSpeed = 25.0;
-grappleReelToSpeed = 25.0;
-grappleShootOutSpeed = 25.0;
-grappleFromX = x;
-grappleFromY = y;
-ropeLengthStart = 0;
-ropeLengthMinimum = 32.0; // Powers of 2; for reference, 1 Wall is 64 pixels in width.
-ropeLengthThreshold = 256.0 // A check to slow down the reel-to speed.
-ropeLengthMaximum = 512.0;
-objectGrappled = noone;
-
-
-// Coyote Time Variables
-// These variables are measured in Ticks.
-coyoteTimeDuration = 60;
-coyoteTimeCounter = coyoteTimeDuration;
+grappleState = GrappleState.Unused;
+enum GrappleState
+{
+	Unused,
+	Projecting,
+	Retracting,
+	Attached
+}

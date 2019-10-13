@@ -5,11 +5,11 @@
     "name": "o_Flag_Goal",
     "eventList": [
         {
-            "id": "527e754d-2f64-416d-9740-a715257f7fe3",
+            "id": "e3d6c1e4-0c73-4b70-b751-7827895e1de3",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "5616d61b-b814-4d2f-891c-394029eb60ee",
+            "collisionObjectId": "7bc0f3a7-0be5-4861-9756-32b8dfe43b4e",
             "enumb": 0,
             "eventtype": 4,
             "m_owner": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9"
