@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "07e43627-e421-481f-91c4-f2df3064ceb1",
+            "Value": {
+                "id": "e191e06b-09d5-427d-bf56-8adffdc19a7a",
+                "resourcePath": "objects\\o_Grappable_Thing_Ceiling\\o_Grappable_Thing_Ceiling.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9",
             "Value": {
                 "id": "5ae9c050-7c33-4555-9b68-7d84fdf5c4e9",
@@ -135,6 +143,14 @@
             }
         },
         {
+            "Key": "24366f8a-2f4c-4b30-b13f-0711d4fd39bb",
+            "Value": {
+                "id": "133d8927-3de3-4278-9c62-07ad69aa1bd5",
+                "resourcePath": "objects\\o_Grappable_Thing_Left\\o_Grappable_Thing_Left.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "255d967e-08ae-4700-9315-419041af0c56",
             "Value": {
                 "id": "c1643445-c4e5-4de8-a639-3bc98381a23a",
@@ -175,14 +191,6 @@
             }
         },
         {
-            "Key": "3b3dfa72-2b49-4266-aad3-d614c75d58bb",
-            "Value": {
-                "id": "20c49dc0-1129-47ce-a9d4-48e082d75cd3",
-                "resourcePath": "objects\\o_Ladder\\o_Ladder.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3ea0b476-fd5e-4995-a548-3650ea0ae761",
             "Value": {
                 "id": "c1a06485-058b-4d07-9277-50e942df6fef",
@@ -199,11 +207,11 @@
             }
         },
         {
-            "Key": "44cd313f-08ea-49f3-ba90-0e3042c49b7a",
+            "Key": "4b74ef48-2541-4e6c-8b3c-fa76d8bab545",
             "Value": {
-                "id": "95cd83c4-9666-40d2-b746-11abac729feb",
-                "resourcePath": "scripts\\is_grappable_to_at_position\\is_grappable_to_at_position.yy",
-                "resourceType": "GMScript"
+                "id": "da2b896f-4a3f-4cfe-a493-6cb394723071",
+                "resourcePath": "sprites\\sp_Grappable_Thing_Ceiling\\sp_Grappable_Thing_Ceiling.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -236,6 +244,14 @@
                 "id": "029e35ce-bef2-4733-b9e4-7ac7c9de5cb4",
                 "resourcePath": "views\\637ad5fd-60ae-40e2-be38-29d8bd0a1353.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "68e62d06-1bc5-4728-8f83-97e778c2604c",
+            "Value": {
+                "id": "130e8fe4-6e24-4f02-8526-11a646eeff46",
+                "resourcePath": "sprites\\sp_Grappable_Thing_Left\\sp_Grappable_Thing_Left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -367,6 +383,14 @@
             }
         },
         {
+            "Key": "a070c6fa-c33a-403a-828f-a41f5ad62edb",
+            "Value": {
+                "id": "61775ac8-3c39-4e4e-9060-7f39f63c7249",
+                "resourcePath": "objects\\o_Grappable_Thing_Right\\o_Grappable_Thing_Right.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a0b48a57-d3d1-4ebe-bf2a-d9e48643e0e3",
             "Value": {
                 "id": "f612cb44-b48b-49e8-8954-6a95fc1c3be9",
@@ -439,6 +463,22 @@
             }
         },
         {
+            "Key": "c126ab68-9b0e-4499-8c74-29bd421261bf",
+            "Value": {
+                "id": "6f8553c9-9c69-45a4-b28d-6363d2827b1c",
+                "resourcePath": "objects\\o_Grappable_Thing_Ring\\o_Grappable_Thing_Ring.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c2f74208-1633-4422-b08c-b15ca67f98ab",
+            "Value": {
+                "id": "2b8ff6d6-8773-48c1-94da-25c7afee2bd0",
+                "resourcePath": "sprites\\sp_Grappable_Thing_Ring\\sp_Grappable_Thing_Ring.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c8231101-ac3f-4d48-878d-e31521a5606b",
             "Value": {
                 "id": "e8bbe3fc-a893-4b8f-a38a-418a99f98de2",
@@ -452,6 +492,14 @@
                 "id": "2af4d6b1-8db3-4292-a8bf-eae27ae85848",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d01437fd-fa61-47ad-8bc2-2dba8ec5124b",
+            "Value": {
+                "id": "eb39ce11-30da-4885-b3c3-8a826c2105bf",
+                "resourcePath": "sprites\\sp_Grappable_Thing_Right\\sp_Grappable_Thing_Right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -523,8 +571,7 @@
         "6a263ca3-bfad-4647-9512-130f42dbc45e",
         "b08dc028-0e1e-4a89-b18d-fcb321e3c481",
         "ab5b88c2-b5e2-4ab3-982d-105dbeb6a572",
-        "235ea724-f7a8-4f69-bd4a-49c93e00254d",
-        "44cd313f-08ea-49f3-ba90-0e3042c49b7a"
+        "235ea724-f7a8-4f69-bd4a-49c93e00254d"
     ],
     "tutorial": ""
 }

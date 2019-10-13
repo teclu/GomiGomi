@@ -1,4 +1,4 @@
-/// @description 
+/// @description Player State and Controls
 
 // Player Keyboard and Mouse Inputs
 var key_up = keyboard_check(ord("W"));
@@ -94,14 +94,11 @@ switch (playerState)
 			grappleToY += grappleToYDirection;
 			
 			// If the Grapple collides into something, stop the Grapple Shot Translation.
-			if (is_grappable_to_at_position(grappleToX, grappleToY))
+			if (can_grapple_to(grappleToX, grappleToY) != noone)
 			{
-				// Visual Cleaning of Grapple Position
-				while (is_grappable_to_at_position(grappleToX, grappleToY))
-				{
-					grappleToX -= grappleToXDirection * 0.01;
-					grappleToY -= grappleToYDirection * 0.01;
-				}
+				var grappledObject = can_grapple_to(grappleToX, grappleToY);
+				grappleToX = grappledObject.x;
+				grappleToY = grappledObject.y;
 				grappleSwingingVelocity = 0.0;
 				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 				grappleLength = point_distance(grappleToX, grappleToY, x, y);
@@ -114,7 +111,7 @@ switch (playerState)
 			if (distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
 			{	
 				// Visual Cleaning of Grapple Position
-				while (is_grappable_to_at_position(grappleToX, grappleToY))
+				while (can_grapple_to(grappleToX, grappleToY))
 				{
 					grappleToX -= grappleToXDirection * 0.01;
 					grappleToY -= grappleToYDirection * 0.01;
@@ -257,7 +254,7 @@ else if (mouse_x < x || key_left)
 }
 
 // If the player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
-var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, false, true);
+var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, true, true);
 if (movingPlatformStanding != noone)
 {
 	var toTranslate = movingPlatformStanding.horizontal_direction * movingPlatformStanding.movespeed;

@@ -1,8 +1,8 @@
 {
-    "id": "3b3dfa72-2b49-4266-aad3-d614c75d58bb",
+    "id": "c126ab68-9b0e-4499-8c74-29bd421261bf",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_Ladder",
+    "name": "o_Grappable_Thing_Ring",
     "eventList": [
         
     ],
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "1d0cc988-6aa0-4bb7-9fe9-57fd64124496",
+    "spriteId": "c2f74208-1633-4422-b08c-b15ca67f98ab",
     "visible": true
 }

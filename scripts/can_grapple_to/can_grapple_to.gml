@@ -5,8 +5,10 @@ grappleToYCheck = argument1;
 
 // Add Grappable Objects to the List.
 var grappable_objects_list = ds_list_create();
-ds_list_add(grappable_objects_list, o_Wall);
-ds_list_add(grappable_objects_list, o_Moving_Platform);
+ds_list_add(grappable_objects_list, o_Grappable_Thing_Left);
+ds_list_add(grappable_objects_list, o_Grappable_Thing_Right);
+ds_list_add(grappable_objects_list, o_Grappable_Thing_Ceiling);
+ds_list_add(grappable_objects_list, o_Grappable_Thing_Ring);
 
 for (var i = 0; i < ds_list_size(grappable_objects_list); i++)
 {
