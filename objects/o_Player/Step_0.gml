@@ -10,7 +10,7 @@ var mouse_left = mouse_check_button_pressed(mb_left);
 var mouse_right = mouse_check_button_pressed(mb_right);
 
 // Boolean Checks
-var isGrounded = is_solid_object_at_position(x, y + 1);
+isGrounded = is_solid_object_at_position(x, y + 1);
 
 // The Player State Machine
 switch (playerState)
@@ -111,8 +111,14 @@ switch (playerState)
 			}
 			
 			// If we have reached the maximum grapple distance, retract the grapple.
-			if (distance_to_point(grappleToX, grappleToY) >= grappleLengthMaximum)
-			{				
+			if (distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
+			{	
+				// Visual Cleaning of Grapple Position
+				while (is_grappable_to_at_position(grappleToX, grappleToY))
+				{
+					grappleToX -= grappleToXDirection * 0.01;
+					grappleToY -= grappleToYDirection * 0.01;
+				}
 				grappleState = GrappleState.Retracting
 			}
 		}
@@ -142,15 +148,39 @@ switch (playerState)
 	break;
 	
 	case PlayerState.Swinging:
-	{
-		// Calculate the swinging speeds.
-		var grappleSwingingAcceleration = -0.2 * dcos(grappleAngle);
-		grappleSwingingVelocity += grappleSwingingAcceleration + ((grappleAngle > 247.5 && grappleAngle < 292.5) ? 0.05 * (key_right - key_left) : 0);
-		grappleSwingingVelocity = clamp(grappleSwingingVelocity, -grappleSwingingVelocityMaximum, grappleSwingingVelocityMaximum);
-		grappleAngle += grappleSwingingVelocity;
-		grappleSwingingVelocity *= 0.99;
-		horizontalSpeed = grappleToX + lengthdir_x(grappleLength, grappleAngle) - x;
-		verticalSpeed = grappleToY + lengthdir_y(grappleLength, grappleAngle) - y
+	{				
+		// If the player is grounded or there is Coyote Time remaining, perform the jump.
+		if (isGrounded)
+		{
+			// Resolve Horizontal and Vertical Translation
+			var moveDirection = key_right - key_left;
+			horizontalSpeed += moveDirection * horizontalWalkAcceleration;
+			if (moveDirection == 0)
+			{
+				horizontalSpeed = approach(horizontalSpeed, 0, horizontalWalkFriction);
+			}
+			horizontalSpeed = clamp(horizontalSpeed, -horizontalWalkSpeedMaximum, horizontalWalkSpeedMaximum);
+			
+			// Don't move if we go beyond the grapple length.
+			if (point_distance(x + horizontalSpeed, y, grappleToX, grappleToY) >= grappleLengthMaximum)
+			{	
+				horizontalSpeed = 0;
+			}
+			grappleSwingingVelocity = 0.0;
+			grappleAngle = point_direction(grappleToX, grappleToY, x, y);
+			grappleLength = point_distance(grappleToX, grappleToY, x, y);
+		}
+		else
+		{
+			// Calculate the swinging speeds.
+			var grappleSwingingAcceleration = -0.2 * dcos(grappleAngle);
+			grappleSwingingVelocity += grappleSwingingAcceleration + ((grappleAngle > 247.5 && grappleAngle < 292.5) ? 0.075 * (key_right - key_left) : 0);
+			grappleSwingingVelocity = clamp(grappleSwingingVelocity, -grappleSwingingVelocityMaximum, grappleSwingingVelocityMaximum);
+			grappleAngle += grappleSwingingVelocity;
+			grappleSwingingVelocity *= 0.99; // Damping.
+			horizontalSpeed = grappleToX + lengthdir_x(grappleLength, grappleAngle) - x;
+			verticalSpeed = grappleToY + lengthdir_y(grappleLength, grappleAngle) - y;
+		}
 		
 		// If the grapple is attached.
 		if (grappleState == GrappleState.Attached)
@@ -184,12 +214,6 @@ switch (playerState)
 				playerState = PlayerState.Reeling;
 				break;
 			}
-		}
-		
-		// If the player is grounded or there is Coyote Time remaining, perform the jump.
-		if (key_space && isGrounded)
-		{
-			verticalSpeed = verticalInitialJumpSpeed;
 		}
 	}
 	break;
@@ -259,7 +283,7 @@ if (is_solid_object_at_position(x + horizontalSpeed, y))
 		
 		if (playerState == PlayerState.Reeling)
 		{
-			playerState = PlayerState.Swinging;
+			//playerState = PlayerState.Swinging;
 		}
 	}
 }
