@@ -106,6 +106,11 @@ switch (playerState)
 				grappleState = GrappleState.Attached;
 				break;
 			}
+			// Else if the Grapple collides into something interactable, retract the grapple afterwards.
+			else if (is_interactable_object_grapple(grappleToX, grappleToY))
+			{
+				grappleState = GrappleState.Retracting;	
+			}
 			
 			// If we have reached the maximum grapple distance, retract the grapple.
 			if (distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
