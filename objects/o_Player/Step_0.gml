@@ -5,7 +5,7 @@ var key_up = keyboard_check(ord("W"));
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
 var key_space = keyboard_check(vk_space);
-var key_down = keyboard_check(ord("S"));
+//var key_down = keyboard_check(ord("S"));
 var mouse_left = mouse_check_button_pressed(mb_left);
 var mouse_right = mouse_check_button_pressed(mb_right);
 
