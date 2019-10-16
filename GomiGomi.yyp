@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "7c9d3f1d-62f4-416f-ac23-b60fc300c841",
+            "Value": {
+                "id": "dc0a446b-a040-4941-8bd1-eabe50d4186c",
+                "resourcePath": "views\\7c9d3f1d-62f4-416f-ac23-b60fc300c841.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
             "Value": {
                 "id": "ff0c7306-40e5-488f-9e11-043f790ecda4",
@@ -519,6 +527,14 @@
             }
         },
         {
+            "Key": "a573cc4a-5a46-45b3-9f53-59da4e413f0b",
+            "Value": {
+                "id": "c5cb7907-05d9-4cf9-8e6e-f770c9f2b6ff",
+                "resourcePath": "views\\a573cc4a-5a46-45b3-9f53-59da4e413f0b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a8a1376f-182c-4af6-8295-7297b04dd796",
             "Value": {
                 "id": "7b739779-3aff-40df-a5ea-c160bfb83482",
@@ -554,7 +570,7 @@
             "Key": "b36aeebe-7406-4cba-9bf1-a8f57d84bf3d",
             "Value": {
                 "id": "885d80a3-66fe-420b-a757-123bcf4de029",
-                "resourcePath": "rooms\\r_Tutorial_Level_13_NOTFUNCTIONABLE\\r_Tutorial_Level_13_NOTFUNCTIONABLE.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level_13\\r_Tutorial_Level_13.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -647,6 +663,14 @@
             }
         },
         {
+            "Key": "d21d1061-6e8f-49ef-9bf0-a9a91f83df8a",
+            "Value": {
+                "id": "9eaf3a20-7737-4223-b8be-69e258b30ec3",
+                "resourcePath": "rooms\\r_Tutorial_Level_16\\r_Tutorial_Level_16.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e05e7980-3aee-406f-9f4e-8a2e1eaef29d",
             "Value": {
                 "id": "bc2d4283-49c1-4098-bd1b-9bf21f7ec0c2",
@@ -658,7 +682,7 @@
             "Key": "e391c98a-0178-4c17-86d5-27114c4c8b30",
             "Value": {
                 "id": "86621f5f-40a7-4030-a9cf-e98a561fffcd",
-                "resourcePath": "rooms\\r_Tutorial_Level_12_NOTFUNCTIONABLE\\r_Tutorial_Level_12_NOTFUNCTIONABLE.yy",
+                "resourcePath": "rooms\\r_Tutorial_Level_12\\r_Tutorial_Level_12.yy",
                 "resourceType": "GMRoom"
             }
         },
