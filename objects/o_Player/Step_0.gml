@@ -96,7 +96,7 @@ switch (playerState)
 			// If the Grapple collides into something, stop the Grapple Shot Translation.
 			if (can_grapple_to(grappleToX, grappleToY) != noone)
 			{
-				var grappledObject = can_grapple_to(grappleToX, grappleToY);
+				grappledObject = can_grapple_to(grappleToX, grappleToY);
 				grappleToX = grappledObject.x;
 				grappleToY = grappledObject.y;
 				grappleSwingingVelocity = 0.0;
@@ -107,21 +107,9 @@ switch (playerState)
 				break;
 			}
 			// Else if the Grapple collides into something interactable, retract the grapple afterwards.
-			else if (is_interactable_object_grapple(grappleToX, grappleToY))
+			else if (is_interactable_object_grapple(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
 			{
 				grappleState = GrappleState.Retracting;	
-			}
-			
-			// If we have reached the maximum grapple distance, retract the grapple.
-			if (distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
-			{	
-				// Visual Cleaning of Grapple Position
-				while (can_grapple_to(grappleToX, grappleToY))
-				{
-					grappleToX -= grappleToXDirection * 0.01;
-					grappleToY -= grappleToYDirection * 0.01;
-				}
-				grappleState = GrappleState.Retracting
 			}
 		}
 		
@@ -150,9 +138,15 @@ switch (playerState)
 	break;
 	
 	case PlayerState.Swinging:
-	{				
-		// If the player is grounded or there is Coyote Time remaining, perform the jump.
-		if (isGrounded)
+	{
+		// If the player is grappled to the moving platform, make sure that the grapple moves as well; this indirectly moves the player.
+		if (grappledObject.type == o_Moving_Platform)
+		{
+			grappleToX += grappledObject.horizontal_direction * grappledObject.movespeed;
+		}
+		
+		// If the player is grounded, let the player walk around.
+		if (isGrounded && grappledObject.type != o_Moving_Platform)
 		{
 			// Resolve Horizontal and Vertical Translation
 			var moveDirection = key_right - key_left;
@@ -197,6 +191,7 @@ switch (playerState)
 					coyoteTimeCounter = 0;
 				}
 				horizontalSpeedOnSwingingExit = horizontalSpeed;
+				grappledObject = noone;
 				playerState = PlayerState.Normal;
 				grappleState = GrappleState.Retracting;
 				break;
@@ -222,11 +217,17 @@ switch (playerState)
 	
 	case PlayerState.Reeling:
 	{
+		// If the player is grappled to the moving platform, make sure that the grapple moves as well; this indirectly moves the player.
+		if (grappledObject.type == o_Moving_Platform)
+		{
+			grappleToX += grappledObject.horizontal_direction * grappledObject.movespeed;
+		}
+		
 		grappleLength = point_distance(grappleToX, grappleToY, x, y);
 		horizontalSpeed = approach(horizontalSpeed, grappleToXDirection, 0.125 * abs(grappleToXDirection));
 		verticalSpeed = approach(verticalSpeed, grappleToYDirection, 0.125 * abs(grappleToYDirection));
 		
-		// If the player is not holding the up key or the grapple has reached the threshold, stop the reeling.
+		// If the grapple has reached the threshold, stop the reeling.
 		if (grappleLength <= grappleLengthRetractThreshold)
 		{
 			grappleAngle = point_direction(grappleToX, grappleToY, x, y);
