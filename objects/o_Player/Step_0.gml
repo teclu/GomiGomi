@@ -97,8 +97,6 @@ switch (playerState)
 			if (can_grapple_to(grappleToX, grappleToY) != noone)
 			{
 				grappledObject = can_grapple_to(grappleToX, grappleToY);
-				grappleToX = grappledObject.x;
-				grappleToY = grappledObject.y;
 				grappleSwingingVelocity = 0.0;
 				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 				grappleLength = point_distance(grappleToX, grappleToY, x, y);
@@ -158,7 +156,7 @@ switch (playerState)
 			horizontalSpeed = clamp(horizontalSpeed, -horizontalWalkSpeedMaximum, horizontalWalkSpeedMaximum);
 			
 			// Don't move if we go beyond the grapple length.
-			if (point_distance(x + horizontalSpeed, y, grappleToX, grappleToY) >= grappleLengthMaximum)
+			if (point_distance(x + horizontalSpeed, y, grappleToX, grappleToY) >= grappleLength)
 			{	
 				horizontalSpeed = 0;
 			}

@@ -27,7 +27,7 @@ grappleToYDirection = 0.0;
 grappleToDirectionMagnitude = 0.0;
 grappleReelingSpeedFactor = 14.0;
 grappleLengthRetractMinimum = 32.0;
-grappleLengthRetractThreshold = 128.0;
+grappleLengthRetractThreshold = 96.0;
 grappleLengthMaximum = 480.0;
 grappledObject = noone;
 
