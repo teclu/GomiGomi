@@ -243,20 +243,35 @@ switch (playerState)
 		var key_r = keyboard_check(ord("R"));		
 		if (key_r)
 		{
+			image_yscale = -1;
 			room_restart();
 		}
 		return;	
 	}
 }
 
-// The Player Sprite Appearance, which is currently mouse or key press dependent.
+// The Player Sprite Appearance
+if (isGrounded && key_right - key_left != 0)
+{
+	sprite_index = sp_Player_Walking;
+}
+else if (isGrounded && key_right - key_left == 0)
+{
+	sprite_index = sp_Player_Idle;	
+}
+else if (!isGrounded && playerState == PlayerState.Swinging)
+{
+	sprite_index = sp_Player_Swinging;
+}
+
+// Invert the X-axis of the sprite depending on the move direction or mouse cursor.
 if (mouse_x > x || key_right)
 {
-	sprite_index = sp_Player_Right;	
+	image_xscale = 1;
 }
 else if (mouse_x < x || key_left)
 {
-	sprite_index = sp_Player_Left;	
+	image_xscale = -1;
 }
 
 // If the player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
