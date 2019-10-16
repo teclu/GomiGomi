@@ -407,6 +407,14 @@
             }
         },
         {
+            "Key": "85188480-431b-49a4-a61f-3b8dadeb0195",
+            "Value": {
+                "id": "6400367d-8ab9-4132-8040-b3a428635578",
+                "resourcePath": "sprites\\sp_Dirt_Tile_Set\\sp_Dirt_Tile_Set.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8629c783-139f-457d-b75b-0dd371bf02e2",
             "Value": {
                 "id": "4fc888e8-8b2e-4d35-85a4-13e8e1430ca0",
@@ -572,6 +580,14 @@
                 "id": "885d80a3-66fe-420b-a757-123bcf4de029",
                 "resourcePath": "rooms\\r_Tutorial_Level_13\\r_Tutorial_Level_13.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "b741c141-d4ba-4d1e-ab4f-f1c08ed07265",
+            "Value": {
+                "id": "d1998d32-bf1b-4942-bdaa-6ac7818c7ab4",
+                "resourcePath": "tilesets\\ts_Dirt\\ts_Dirt.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
