@@ -21,7 +21,7 @@
         "013c65ca-4425-45bb-82ef-a29078903c13"
     ],
     "filterType": "GMRoom",
-    "folderName": "Rubbish Dump Area",
+    "folderName": "Rubbish Dump Area (RDA)",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
