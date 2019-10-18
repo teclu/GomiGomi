@@ -84,13 +84,6 @@ switch (playerState)
 		// Handle the grapple translation and collision if any.
 		if (grappleState == GrappleState.Projecting)
 		{
-			// Calculate the Direction Unit Vector.
-			grappleToXDirection = grappleToMouseX - x;
-			grappleToYDirection = grappleToMouseY - y;
-			grappleToDirectionMagnitude = sqrt(grappleToXDirection * grappleToXDirection + grappleToYDirection * grappleToYDirection);
-			grappleToXDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
-			grappleToYDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
-			
 			// Move the grapple position.
 			grappleToX += grappleToXDirection;
 			grappleToY += grappleToYDirection;
