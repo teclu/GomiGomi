@@ -215,6 +215,22 @@
             }
         },
         {
+            "Key": "2ea53321-4874-4a55-a4e8-b635d5b498ba",
+            "Value": {
+                "id": "9cdadadb-a91b-4022-9713-e1ec8f937dcb",
+                "resourcePath": "sprites\\sp_On_Red_Wall\\sp_On_Red_Wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3355e4f6-ab46-423d-be08-75c767bd7461",
+            "Value": {
+                "id": "800457dc-e3f3-4ea1-98dc-f5e4386decfa",
+                "resourcePath": "sprites\\sp_Off_Red_Wall\\sp_Off_Red_Wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "33c17af0-1117-4ce4-8958-e1fc8e7d7ee7",
             "Value": {
                 "id": "2b113cd5-d03c-4974-8a28-81b14eb7421c",
@@ -282,7 +298,7 @@
             "Key": "5431efc9-4693-4eb3-9ccd-69acd48a5135",
             "Value": {
                 "id": "9e27d726-2cb8-491c-a445-2bdc44459b57",
-                "resourcePath": "sprites\\sp_On_Wall\\sp_On_Wall.yy",
+                "resourcePath": "sprites\\sp_On_Blue_Wall\\sp_On_Blue_Wall.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -346,7 +362,7 @@
             "Key": "70a7984b-2038-4f27-bf96-a95760aee3a0",
             "Value": {
                 "id": "6d989540-2c2f-40f8-933b-a0ad88314346",
-                "resourcePath": "sprites\\sp_Off_Wall\\sp_Off_Wall.yy",
+                "resourcePath": "sprites\\sp_Off_Blue_Wall\\sp_Off_Blue_Wall.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -356,6 +372,14 @@
                 "id": "7ce8e101-759f-485a-8c3f-4db3013befbd",
                 "resourcePath": "views\\761d16c8-00a6-43dc-9202-53e6ebadce1f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "77e7a63e-2f2f-4fa8-ada9-9082f9a522d6",
+            "Value": {
+                "id": "a6215690-8ef5-4c63-ba1c-a3b83adf1e21",
+                "resourcePath": "objects\\o_On_Off_Red_Wall\\o_On_Off_Red_Wall.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -386,7 +410,7 @@
             "Key": "7a8e06e8-907d-4370-b81a-71f8abe7b720",
             "Value": {
                 "id": "45fe6a7d-8627-43a7-91f4-03e08be32852",
-                "resourcePath": "sprites\\sp_On_Wall_Switch\\sp_On_Wall_Switch.yy",
+                "resourcePath": "sprites\\sp_Blue_Wall_Switch\\sp_Blue_Wall_Switch.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -458,7 +482,7 @@
             "Key": "95cb190a-8f88-4c65-a07e-3501f81b642a",
             "Value": {
                 "id": "fbb35e47-60eb-442d-93c3-a44950040e6f",
-                "resourcePath": "objects\\o_On_Off_Wall\\o_On_Off_Wall.yy",
+                "resourcePath": "objects\\o_On_Off_Blue_Wall\\o_On_Off_Blue_Wall.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -474,7 +498,7 @@
             "Key": "981bc730-f4b6-4d10-bec2-098a67aa6803",
             "Value": {
                 "id": "9a334d2d-9903-445c-a6ba-747f69efdb1c",
-                "resourcePath": "sprites\\sp_Off_Wall_Switch\\sp_Off_Wall_Switch.yy",
+                "resourcePath": "sprites\\sp_Red_Wall_Switch\\sp_Red_Wall_Switch.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -546,7 +570,7 @@
             "Key": "a3cfa91b-7a18-42ab-9e0c-d83f87082f75",
             "Value": {
                 "id": "1b9dd2be-4ea6-4871-bef7-10558441e901",
-                "resourcePath": "objects\\o_On_Off_Wall_Switch\\o_On_Off_Wall_Switch.yy",
+                "resourcePath": "objects\\o_Blue_Red_Wall_Switch\\o_Blue_Red_Wall_Switch.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -628,6 +652,14 @@
                 "id": "7579ccd7-d95e-40c0-bbda-a44fdbfae37b",
                 "resourcePath": "sprites\\sp_Corrosive_Gas_Pool\\sp_Corrosive_Gas_Pool.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bea41a56-b164-4a83-a168-15bff57459af",
+            "Value": {
+                "id": "73e4acd8-03d3-4f68-a439-cef37b8a8ca2",
+                "resourcePath": "scripts\\cannot_grapple_to\\cannot_grapple_to.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -827,6 +859,7 @@
         "6a263ca3-bfad-4647-9512-130f42dbc45e",
         "b08dc028-0e1e-4a89-b18d-fcb321e3c481",
         "ab5b88c2-b5e2-4ab3-982d-105dbeb6a572",
+        "bea41a56-b164-4a83-a168-15bff57459af",
         "235ea724-f7a8-4f69-bd4a-49c93e00254d",
         "9f2596cf-3752-45e9-a6cb-96bbc59cf5ef"
     ],

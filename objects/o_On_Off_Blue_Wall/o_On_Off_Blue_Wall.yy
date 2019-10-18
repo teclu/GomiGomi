@@ -2,9 +2,18 @@
     "id": "95cb190a-8f88-4c65-a07e-3501f81b642a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_On_Off_Wall",
+    "name": "o_On_Off_Blue_Wall",
     "eventList": [
-        
+        {
+            "id": "8029cb72-5681-42f0-a950-8e3fa0d10132",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "95cb190a-8f88-4c65-a07e-3501f81b642a"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -23,20 +32,7 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "properties": [
-        {
-            "id": "73bb3927-288f-4eff-86a1-7c2534f59e35",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "True",
-            "varName": "is_switched_on",
-            "varType": 3
-        }
+        
     ],
     "solid": false,
     "spriteId": "5431efc9-4693-4eb3-9ccd-69acd48a5135",

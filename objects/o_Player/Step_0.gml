@@ -93,7 +93,7 @@ switch (playerState)
 			grappleToX += grappleToXDirection;
 			grappleToY += grappleToYDirection;
 			
-			// If the Grapple collides into something, stop the Grapple Shot Translation.
+			// If the Grapple collides into something grappable, stop the Grapple Shot Translation.
 			if (can_grapple_to(grappleToX, grappleToY) != noone)
 			{
 				grappledObject = can_grapple_to(grappleToX, grappleToY);
@@ -104,8 +104,8 @@ switch (playerState)
 				grappleState = GrappleState.Attached;
 				break;
 			}
-			// Else if the Grapple collides into something interactable, retract the grapple afterwards.
-			else if (is_interactable_object_grapple(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
+			// Else if the Grapple collides into something interactable or solid, retract the grapple afterwards.
+			else if (is_interactable_object_grapple(grappleToX, grappleToY) || cannot_grapple_to(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
 			{
 				grappleState = GrappleState.Retracting;	
 			}
@@ -239,9 +239,9 @@ switch (playerState)
 	case PlayerState.Dead:
 	{
 		var key_r = keyboard_check(ord("R"));		
+		image_yscale = -1;
 		if (key_r)
 		{
-			image_yscale = -1;
 			room_restart();
 		}
 		return;	
