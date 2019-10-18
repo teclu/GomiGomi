@@ -326,3 +326,10 @@ if (is_solid_object_at_position(x, y + verticalSpeed))
 	}
 }
 y += verticalSpeed;
+
+// Prevent slight phasing through solid objects.
+while (is_solid_object_at_position(x, y + 1))
+{
+	y -= 1;
+} 
+y += 1;
