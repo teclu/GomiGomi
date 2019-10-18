@@ -29,7 +29,9 @@ switch (playerState)
 				horizontalSpeed = approach(horizontalSpeed, 0, horizontalAirFriction);
 			}
 			horizontalSpeed = clamp(horizontalSpeed, -1.5 * horizontalWalkSpeedMaximum, 1.5 * horizontalWalkSpeedMaximum);
+			
 			verticalSpeed += gravityExperienced;
+			verticalSpeed = clamp(verticalSpeed, verticalInitialJumpSpeed, -1.5 * verticalInitialJumpSpeed);
 			
 			// Decrement the Coyote Time Counter.
 			if (coyoteTimeCounter > 0)
