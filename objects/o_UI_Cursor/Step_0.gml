@@ -24,12 +24,14 @@ if (game_started)
 	var key_pageup = keyboard_check_pressed(vk_pageup);
 	if (key_pageup)
 	{
+		room_persistent = false;
 		room_goto_next();	
 	}
 	
 	var key_pagedown = keyboard_check_pressed(vk_pagedown);
 	if (key_pagedown && room != r_Tutorial_Level_1_E)
 	{
+		room_persistent = false;
 		room_goto_previous();	
 	}
 }
