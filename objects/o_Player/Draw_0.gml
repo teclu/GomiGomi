@@ -15,7 +15,7 @@ if (grappleState != GrappleState.Unused && playerState != PlayerState.Dead)
 	draw_line_width_color(x, y, grappleToX, grappleToY, 4, c_yellow, c_yellow);
 	draw_circle_color(grappleToX, grappleToY, 6, c_red, c_red, false);	
 }
-else
+else if (!global.pause)
 {
 	// Green coloured line if cursor is within range, and red otherwise.
 	if (point_distance(x, y, mouse_x, mouse_y) <= grappleLengthMaximum * 1.125)
