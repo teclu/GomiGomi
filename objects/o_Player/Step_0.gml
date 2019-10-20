@@ -1,5 +1,10 @@
 /// @description Player State and Controls
 
+if (global.pause)
+{
+	exit;	
+}
+
 // Player Keyboard and Mouse Inputs
 var key_up = keyboard_check(ord("W"));
 var key_left = keyboard_check(ord("A"));
@@ -245,13 +250,8 @@ switch (playerState)
 	break;
 	
 	case PlayerState.Dead:
-	{
-		var key_r = keyboard_check(ord("R"));		
-		image_yscale = -1;
-		if (key_r)
-		{
-			room_restart();
-		}
+	{	
+		room_restart();
 		return;	
 	}
 }

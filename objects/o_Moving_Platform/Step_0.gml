@@ -1,5 +1,10 @@
 /// @description Handle Horizontal and/or Vertical Movement
 
+if (global.pause)
+{
+	exit;	
+}
+
 if (is_moving_horizontally)
 {
 	var toMove = movespeed * horizontal_direction;

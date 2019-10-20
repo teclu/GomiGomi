@@ -5,7 +5,7 @@ if (can_grapple_to(mouse_x, mouse_y))
 {
 	draw_circle_color(mouse_x, mouse_y, 8, c_lime, c_lime, false);
 }
-else
+else if (!global.pause)
 {
 	draw_circle_color(mouse_x, mouse_y, 5, c_red, c_red, true);
 }
@@ -28,39 +28,59 @@ else
 	}
 }
 
-// Current Player Details (For Debugging)
-var playerDetails = "";
-switch (playerState)
-{
-	case PlayerState.Normal:
-		playerDetails = "Normal (";
-		if (!isGrounded) {
-			playerDetails += "Air)"
-		}
-		else
-		{
-			playerDetails += "Grounded)"
-		}
-		break;
-	case PlayerState.Swinging:
-		playerDetails = "Swinging (";
-		if (!isGrounded) {
-			playerDetails += "Air)"
-		}
-		else
-		{
-			playerDetails += "Grounded)"
-		}
-		break;
-	case PlayerState.Reeling:
-		playerDetails = "Reeling";
-		break;
-	case PlayerState.Dead:
-		playerDetails = "Dead";
-		break;
-}
-playerDetails += " " + string(coyoteTimeCounter);
-draw_text(x + 35, y - 10, playerDetails);
-
 // Draw the Player
 draw_self();
+
+// Handle Global Pause
+if (global.pause)
+{
+	if (image_speed_temp == -1)
+	{
+		image_speed_temp = image_speed;
+	}
+	image_speed = 0;
+	exit;	
+}
+
+if (image_speed_temp != -1)
+{
+	image_speed = image_speed_temp;
+	image_speed_temp = -1;
+}
+
+// Current Player Details (For Debugging)
+if (false) // Change to enable/disable debugging messages.
+{
+	var playerDetails = "";
+	switch (playerState)
+	{
+		case PlayerState.Normal:
+			playerDetails = "Normal (";
+			if (!isGrounded) {
+				playerDetails += "Air)"
+			}
+			else
+			{
+				playerDetails += "Grounded)"
+			}
+			break;
+		case PlayerState.Swinging:
+			playerDetails = "Swinging (";
+			if (!isGrounded) {
+				playerDetails += "Air)"
+			}
+			else
+			{
+				playerDetails += "Grounded)"
+			}
+			break;
+		case PlayerState.Reeling:
+			playerDetails = "Reeling";
+			break;
+		case PlayerState.Dead:
+			playerDetails = "Dead";
+			break;
+	}
+	playerDetails += " " + string(coyoteTimeCounter);
+	draw_text(x + 35, y - 10, playerDetails);
+}

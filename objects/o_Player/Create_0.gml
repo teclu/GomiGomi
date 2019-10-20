@@ -1,5 +1,6 @@
 /// @description Initialise Variables
 hasJumped = false;
+image_speed_temp = -1;
 
 horizontalSpeed = 0.0;
 horizontalWalkAcceleration = 2.5;

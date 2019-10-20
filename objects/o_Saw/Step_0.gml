@@ -1,6 +1,12 @@
 /// @description Handle Horizontal and/or Vertical Movement and Saw Rotation
 image_angle += 5;
 
+if (global.pause)
+{
+	exit;	
+}
+
+
 if (is_moving_horizontally)
 {
 	var toMoveX = movespeed * horizontal_direction;
