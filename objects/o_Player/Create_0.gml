@@ -1,4 +1,6 @@
 /// @description Initialise Variables
+hasJumped = false;
+
 horizontalSpeed = 0.0;
 horizontalWalkAcceleration = 2.5;
 horizontalWalkSpeedMaximum = 7.5;

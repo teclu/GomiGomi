@@ -54,6 +54,11 @@ switch (playerState)
 			{
 				coyoteTimeCounter = coyoteTimeDuration;	
 			}
+			
+			if (hasJumped)
+			{
+				hasJumped = false;	
+			}
 		}
 		
 		// If the player is grounded or there is Coyote Time remaining, perform the jump.
@@ -61,6 +66,7 @@ switch (playerState)
 		{
 			verticalSpeed = verticalInitialJumpSpeed;
 			coyoteTimeCounter = 0;
+			hasJumped = true;
 		}
 		
 		// If the player presses the left mouse button and the grapple is unused, shoot the grapple.
@@ -92,9 +98,10 @@ switch (playerState)
 			if (can_grapple_to(grappleToX, grappleToY) != noone)
 			{
 				grappledObject = can_grapple_to(grappleToX, grappleToY);
-				grappleSwingingVelocity = 0.0;
 				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 				grappleLength = point_distance(grappleToX, grappleToY, x, y);
+				grappleSwingingVelocity = 0.0;
+				hasJumped = false;
 				playerState = PlayerState.Swinging;
 				grappleState = GrappleState.Attached;
 				break;
@@ -158,6 +165,11 @@ switch (playerState)
 			grappleSwingingVelocity = 0.0;
 			grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 			grappleLength = point_distance(grappleToX, grappleToY, x, y);
+			
+			if (hasJumped)
+			{
+				hasJumped = false;	
+			}
 		}
 		else
 		{
@@ -183,6 +195,7 @@ switch (playerState)
 					verticalSpeed = 0.5 * verticalInitialJumpSpeed;
 					coyoteTimeCounter = 0;
 				}
+				hasJumped = true;
 				horizontalSpeedOnSwingingExit = horizontalSpeed;
 				grappledObject = noone;
 				playerState = PlayerState.Normal;
@@ -255,6 +268,11 @@ else if (isGrounded && key_right - key_left == 0)
 else if (!isGrounded && playerState == PlayerState.Swinging)
 {
 	sprite_index = sp_Player_Swinging;
+}
+
+if (hasJumped)
+{
+	sprite_index = sp_Player_Jumping;	
 }
 
 // Invert the X-axis of the sprite depending on the move direction or mouse cursor.
