@@ -399,10 +399,26 @@
             }
         },
         {
+            "Key": "53e17275-4d2f-4cd9-b03d-f56c4e596e45",
+            "Value": {
+                "id": "72f3a878-8be1-4ce6-8aa7-cd00d133f483",
+                "resourcePath": "sprites\\sp_Grapple\\sp_Grapple.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5431efc9-4693-4eb3-9ccd-69acd48a5135",
             "Value": {
                 "id": "9e27d726-2cb8-491c-a445-2bdc44459b57",
                 "resourcePath": "sprites\\sp_On_Blue_Wall\\sp_On_Blue_Wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "55e1e41a-491e-4e95-9dac-548ef4473d64",
+            "Value": {
+                "id": "7f774721-90a4-43d6-9d9b-e470e30ed7eb",
+                "resourcePath": "sprites\\sp_Player_Jump_Fall\\sp_Player_Jump_Fall.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -538,7 +554,7 @@
             "Key": "7e273ac0-a4e2-461e-b652-de2a682847e2",
             "Value": {
                 "id": "f812c1b5-95cc-4eef-b9d5-feb9ee304220",
-                "resourcePath": "sprites\\sp_Player_Jumping\\sp_Player_Jumping.yy",
+                "resourcePath": "sprites\\sp_Player_Jump_Up\\sp_Player_Jump_Up.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -572,6 +588,14 @@
                 "id": "4fc888e8-8b2e-4d35-85a4-13e8e1430ca0",
                 "resourcePath": "views\\8629c783-139f-457d-b75b-0dd371bf02e2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8c307cf1-f2e2-435c-adc5-52b85dd68683",
+            "Value": {
+                "id": "397f037c-4ad9-4310-ad5a-55e39a5ef8ee",
+                "resourcePath": "sprites\\sp_Player_Jump_Land\\sp_Player_Jump_Land.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -732,6 +756,14 @@
                 "id": "e602039a-2af8-4141-82bb-9ae1228ba1de",
                 "resourcePath": "scripts\\can_grapple_to\\can_grapple_to.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ad9e56b8-d506-4b7f-bb4f-7857fb59fccd",
+            "Value": {
+                "id": "2f2f2abe-6ee5-4d28-a7ee-4d57262f8c47",
+                "resourcePath": "sprites\\sp_Player_Jump_Midair\\sp_Player_Jump_Midair.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

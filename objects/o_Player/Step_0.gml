@@ -272,8 +272,9 @@ else if (!isGrounded && playerState == PlayerState.Swinging)
 
 if (hasJumped)
 {
-	sprite_index = sp_Player_Jumping;	
-}
+	sprite_index = sp_Player_Jump_Up;	
+}ddd
+ 
 
 // Invert the X-axis of the sprite depending on the move direction or mouse cursor.
 if (mouse_x > x || key_right)

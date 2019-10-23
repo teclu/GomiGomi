@@ -11,7 +11,7 @@ horizontalSpeedOnSwingingExit = 0.0;
 
 verticalSpeed = 0.0;
 verticalInitialJumpSpeed = -12.0;
-gravityExperienced = 1.0;
+gravityExperienced = 0.5;
 
 coyoteTimeDuration = 30;
 coyoteTimeCounter = coyoteTimeDuration;
