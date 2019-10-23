@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "1148b0c3-29cf-4841-a642-468ad74761af",
+            "Value": {
+                "id": "6a9afb9a-4298-43b7-a500-959332599625",
+                "resourcePath": "sprites\\sp_Moving_Platform_Rail_Left\\sp_Moving_Platform_Rail_Left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "11c4b433-f4a9-4074-b7a9-d546430e1bbe",
             "Value": {
                 "id": "2fa2d61d-1185-4b31-adaa-b7c2698a4b14",
@@ -251,6 +259,14 @@
             "Value": {
                 "id": "059a60a9-06f6-47a6-8c98-1ae373280acc",
                 "resourcePath": "sprites\\sp_Cursor\\sp_Cursor.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2d8baa4d-e00a-4c71-889f-25e48f54052b",
+            "Value": {
+                "id": "ff6c48a7-3f06-4a77-a239-e42dc0259386",
+                "resourcePath": "sprites\\sp_Moving_Platform\\sp_Moving_Platform.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -588,6 +604,14 @@
                 "id": "4fc888e8-8b2e-4d35-85a4-13e8e1430ca0",
                 "resourcePath": "views\\8629c783-139f-457d-b75b-0dd371bf02e2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8aad3726-e919-4f82-9f78-c4a658606671",
+            "Value": {
+                "id": "c6bc28a3-ebca-4c94-bf8d-632071566dca",
+                "resourcePath": "sprites\\sp_Moving_Platform_Rail_Mid\\sp_Moving_Platform_Rail_Mid.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1076,6 +1100,14 @@
                 "id": "187213f0-810b-4292-ae91-a7814c0e7941",
                 "resourcePath": "views\\f5b09b78-0994-4745-87ca-6e1e7e996163.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f9f0fb54-5626-4fcc-8bda-ff5690bcb2d3",
+            "Value": {
+                "id": "c4ac4ecb-f143-4ab8-af51-1675b3f58870",
+                "resourcePath": "sprites\\sp_Moving_Platform_Rail_Right\\sp_Moving_Platform_Rail_Right.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],
