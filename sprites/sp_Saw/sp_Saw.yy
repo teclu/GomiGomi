@@ -1,5 +1,5 @@
 {
-    "id": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
+    "id": "1e1227f8-08cd-4701-99da-7d9317d47115",
     "modelName": "GMSprite",
     "mvc": "1.12",
     "name": "sp_Saw",
@@ -16,31 +16,31 @@
     "edgeFiltering": false,
     "frames": [
         {
-            "id": "ecceb3bc-f897-4d1a-aee6-b18e66a29199",
+            "id": "e900b1cf-3187-4e18-a497-e68fc2990c1f",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
-            "SpriteId": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
+            "SpriteId": "1e1227f8-08cd-4701-99da-7d9317d47115",
             "compositeImage": {
-                "id": "ce06dea3-a41d-4c2e-a82f-580764460075",
+                "id": "709ed879-7a03-4036-8510-cfc7825c4d1f",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "ecceb3bc-f897-4d1a-aee6-b18e66a29199",
+                "FrameId": "e900b1cf-3187-4e18-a497-e68fc2990c1f",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "12c123bb-b057-44ca-9a0b-fb09a4f41b6a",
+                    "id": "8b26cb5b-ec4e-4238-85f6-a956ac00865e",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "ecceb3bc-f897-4d1a-aee6-b18e66a29199",
-                    "LayerId": "50e10027-6414-4f51-99cc-ba914309a382"
+                    "FrameId": "e900b1cf-3187-4e18-a497-e68fc2990c1f",
+                    "LayerId": "93271139-6feb-4689-8f27-bd92849fdc4a"
                 },
                 {
-                    "id": "cc884dc1-b5d8-4980-bb30-311de6925732",
+                    "id": "27676812-ad26-491c-8337-4ac1ef2c9c85",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "ecceb3bc-f897-4d1a-aee6-b18e66a29199",
-                    "LayerId": "300dcfe7-295b-47a3-a801-ba2931564fda"
+                    "FrameId": "e900b1cf-3187-4e18-a497-e68fc2990c1f",
+                    "LayerId": "b2905f4c-113b-46af-8d57-4ee9b1e07f68"
                 }
             ]
         }
@@ -50,10 +50,10 @@
     "height": 63,
     "layers": [
         {
-            "id": "50e10027-6414-4f51-99cc-ba914309a382",
+            "id": "93271139-6feb-4689-8f27-bd92849fdc4a",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
-            "SpriteId": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
+            "SpriteId": "1e1227f8-08cd-4701-99da-7d9317d47115",
             "blendMode": 0,
             "isLocked": false,
             "name": "Saw Blade",
@@ -61,10 +61,10 @@
             "visible": true
         },
         {
-            "id": "300dcfe7-295b-47a3-a801-ba2931564fda",
+            "id": "b2905f4c-113b-46af-8d57-4ee9b1e07f68",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
-            "SpriteId": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
+            "SpriteId": "1e1227f8-08cd-4701-99da-7d9317d47115",
             "blendMode": 0,
             "isLocked": false,
             "name": "Saw Background",

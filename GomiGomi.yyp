@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "1e1227f8-08cd-4701-99da-7d9317d47115",
+            "Value": {
+                "id": "b01289f8-7377-444d-8d14-5282a85c9f4b",
+                "resourcePath": "sprites\\sp_Saw\\sp_Saw.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "207a8217-b59c-4dd1-a2a4-8445d5c19fd4",
             "Value": {
                 "id": "695a42ec-c527-4821-bbb5-029b99dc4bdc",
@@ -575,10 +583,18 @@
             }
         },
         {
+            "Key": "81440791-d9bf-49f9-be1e-5bb68889888e",
+            "Value": {
+                "id": "db84ac22-1e17-4327-97b4-2973b31119a6",
+                "resourcePath": "sprites\\sp_Background\\sp_Background.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8256c197-78fd-48e4-95c8-1f61af2b75cb",
             "Value": {
                 "id": "ff0c7306-40e5-488f-9e11-043f790ecda4",
-                "resourcePath": "sprites\\sp_Saw\\sp_Saw.yy",
+                "resourcePath": "sprites\\sp_Saw2\\sp_Saw2.yy",
                 "resourceType": "GMSprite"
             }
         },
