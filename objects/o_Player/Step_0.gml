@@ -86,6 +86,15 @@ switch (playerState)
 			grappleToXDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
 			grappleToYDirection *= grappleShotSpeedFactor / grappleToDirectionMagnitude;
 			
+			// Handle the overshoot.
+			grappleToXCheck = x;
+			grappleToYCheck = y;
+			while (can_grapple_to(grappleToXCheck, grappleToYCheck) == noone && distance_to_point(grappleToXCheck, grappleToYCheck) <= grappleLengthMaximum)
+			{
+				grappleToXCheck += grappleToXDirection * 0.01;
+				grappleToYCheck += grappleToYDirection * 0.01;
+			}
+			
 			// Initialise the grapple starting position.
 			grappleToX = x;
 			grappleToY = y;
@@ -96,8 +105,8 @@ switch (playerState)
 		if (grappleState == GrappleState.Projecting)
 		{
 			// Move the grapple position.
-			grappleToX += grappleToXDirection;
-			grappleToY += grappleToYDirection;
+			grappleToX = approach(grappleToX, grappleToXCheck, abs(grappleToXDirection));
+			grappleToY = approach(grappleToY, grappleToYCheck, abs(grappleToYDirection));
 			
 			// If the Grapple collides into something grappable, stop the Grapple Shot Translation.
 			if (can_grapple_to(grappleToX, grappleToY) != noone)
@@ -111,8 +120,8 @@ switch (playerState)
 				grappleState = GrappleState.Attached;
 				break;
 			}
-			// Else if the Grapple collides into something interactable or solid, retract the grapple afterwards.
-			else if (is_interactable_object_grapple(grappleToX, grappleToY) || cannot_grapple_to(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum)
+			// Else if the Grapple collides into something interactable or ungrappable, retract the grapple afterwards.
+			if (is_interactable_object_grapple(grappleToX, grappleToY) || cannot_grapple_to(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum || (grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
 			{
 				grappleState = GrappleState.Retracting;	
 			}
