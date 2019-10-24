@@ -10,7 +10,7 @@ horizontalAirFriction = 1.0;
 horizontalSpeedOnSwingingExit = 0.0;
 
 verticalSpeed = 0.0;
-verticalSpeedMaximum = 15.0;
+verticalSpeedMaximum = 13.0;
 verticalInitialJumpSpeed = -12.0;
 gravityExperienced = 0.5;
 
