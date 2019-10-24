@@ -711,6 +711,14 @@
             }
         },
         {
+            "Key": "9e9192c7-a8f3-4940-adda-696f3bb43788",
+            "Value": {
+                "id": "6161b776-0da7-4400-8e88-d977bc738cc2",
+                "resourcePath": "sprites\\sp_Player_Jump_Up\\sp_Player_Jump_Up.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9f2596cf-3752-45e9-a6cb-96bbc59cf5ef",
             "Value": {
                 "id": "2f98309c-e6fe-45c1-9bc4-642c0d1a5617",
