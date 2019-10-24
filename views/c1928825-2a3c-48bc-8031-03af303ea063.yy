@@ -4,8 +4,8 @@
     "mvc": "1.1",
     "name": "c1928825-2a3c-48bc-8031-03af303ea063",
     "children": [
-        "1e1227f8-08cd-4701-99da-7d9317d47115",
-        "bd583bd4-432d-4c8b-bfbc-ee9c08403a37"
+        "bd583bd4-432d-4c8b-bfbc-ee9c08403a37",
+        "31d9eea5-73ff-423e-8d20-c05d18155d9e"
     ],
     "filterType": "GMSprite",
     "folderName": "sp_Hazard",
