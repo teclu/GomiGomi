@@ -36,7 +36,7 @@ switch (playerState)
 			horizontalSpeed = clamp(horizontalSpeed, -1.5 * horizontalWalkSpeedMaximum, 1.5 * horizontalWalkSpeedMaximum);
 			
 			verticalSpeed += gravityExperienced;
-			verticalSpeed = clamp(verticalSpeed, verticalInitialJumpSpeed, -1.5 * verticalInitialJumpSpeed);
+			verticalSpeed = clamp(verticalSpeed, -verticalSpeedMaximum, verticalSpeedMaximum);
 			
 			// Decrement the Coyote Time Counter.
 			if (coyoteTimeCounter > 0)
