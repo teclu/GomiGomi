@@ -17,13 +17,21 @@ var mouse_right = mouse_check_button_pressed(mb_right);
 // Boolean Checks
 isGrounded = is_solid_object_at_position(x, y + 1);
 
+// Make the player wait if dead or moving between rooms.
+var moveDirection = key_right - key_left;
+if (waitDuration > 0)
+{
+	moveDirection = 0;
+	key_space = 0;
+	waitDuration--;	
+}
+
 // The Player State Machine
 switch (playerState)
 {
 	case PlayerState.Normal:
-	{
+	{		
 		// Resolve Horizontal and Vertical Translation
-		var moveDirection = key_right - key_left;
 		horizontalSpeed += moveDirection * horizontalWalkAcceleration;
 		
 		// If the player is not grounded, apply gravity.
@@ -94,6 +102,7 @@ switch (playerState)
 				grappleToXCheck += grappleToXDirection * 0.01;
 				grappleToYCheck += grappleToYDirection * 0.01;
 			}
+			grappledObject = can_grapple_to(grappleToXCheck, grappleToYCheck);
 			
 			// Initialise the grapple starting position.
 			grappleToX = x;
@@ -109,9 +118,21 @@ switch (playerState)
 			grappleToY = approach(grappleToY, grappleToYCheck, abs(grappleToYDirection));
 			
 			// If the Grapple collides into something grappable, stop the Grapple Shot Translation.
-			if (can_grapple_to(grappleToX, grappleToY) != noone)
+			if (can_grapple_to(grappleToX, grappleToY) != noone || (grappledObject != noone && grappledObject.type == o_Moving_Platform && grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
 			{
-				grappledObject = can_grapple_to(grappleToX, grappleToY);
+				// Handle Moving Platforms.
+				if (grappledObject == noone || grappledObject.type != o_Moving_Platform)
+				{
+					grappledObject = can_grapple_to(grappleToX, grappleToY);
+				}
+				else
+				{
+					while (!can_grapple_to(grappleToX, grappleToY))
+					{
+						grappleToX += grappleToXDirection * 0.01;
+						grappleToY += grappleToYDirection * 0.01;
+					}
+				}
 				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 				grappleLength = point_distance(grappleToX, grappleToY, x, y);
 				grappleSwingingVelocity = 0.0;
@@ -163,7 +184,6 @@ switch (playerState)
 		if (isGrounded && grappledObject.type != o_Moving_Platform)
 		{
 			// Resolve Horizontal and Vertical Translation
-			var moveDirection = key_right - key_left;
 			horizontalSpeed += moveDirection * horizontalWalkAcceleration;
 			if (moveDirection == 0)
 			{
@@ -260,7 +280,15 @@ switch (playerState)
 	
 	case PlayerState.Dead:
 	{	
-		room_restart();
+		// Make the player wait if dead or moving between rooms.
+		if (waitDuration > 0)
+		{
+			waitDuration--;	
+		}
+		else
+		{
+			room_restart();
+		}
 		return;	
 	}
 }
@@ -319,11 +347,6 @@ if (is_solid_object_at_position(x + horizontalSpeed, y))
 	{
 		grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 		grappleSwingingVelocity = 0.0;
-		
-		if (playerState == PlayerState.Reeling)
-		{
-			//playerState = PlayerState.Swinging;
-		}
 	}
 }
 x += horizontalSpeed;
