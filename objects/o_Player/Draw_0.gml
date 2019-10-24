@@ -10,10 +10,10 @@ else if (!global.pause)
 	draw_circle_color(mouse_x, mouse_y, 5, c_red, c_red, true);
 }
 
+// Draw the Grapple Rope or the distance-reference line.
 if (grappleState != GrappleState.Unused && playerState != PlayerState.Dead)
 {
-	draw_line_width_color(x, y, grappleToX, grappleToY, 4, c_yellow, c_yellow);
-	draw_circle_color(grappleToX, grappleToY, 6, c_red, c_red, false);	
+	draw_line_width_color(x, y, grappleToX, grappleToY, 4, c_silver, c_silver);
 }
 else if (!global.pause)
 {

@@ -18,6 +18,9 @@ gravityExperienced = 0.5;
 coyoteTimeDuration = 5;
 coyoteTimeCounter = coyoteTimeDuration;
 
+grapple = instance_create_layer(x, y, "Player", o_Grapple);
+grapple.image_xscale = 0;
+grapple.image_yscale = 0.5;
 grappleShotSpeedFactor = 32.0;
 grappleSwingingVelocity = 0.0;
 grappleSwingingVelocityMaximum = 3.0;

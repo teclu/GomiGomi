@@ -99,14 +99,17 @@ switch (playerState)
 			grappleToYCheck = y;
 			while (can_grapple_to(grappleToXCheck, grappleToYCheck) == noone && distance_to_point(grappleToXCheck, grappleToYCheck) <= grappleLengthMaximum)
 			{
-				grappleToXCheck += grappleToXDirection * 0.01;
-				grappleToYCheck += grappleToYDirection * 0.01;
+				grappleToXCheck += grappleToXDirection * 0.1;
+				grappleToYCheck += grappleToYDirection * 0.1;
 			}
 			grappledObject = can_grapple_to(grappleToXCheck, grappleToYCheck);
 			
 			// Initialise the grapple starting position.
 			grappleToX = x;
 			grappleToY = y;
+			grapple.x = x;
+			grapple.y = y;
+			grapple.image_xscale = 0.5;
 			grappleState = GrappleState.Projecting;
 		}
 		
@@ -116,6 +119,9 @@ switch (playerState)
 			// Move the grapple position.
 			grappleToX = approach(grappleToX, grappleToXCheck, abs(grappleToXDirection));
 			grappleToY = approach(grappleToY, grappleToYCheck, abs(grappleToYDirection));
+			grapple.image_angle = point_direction(x, y, grappleToXCheck, grappleToYCheck) - 90;
+			grapple.x = grappleToX;
+			grapple.y = grappleToY;
 			
 			// If the Grapple collides into something grappable, stop the Grapple Shot Translation.
 			if (can_grapple_to(grappleToX, grappleToY) != noone || (grappledObject != noone && grappledObject.type == o_Moving_Platform && grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
@@ -124,14 +130,24 @@ switch (playerState)
 				if (grappledObject == noone || grappledObject.type != o_Moving_Platform)
 				{
 					grappledObject = can_grapple_to(grappleToX, grappleToY);
+					
+					if (grappledObject.type == o_Grappable_Thing_Ring)
+					{
+						grappleToX = grappledObject.x;
+						grappleToY = grappledObject.y;
+						grapple.x = grappleToX;
+						grapple.y = grappleToY;
+					}
 				}
-				else
+				else if (grappledObject != noone && grappledObject.type == o_Moving_Platform)
 				{
 					while (!can_grapple_to(grappleToX, grappleToY))
 					{
 						grappleToX += grappleToXDirection * 0.01;
 						grappleToY += grappleToYDirection * 0.01;
 					}
+					grapple.x = grappleToX;
+					grapple.y = grappleToY;
 				}
 				grappleAngle = point_direction(grappleToX, grappleToY, x, y);
 				grappleLength = point_distance(grappleToX, grappleToY, x, y);
@@ -141,6 +157,7 @@ switch (playerState)
 				grappleState = GrappleState.Attached;
 				break;
 			}
+			
 			// Else if the Grapple collides into something interactable or ungrappable, retract the grapple afterwards.
 			if (is_interactable_object_grapple(grappleToX, grappleToY) || cannot_grapple_to(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum || (grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
 			{
@@ -160,12 +177,17 @@ switch (playerState)
 			// Move the grapple position.
 			grappleToX += grappleToXDirection;
 			grappleToY += grappleToYDirection;
+			grapple.x = grappleToX;
+			grapple.y = grappleToY;
 
 			// If we have reached the minimum grapple distance, hide the grapple.
 			if (distance_to_point(grappleToX, grappleToY) <= grappleLengthRetractMinimum)
 			{
 				grappleToX = x;
 				grappleToY = y;
+				grapple.x = x;
+				grapple.y = y;
+				grapple.image_xscale = 0;
 				grappleState = GrappleState.Unused;
 			}
 		}
@@ -217,6 +239,11 @@ switch (playerState)
 			verticalSpeed = grappleToY + lengthdir_y(grappleLength, grappleAngle) - y;
 		}
 		
+		// Visually update the grapple.
+		grapple.image_angle = grappleAngle + 90;
+		grapple.x = grappleToX;
+		grapple.y = grappleToY;
+		
 		// If the grapple is attached.
 		if (grappleState == GrappleState.Attached)
 		{
@@ -267,6 +294,10 @@ switch (playerState)
 		horizontalSpeed = approach(horizontalSpeed, grappleToXDirection, 0.125 * abs(grappleToXDirection));
 		verticalSpeed = approach(verticalSpeed, grappleToYDirection, 0.125 * abs(grappleToYDirection));
 		
+		// Visually update the grapple.
+		grapple.x = grappleToX;
+		grapple.y = grappleToY;
+		
 		// If the grapple has reached the threshold, stop the reeling.
 		if (grappleLength <= grappleLengthRetractThreshold)
 		{
@@ -283,6 +314,7 @@ switch (playerState)
 		// Make the player wait if dead or moving between rooms.
 		if (waitDuration > 0)
 		{
+			grapple.image_xscale = 0;
 			waitDuration--;	
 		}
 		else
