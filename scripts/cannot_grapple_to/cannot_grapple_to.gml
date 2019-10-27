@@ -9,6 +9,7 @@ ds_list_add(grappable_objects_list, o_Wall);
 ds_list_add(grappable_objects_list, o_On_Off_Blue_Wall);
 ds_list_add(grappable_objects_list, o_On_Off_Red_Wall);
 ds_list_add(grappable_objects_list, o_Saw);
+ds_list_add(grappable_objects_list, o_Fragile);
 
 for (var i = 0; i < ds_list_size(grappable_objects_list); i++)
 {

@@ -6,7 +6,8 @@
     "children": [
         "ea89bc78-fb92-41b9-a340-757c4df20d3f",
         "909be864-37b4-487d-a8ee-6b1191a4db68",
-        "edd9c514-7915-4307-9c26-0c1fb9647730"
+        "edd9c514-7915-4307-9c26-0c1fb9647730",
+        "8d57de6f-3955-4206-9c14-c1da2412e333"
     ],
     "filterType": "GMSprite",
     "folderName": "sp_Blocks",

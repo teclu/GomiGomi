@@ -639,6 +639,14 @@
             }
         },
         {
+            "Key": "8d57de6f-3955-4206-9c14-c1da2412e333",
+            "Value": {
+                "id": "ab0e5728-0595-4627-8204-94df4be064d6",
+                "resourcePath": "sprites\\sp_Fragile\\sp_Fragile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "909be864-37b4-487d-a8ee-6b1191a4db68",
             "Value": {
                 "id": "02b56702-0578-42d9-9bf4-d9101e2f9c5a",
@@ -884,6 +892,14 @@
                 "id": "70341191-db1e-4172-bb08-7ad6aeffbb41",
                 "resourcePath": "fonts\\f_Consolas\\f_Consolas.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "b57eb7ee-ab25-4c40-976b-c44d1dd3c844",
+            "Value": {
+                "id": "d1e0a79a-c37b-402e-b618-00f135c02fbb",
+                "resourcePath": "objects\\o_Fragile\\o_Fragile.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1204,6 +1220,14 @@
                 "id": "187213f0-810b-4292-ae91-a7814c0e7941",
                 "resourcePath": "views\\f5b09b78-0994-4745-87ca-6e1e7e996163.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fc35bba6-8a49-4457-bab9-6ab804b0ffee",
+            "Value": {
+                "id": "9638e65b-bb2d-4103-bfc0-ce1f1fdf64ee",
+                "resourcePath": "fonts\\f_Consolas_Debug\\f_Consolas_Debug.yy",
+                "resourceType": "GMFont"
             }
         },
         {
