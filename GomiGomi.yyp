@@ -423,6 +423,14 @@
             }
         },
         {
+            "Key": "3867f80a-8e0b-4a5e-aff9-1c2b5a401fd2",
+            "Value": {
+                "id": "a64ce752-ef0b-402e-b902-9d9ebb628f33",
+                "resourcePath": "fonts\\f_Consolas_Smaller\\f_Consolas_Smaller.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "3a348c80-88e5-497b-9b2c-8a78adab0347",
             "Value": {
                 "id": "dba19837-c4ad-445e-844a-5d1bfdde3ca7",
@@ -556,6 +564,14 @@
                 "id": "926e1593-6eba-4718-87a5-822186150f20",
                 "resourcePath": "rooms\\r_DCA_Level_27\\r_DCA_Level_27.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "584e2bb3-0e8f-43b4-a9a7-d1876236548d",
+            "Value": {
+                "id": "706dd206-1119-4fdd-9e6e-2fb827d153d8",
+                "resourcePath": "objects\\o_UI_Pause_Tint\\o_UI_Pause_Tint.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -811,6 +827,14 @@
             "Value": {
                 "id": "02b56702-0578-42d9-9bf4-d9101e2f9c5a",
                 "resourcePath": "sprites\\sp_Platform\\sp_Platform.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9109664d-352f-47d1-aa99-e873b74e74a5",
+            "Value": {
+                "id": "cfc9dd59-9e2a-4137-b7c9-b8c16240c5cb",
+                "resourcePath": "sprites\\sp_Tint\\sp_Tint.yy",
                 "resourceType": "GMSprite"
             }
         },
