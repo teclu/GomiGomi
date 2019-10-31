@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "11beea9b-f92d-4b08-8297-a25325641691",
+            "Value": {
+                "id": "00f5ce5d-6552-4a58-8d0d-3fdd701ee323",
+                "resourcePath": "objects\\o_Corrosive_Gas_Pool_Bottom\\o_Corrosive_Gas_Pool_Bottom.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "11c4b433-f4a9-4074-b7a9-d546430e1bbe",
             "Value": {
                 "id": "2fa2d61d-1185-4b31-adaa-b7c2698a4b14",
@@ -804,6 +812,14 @@
                 "id": "3963e4a4-ec50-4985-808b-2db28c5a61d5",
                 "resourcePath": "sounds\\snd_Main_Menu_Move\\snd_Main_Menu_Move.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "88b1811c-8341-41fc-8711-3d53a2e64829",
+            "Value": {
+                "id": "75761f30-c532-4a1a-9e14-f0bf516e2a06",
+                "resourcePath": "sprites\\sp_Corrosive_Gas_Pool_Bottom\\sp_Corrosive_Gas_Pool_Bottom.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
