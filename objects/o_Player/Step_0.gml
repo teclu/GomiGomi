@@ -70,6 +70,10 @@ switch (playerState)
 			
 			if (hasJumped)
 			{
+				if (!audio_is_playing(snd_Land))
+				{
+					audio_play_sound(snd_Land, 1, false);	
+				}
 				hasJumped = false;	
 			}
 		}
@@ -85,6 +89,11 @@ switch (playerState)
 		// If the player presses the left mouse button and the grapple is unused, shoot the grapple.
 		if (grappleState == GrappleState.Unused && mouse_left)
 		{
+			if (!audio_is_playing(snd_Grapple_Shoot))
+			{
+				audio_play_sound(snd_Grapple_Shoot, 1, false);	
+			}
+			
 			// Calculate the Direction Unit Vector.
 			grappleToMouseX = mouse_x;
 			grappleToMouseY = mouse_y;
@@ -154,14 +163,22 @@ switch (playerState)
 				grappleSwingingVelocity = 0.0;
 				hasJumped = false;
 				playerState = PlayerState.Swinging;
-				grappleState = GrappleState.Attached;
+				grappleState = GrappleState.Attached
+				if (!audio_is_playing(snd_Grapple_Hook))
+				{
+					audio_play_sound(snd_Grapple_Hook, 1, false);	
+				}
 				break;
 			}
 			
 			// Else if the Grapple collides into something interactable or ungrappable, retract the grapple afterwards.
 			if (is_interactable_object_grapple(grappleToX, grappleToY) || cannot_grapple_to(grappleToX, grappleToY) || distance_to_point(grappleToX, grappleToY) > grappleLengthMaximum || (grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
 			{
-				grappleState = GrappleState.Retracting;	
+				grappleState = GrappleState.Retracting;
+				if (!audio_is_playing(snd_Grapple_Reel))
+				{
+					audio_play_sound(snd_Grapple_Reel, 1, false);	
+				}
 			}
 		}
 		
@@ -311,6 +328,12 @@ switch (playerState)
 	
 	case PlayerState.Dead:
 	{	
+		if (!isDead && !audio_is_playing(snd_Death))
+		{
+			audio_play_sound(snd_Death, 1, false);
+			isDead = true;
+		}
+		
 		// Make the player wait if dead or moving between rooms.
 		if (waitDuration > 0)
 		{
@@ -329,10 +352,14 @@ switch (playerState)
 if (isGrounded && key_right - key_left != 0)
 {
 	sprite_index = sp_Player_Walking;
+	if (!audio_is_playing(snd_Movement))
+	{
+		audio_play_sound(snd_Movement, 1, false);	
+	}
 }
 else if (isGrounded && key_right - key_left == 0)
 {
-	sprite_index = sp_Player_Idle;	
+	sprite_index = sp_Player_Idle;
 }
 else if (!isGrounded && playerState == PlayerState.Swinging)
 {
@@ -341,7 +368,11 @@ else if (!isGrounded && playerState == PlayerState.Swinging)
 
 if (hasJumped)
 {
-	sprite_index = sp_Player_Jump_Up;	
+	sprite_index = sp_Player_Jump_Up;
+	if (isGrounded && !audio_is_playing(snd_Jump))
+	{
+		audio_play_sound(snd_Jump, 1, false);	
+	}
 }
  
 

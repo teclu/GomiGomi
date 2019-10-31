@@ -2,6 +2,7 @@
 hasJumped = false;
 image_speed_temp = -1;
 waitDuration = 30;
+isDead = false;
 
 horizontalSpeed = 0.0;
 horizontalWalkAcceleration = 2.5;

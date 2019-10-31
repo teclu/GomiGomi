@@ -54,9 +54,15 @@ var text = "";
 if (option != noone)
 {
 	text = option.button_name;
+	if (!menu_sound_played)
+	{
+		audio_play_sound(snd_Main_Menu_Move, 1, false);
+		menu_sound_played = true;
+	}
 }
 else
 {
+	menu_sound_played = false;
 	return;	
 }
 
@@ -68,6 +74,7 @@ if (mouse_left)
 	{
 		case "Start Game":
 		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			room = r_Tutorial_Level_1_E;
 			game_started = true;
 			image_xscale = 0;
@@ -76,6 +83,7 @@ if (mouse_left)
 		
 		case "Main Menu":
 		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			global.pause = false;
 			global.show_pause_menu = false;
 			room_persistent = false;
@@ -87,6 +95,7 @@ if (mouse_left)
 		
 		case "Instructions":
 		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			if (global.pause)
 			{
 				global.show_pause_menu = false;
@@ -100,6 +109,7 @@ if (mouse_left)
 	
 		case "Credits":
 		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			previous_room = room;
 			room = r_Credits;
 		}
@@ -107,6 +117,7 @@ if (mouse_left)
 		
 		case "Back":
 		{	
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			var previous_room_temp = room;
 			room = previous_room;
 			previous_room = previous_room_temp;
@@ -121,6 +132,7 @@ if (mouse_left)
 	
 		case "Quit":
 		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			game_end();
 		}
 		break;

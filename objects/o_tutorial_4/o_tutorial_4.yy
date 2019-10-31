@@ -2,7 +2,7 @@
     "id": "be4eb293-e068-4dbf-9e05-e6f80e29586a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_tutorial_4",
+    "name": "o_Tutorial_4",
     "eventList": [
         {
             "id": "6fc6839c-c1f3-4f49-a5e9-838bd9ef8d59",

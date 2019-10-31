@@ -1,8 +1,8 @@
 {
-    "id": "6aad1176-c9bc-444e-8924-cbf2e4a2f019",
+    "id": "86dce790-ef57-4129-99ac-a70ecbb697b9",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_grapplethrow",
+    "name": "snd_Main_Menu_Move",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,

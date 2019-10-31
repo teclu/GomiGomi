@@ -11,7 +11,7 @@
         "0161d75c-9e7e-4ece-8254-d269c32f0bc0"
     ],
     "filterType": "GMObject",
-    "folderName": "o_tutorialwords",
+    "folderName": "o_Tutorial_Words",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

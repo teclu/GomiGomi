@@ -42,7 +42,7 @@
             "Key": "0161d75c-9e7e-4ece-8254-d269c32f0bc0",
             "Value": {
                 "id": "115e6b91-8fc3-4b31-a3b7-199b97c54d2c",
-                "resourcePath": "objects\\o_tutorial_End\\o_tutorial_End.yy",
+                "resourcePath": "objects\\o_Tutorial_End\\o_Tutorial_End.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -58,7 +58,7 @@
             "Key": "03c86a69-d4dc-43b6-a8b8-f5e46c5548db",
             "Value": {
                 "id": "a6e7d221-88fe-4b72-af78-33252adc2099",
-                "resourcePath": "sounds\\snd_obtain\\snd_obtain.yy",
+                "resourcePath": "sounds\\snd_Obtain\\snd_Obtain.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -154,7 +154,7 @@
             "Key": "1839a3d3-a21f-4b0c-91ed-77bfe0b39fb4",
             "Value": {
                 "id": "43d8021b-1f86-4682-8906-0f055aa81729",
-                "resourcePath": "objects\\o_tutorial_3\\o_tutorial_3.yy",
+                "resourcePath": "objects\\o_Tutorial_3\\o_Tutorial_3.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -210,7 +210,7 @@
             "Key": "1fa8896d-bc54-44e8-851e-2194abdd40ef",
             "Value": {
                 "id": "1dcc6c7f-7dd1-4985-8e8c-0c1fb468b3a3",
-                "resourcePath": "sounds\\snd_mainmenuselect\\snd_mainmenuselect.yy",
+                "resourcePath": "sounds\\snd_Main_Menu_Select\\snd_Main_Menu_Select.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -306,7 +306,7 @@
             "Key": "29edc532-3acd-4dc4-91cf-370402688441",
             "Value": {
                 "id": "97d33015-a2bc-4851-bf1b-0305472add8b",
-                "resourcePath": "sounds\\snd_land\\snd_land.yy",
+                "resourcePath": "sounds\\snd_Land\\snd_Land.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -450,7 +450,7 @@
             "Key": "3bef8cfc-0e60-4fb8-94fb-e861394e38b5",
             "Value": {
                 "id": "e185cecb-da80-4aa3-b44b-0c4bf71a9309",
-                "resourcePath": "objects\\o_tutorial_2\\o_tutorial_2.yy",
+                "resourcePath": "objects\\o_Tutorial_2\\o_Tutorial_2.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -570,7 +570,7 @@
             "Key": "5a532752-5b45-4417-a03c-728a82fb574f",
             "Value": {
                 "id": "019cd802-bbd2-4323-90d9-14ee31b177d8",
-                "resourcePath": "sounds\\snd_jump8\\snd_jump8.yy",
+                "resourcePath": "sounds\\snd_Jump\\snd_Jump.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -618,7 +618,7 @@
             "Key": "66c59566-1914-4579-83e2-d1ba7921ea8c",
             "Value": {
                 "id": "5a97f912-3c7e-4107-b5da-5abc521cfe0b",
-                "resourcePath": "sounds\\snd_mainmenubgm\\snd_mainmenubgm.yy",
+                "resourcePath": "sounds\\snd_Main_Menu_BGM\\snd_Main_Menu_BGM.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -650,7 +650,7 @@
             "Key": "6aad1176-c9bc-444e-8924-cbf2e4a2f019",
             "Value": {
                 "id": "eed4d139-2128-400f-8f5a-441f5bf2b18f",
-                "resourcePath": "sounds\\snd_grapplethrow\\snd_grapplethrow.yy",
+                "resourcePath": "sounds\\snd_Grapple_Shoot\\snd_Grapple_Shoot.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -674,7 +674,7 @@
             "Key": "72ae8dc5-782c-4f32-a770-29fabcd70d3c",
             "Value": {
                 "id": "f83d5784-a7f3-4746-8a4d-31e122aed96f",
-                "resourcePath": "objects\\o_tutorial_1\\o_tutorial_1.yy",
+                "resourcePath": "objects\\o_Tutorial_1\\o_Tutorial_1.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -743,6 +743,14 @@
             }
         },
         {
+            "Key": "822dae9b-1d0e-499b-bbac-04141f636b7b",
+            "Value": {
+                "id": "eba29140-736a-40c8-84c0-e44a20156740",
+                "resourcePath": "objects\\o_UI_Audio\\o_UI_Audio.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "839e58ce-0000-4e05-9ac0-b31c14fe588b",
             "Value": {
                 "id": "8d202221-630d-4d1e-abb9-224313bd5e69",
@@ -754,7 +762,7 @@
             "Key": "84527dbb-cef7-46f2-bea4-08fe8e5c277a",
             "Value": {
                 "id": "c7eeb112-5407-4740-aecc-bbf223ca7a8a",
-                "resourcePath": "sounds\\snd_grapplereel\\snd_grapplereel.yy",
+                "resourcePath": "sounds\\snd_Grapple_Reel\\snd_Grapple_Reel.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -778,7 +786,7 @@
             "Key": "86dce790-ef57-4129-99ac-a70ecbb697b9",
             "Value": {
                 "id": "3963e4a4-ec50-4985-808b-2db28c5a61d5",
-                "resourcePath": "sounds\\snd_mainmenumove\\snd_mainmenumove.yy",
+                "resourcePath": "sounds\\snd_Main_Menu_Move\\snd_Main_Menu_Move.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -962,7 +970,7 @@
             "Key": "a61dd90f-1d3a-4f02-a962-1c90490dcf42",
             "Value": {
                 "id": "8a67438e-1899-4369-8cd5-06d7e00ad595",
-                "resourcePath": "sounds\\snd_grapplehook\\snd_grapplehook.yy",
+                "resourcePath": "sounds\\snd_Grapple_Hook\\snd_Grapple_Hook.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -970,7 +978,7 @@
             "Key": "a680f73b-b499-4808-a5c0-5a0ea8ebfba5",
             "Value": {
                 "id": "f06fb554-3d2f-4e22-978b-8a89b6660a72",
-                "resourcePath": "sounds\\snd_movement\\snd_movement.yy",
+                "resourcePath": "sounds\\snd_Movement\\snd_Movement.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -1042,7 +1050,7 @@
             "Key": "b31b23d3-1d4f-4e77-9206-73b76f7ab886",
             "Value": {
                 "id": "214d3af7-c06d-40c0-9b95-c038c8cd99ab",
-                "resourcePath": "sounds\\snd_death\\snd_death.yy",
+                "resourcePath": "sounds\\snd_Death\\snd_Death.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -1138,7 +1146,7 @@
             "Key": "be4eb293-e068-4dbf-9e05-e6f80e29586a",
             "Value": {
                 "id": "74943d64-d186-4347-98d5-cb0c7f5b77d2",
-                "resourcePath": "objects\\o_tutorial_4\\o_tutorial_4.yy",
+                "resourcePath": "objects\\o_Tutorial_4\\o_Tutorial_4.yy",
                 "resourceType": "GMObject"
             }
         },
