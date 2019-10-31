@@ -1,28 +1,38 @@
 {
-    "id": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9",
+    "id": "762c00e6-0205-4abf-9527-a33d1772be23",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_Flag_Goal",
+    "name": "o_Player_No_Grapple",
     "eventList": [
         {
-            "id": "e3d6c1e4-0c73-4b70-b751-7827895e1de3",
+            "id": "1690886b-b33f-40fe-b216-375fc33f6335",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "7bc0f3a7-0be5-4861-9756-32b8dfe43b4e",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9"
+            "eventtype": 0,
+            "m_owner": "762c00e6-0205-4abf-9527-a33d1772be23"
         },
         {
-            "id": "4055ab17-b603-4da7-a494-3ad2db736503",
+            "id": "637a5e42-1b09-45f7-ad3d-f25a4ad43cde",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "762c00e6-0205-4abf-9527-a33d1772be23",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "0a123ccf-c9bb-44af-a7bf-dbf8f7d632e9"
+            "eventtype": 3,
+            "m_owner": "762c00e6-0205-4abf-9527-a33d1772be23"
+        },
+        {
+            "id": "7160373c-0bcf-4537-b8b5-e593b6f71c0e",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "762c00e6-0205-4abf-9527-a33d1772be23"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -43,6 +53,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "e84fa423-1160-4808-a209-5af5e9c8d70d",
+    "spriteId": "03723972-97de-465d-aba5-88040971f00c",
     "visible": true
 }

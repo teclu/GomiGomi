@@ -711,6 +711,14 @@
             }
         },
         {
+            "Key": "762c00e6-0205-4abf-9527-a33d1772be23",
+            "Value": {
+                "id": "72b6e635-d947-4525-b2c6-65902b8dc2ff",
+                "resourcePath": "objects\\o_Player_No_Grapple\\o_Player_No_Grapple.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "77e7a63e-2f2f-4fa8-ada9-9082f9a522d6",
             "Value": {
                 "id": "a6215690-8ef5-4c63-ba1c-a3b83adf1e21",

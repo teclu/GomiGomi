@@ -1,7 +1,7 @@
 /// @description Handle Collision and Countdown.
 
 // Set the boolean to true when player has stood on the Fragile block.
-if (!hasBeenSteppedOn && place_meeting(x, y - 1, o_Player))
+if (!hasBeenSteppedOn && (place_meeting(x, y - 1, o_Player) || place_meeting(x, y - 1, o_Player_No_Grapple)))
 {
 	hasBeenSteppedOn = true;	
 }
