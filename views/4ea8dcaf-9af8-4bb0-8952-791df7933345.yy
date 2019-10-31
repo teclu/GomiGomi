@@ -8,7 +8,8 @@
         "cabcfb55-5631-4fd4-a020-532141c505ad",
         "03723972-97de-465d-aba5-88040971f00c",
         "9e9192c7-a8f3-4940-adda-696f3bb43788",
-        "b6ef61ba-ccfe-4029-9709-0ee2cee1ec03"
+        "b6ef61ba-ccfe-4029-9709-0ee2cee1ec03",
+        "4a46ac87-fa9e-48e6-8b7a-d191a60c32e9"
     ],
     "filterType": "GMSprite",
     "folderName": "sp_Player",
