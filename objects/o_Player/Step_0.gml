@@ -135,7 +135,7 @@ switch (playerState)
 			// If the Grapple collides into something grappable, stop the Grapple Shot Translation.
 			if (can_grapple_to(grappleToX, grappleToY) != noone || (grappledObject != noone && grappledObject.type == o_Moving_Platform && grappleToX == grappleToXCheck && grappleToY == grappleToYCheck))
 			{
-				// Handle Moving Platforms.
+				// Handle anything else grappable that is not a Moving Platform.
 				if (grappledObject == noone || grappledObject.type != o_Moving_Platform)
 				{
 					grappledObject = can_grapple_to(grappleToX, grappleToY);
@@ -148,13 +148,25 @@ switch (playerState)
 						grapple.y = grappleToY;
 					}
 				}
+				// Handle Moving Platforms.
 				else if (grappledObject != noone && grappledObject.type == o_Moving_Platform)
 				{
-					while (!can_grapple_to(grappleToX, grappleToY))
+					while (!can_grapple_to(grappleToX, grappleToY) && distance_to_point(grappleToX, grappleToY) <= grappleLengthMaximum)
 					{
 						grappleToX += grappleToXDirection * 0.01;
 						grappleToY += grappleToYDirection * 0.01;
 					}
+					
+					// We still "missed" the moving platform.
+					if (!can_grapple_to(grappleToX, grappleToY)) {
+						grappleState = GrappleState.Retracting;
+						if (!audio_is_playing(snd_Grapple_Reel))
+						{
+							audio_play_sound(snd_Grapple_Reel, 1, false);	
+						}
+						break;
+					}
+					
 					grapple.x = grappleToX;
 					grapple.y = grappleToY;
 				}
