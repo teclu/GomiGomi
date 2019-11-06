@@ -16,13 +16,11 @@
         "5c40e809-2bbb-455f-b9d4-3f9ca0a94d0d",
         "9136fdb1-d9bf-4b94-9212-bcc2c8ec09e1",
         "8d16631e-741f-4762-889f-0f99e0d5d08d",
-        "f555d448-d736-4b52-90e4-d16ea1f117b1",
-        "2d8b3f39-0e4d-43d4-a535-8f124f79b7a6",
         "5828ff68-2138-438e-87f6-752ff8938ff1",
         "bf485a60-2c23-4aab-a56d-02137b909df3",
-        "fc51412b-ac70-4952-a0b8-5e7383e7394a",
-        "a77a1968-3de3-46a1-96ec-372caf96a723",
-        "1cde6ab2-d580-4074-a60d-a8d6a9de5600"
+        "1cde6ab2-d580-4074-a60d-a8d6a9de5600",
+        "514ee54d-6245-4e0f-9648-f779bd7c77a0",
+        "174457dd-572e-4ba6-84d0-64c5ea5d29ab"
     ],
     "filterType": "GMRoom",
     "folderName": "Disposal Control Area (DCA)",
