@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "08bbce98-8b11-485d-b124-782cd067b77e",
+            "Value": {
+                "id": "b14ca9f1-bd71-43b3-a0e4-a573f33693bc",
+                "resourcePath": "sprites\\sp_Metal_Wall\\sp_Metal_Wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "08e6c776-4aee-4079-b559-9b415cdecc1f",
             "Value": {
                 "id": "1d755b1b-cb5c-4ed0-98ea-da8ef6fefaf0",
@@ -108,6 +116,14 @@
                 "id": "5ae9c050-7c33-4555-9b68-7d84fdf5c4e9",
                 "resourcePath": "objects\\o_Flag_Goal\\o_Flag_Goal.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0b07cb85-4158-4f64-a1ed-404969e0651a",
+            "Value": {
+                "id": "feacd343-a68a-4ad8-98cc-a0bc794df016",
+                "resourcePath": "sprites\\sp_Rail_Middle\\sp_Rail_Middle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -575,6 +591,14 @@
             }
         },
         {
+            "Key": "48b25d31-88ae-4782-800c-16074c53d850",
+            "Value": {
+                "id": "e6129ad9-eedd-4685-8b13-97fe8b0d0577",
+                "resourcePath": "tilesets\\ts_Rail\\ts_Rail.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "492e5c57-5937-4ee0-a591-a5a286333099",
             "Value": {
                 "id": "097e4f60-a695-419e-b858-f0da3bef3182",
@@ -843,6 +867,14 @@
             "Value": {
                 "id": "6d989540-2c2f-40f8-933b-a0ad88314346",
                 "resourcePath": "sprites\\sp_Off_Blue_Wall\\sp_Off_Blue_Wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "71b37861-8b9f-4c60-86d7-5bfe4b468685",
+            "Value": {
+                "id": "c39b513a-e93d-4824-9b5d-ddcbdbf531b6",
+                "resourcePath": "sprites\\sp_Rail_Left\\sp_Rail_Left.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1559,6 +1591,14 @@
             }
         },
         {
+            "Key": "ce16387d-0b8d-4288-9ff1-f97795dde638",
+            "Value": {
+                "id": "22ddca15-6b48-45b3-9b59-f14ce14fb50d",
+                "resourcePath": "sprites\\sp_Rail_Full\\sp_Rail_Full.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cf4ffc1b-703f-4b2e-8f59-b21c629cf5d0",
             "Value": {
                 "id": "65dc96f7-5034-4b84-85ca-a1f79ba392e4",
@@ -1604,6 +1644,14 @@
                 "id": "aaf49948-8fbc-4a93-abe8-a50f61116426",
                 "resourcePath": "rooms\\r_DCA_Level_19\\r_DCA_Level_19.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "d2f2c1ca-4263-4ca0-9259-21269a8e4aef",
+            "Value": {
+                "id": "a40d1486-a45b-411a-b7bb-88b9d7dea235",
+                "resourcePath": "tilesets\\ts_Metal_wall\\ts_Metal_wall.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -1788,6 +1836,14 @@
                 "id": "c7cf287a-0803-4d64-abfc-9cea36adef11",
                 "resourcePath": "objects\\o_Level_27\\o_Level_27.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f34e19dd-1bf0-469f-a256-64f734ac1f30",
+            "Value": {
+                "id": "9f1296b7-96bf-4dac-b048-9beb8906ec0b",
+                "resourcePath": "sprites\\sp_Rail_Right\\sp_Rail_Right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
