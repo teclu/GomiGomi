@@ -618,7 +618,7 @@
             "Key": "5c40e809-2bbb-455f-b9d4-3f9ca0a94d0d",
             "Value": {
                 "id": "84f2bb1a-9560-4f95-9980-b3e002410dfd",
-                "resourcePath": "rooms\\r_DCA_Level_24\\r_DCA_Level_24.yy",
+                "resourcePath": "rooms\\r_DCA_Level_24b\\r_DCA_Level_24b.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -836,6 +836,14 @@
                 "id": "4fc888e8-8b2e-4d35-85a4-13e8e1430ca0",
                 "resourcePath": "views\\8629c783-139f-457d-b75b-0dd371bf02e2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "86a8660f-18f5-4e43-92d4-0cdeb3c6518a",
+            "Value": {
+                "id": "2bed4109-5046-4820-9f16-3fd15dd58ac1",
+                "resourcePath": "rooms\\r_DCA_Level_25_AlternativeUse\\r_DCA_Level_25_AlternativeUse.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1204,6 +1212,14 @@
                 "id": "d1998d32-bf1b-4942-bdaa-6ac7818c7ab4",
                 "resourcePath": "tilesets\\ts_Dirt\\ts_Dirt.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "b7d7948e-dce8-46a8-acc8-71886173dd61",
+            "Value": {
+                "id": "c499f4eb-3404-4240-a76e-129b37968ec5",
+                "resourcePath": "rooms\\r_DCA_Level_24a\\r_DCA_Level_24a.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
