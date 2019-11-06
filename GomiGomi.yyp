@@ -578,7 +578,7 @@
             "Key": "5828ff68-2138-438e-87f6-752ff8938ff1",
             "Value": {
                 "id": "926e1593-6eba-4718-87a5-822186150f20",
-                "resourcePath": "rooms\\r_DCA_Level_27\\r_DCA_Level_27.yy",
+                "resourcePath": "rooms\\r_DCA_Level_27_CAPITALISM\\r_DCA_Level_27_CAPITALISM.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1476,6 +1476,14 @@
                 "id": "e6832569-88fc-4f6f-afbf-7511f9e3c5f4",
                 "resourcePath": "views\\e95a50b3-2903-4841-8d6a-8be46a611fb2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ea4616bb-5504-4de5-adbd-83025d305bb5",
+            "Value": {
+                "id": "f73a57d1-9b4b-42c9-a850-fd316b2e5f5e",
+                "resourcePath": "rooms\\r_DCA_Level_27_CAPITALISM_FALL\\r_DCA_Level_27_CAPITALISM_FALL.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
