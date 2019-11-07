@@ -791,6 +791,14 @@
             }
         },
         {
+            "Key": "65ff41ea-d3df-44a2-ad8b-2370d40c7c40",
+            "Value": {
+                "id": "9327e88f-e613-4beb-8b45-4e6683ca6a2f",
+                "resourcePath": "tilesets\\ts_Rail_Vert\\ts_Rail_Vert.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "66c59566-1914-4579-83e2-d1ba7921ea8c",
             "Value": {
                 "id": "5a97f912-3c7e-4107-b5da-5abc521cfe0b",
@@ -1828,6 +1836,14 @@
                 "id": "1b8ce547-bf57-4500-83b8-938adbfd5a1b",
                 "resourcePath": "rooms\\r_DCA_Level_22\\r_DCA_Level_22.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "f077d489-58c0-4d06-9175-2b294a2d8657",
+            "Value": {
+                "id": "c3d71247-cbeb-4512-aba2-ed9c229e4a75",
+                "resourcePath": "sprites\\sp_Rail_Full_Vert\\sp_Rail_Full_Vert.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
