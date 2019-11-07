@@ -19,8 +19,8 @@ else if (isAllowedToGrapple && !global.pause)
 {
 	// Green coloured line if cursor is within range, and red otherwise.
 	var distance = max(1, point_distance(x, y, mouse_x, mouse_y));
-	var lineWidth = abs(8 + (7.5 / (1 - grappleLengthMaximum * 1.125)) * distance);
-	if (point_distance(x, y, mouse_x, mouse_y) <= grappleLengthMaximum * 1.125)
+	var lineWidth = abs(8 + (7.5 / (1 - grappleLengthMaximum)) * distance);
+	if (point_distance(x, y, mouse_x, mouse_y) <= grappleLengthMaximum)
 	{
 		draw_line_width_color(x, y, mouse_x, mouse_y, lineWidth, c_lime, c_lime);
 	}
