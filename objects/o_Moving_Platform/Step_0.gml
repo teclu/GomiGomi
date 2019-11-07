@@ -12,6 +12,7 @@ if (is_moving_horizontally)
 		(starting_direction < 0 && x + toMove <= startX && x + toMove >= endX))
 	{
 		x += toMove;
+		image_xscale = (toMove > 0) ? 1 : -1;
 	}
 	else
 	{
