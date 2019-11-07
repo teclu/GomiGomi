@@ -160,7 +160,7 @@
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "Goal",
+            "name": "Text",
             "id": "6fee080c-cf81-4056-858b-160fcc8ed491",
             "depth": 400,
             "grid_x": 32,
