@@ -1327,6 +1327,14 @@
             }
         },
         {
+            "Key": "9d3b611a-f873-4102-80c6-e8e165fe6670",
+            "Value": {
+                "id": "670cc0da-1050-4215-a229-ec60faa53c9a",
+                "resourcePath": "sprites\\sp_test\\sp_test.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9dd91568-b4da-4d5e-98f9-e69b1767be0b",
             "Value": {
                 "id": "a1e812be-a6c9-4982-8969-d7bd6d0e5188",
@@ -1700,6 +1708,14 @@
                 "id": "2b8ff6d6-8773-48c1-94da-25c7afee2bd0",
                 "resourcePath": "sprites\\sp_Grappable_Thing_Ring\\sp_Grappable_Thing_Ring.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c665d932-0ddd-4849-a399-a06527c141d1",
+            "Value": {
+                "id": "2b7574cc-9373-48ac-b2f0-6a01ccf3bc32",
+                "resourcePath": "objects\\o_Sign\\o_Sign.yy",
+                "resourceType": "GMObject"
             }
         },
         {
