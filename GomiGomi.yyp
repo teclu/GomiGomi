@@ -695,6 +695,14 @@
             }
         },
         {
+            "Key": "4d016436-65c1-4a15-8817-1b709421f82a",
+            "Value": {
+                "id": "5b65a43c-6ba1-4c4f-bc7d-60e458e2f936",
+                "resourcePath": "sprites\\sp_Fragile_OK\\sp_Fragile_OK.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4ea8dcaf-9af8-4bb0-8952-791df7933345",
             "Value": {
                 "id": "d1c6c704-6b52-485d-86b7-7f55dfa19b87",
@@ -1202,7 +1210,7 @@
             "Key": "8d57de6f-3955-4206-9c14-c1da2412e333",
             "Value": {
                 "id": "ab0e5728-0595-4627-8204-94df4be064d6",
-                "resourcePath": "sprites\\sp_Fragile\\sp_Fragile.yy",
+                "resourcePath": "sprites\\sp_Fragile_Broken\\sp_Fragile_Broken.yy",
                 "resourceType": "GMSprite"
             }
         },

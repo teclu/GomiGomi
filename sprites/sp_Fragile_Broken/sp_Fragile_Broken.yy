@@ -2,7 +2,7 @@
     "id": "8d57de6f-3955-4206-9c14-c1da2412e333",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sp_Fragile",
+    "name": "sp_Fragile_Broken",
     "For3D": false,
     "HTile": false,
     "VTile": false,
