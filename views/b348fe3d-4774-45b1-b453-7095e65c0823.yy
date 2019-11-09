@@ -11,7 +11,8 @@
         "0b07cb85-4158-4f64-a1ed-404969e0651a",
         "ce16387d-0b8d-4288-9ff1-f97795dde638",
         "f077d489-58c0-4d06-9175-2b294a2d8657",
-        "66060d31-358e-46f4-aff0-d3dc0870db1b"
+        "66060d31-358e-46f4-aff0-d3dc0870db1b",
+        "9d1c7db3-e5d5-4c99-9b73-dc9bcb585d40"
     ],
     "filterType": "GMSprite",
     "folderName": "sp_Art",

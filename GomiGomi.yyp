@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "08bd33b8-c0bf-4559-bd59-213ce72d26c0",
+            "Value": {
+                "id": "89aff662-4fcf-4726-841a-afce5369c845",
+                "resourcePath": "tilesets\\ts_Junk_Mirror\\ts_Junk_Mirror.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "08e6c776-4aee-4079-b559-9b415cdecc1f",
             "Value": {
                 "id": "1d755b1b-cb5c-4ed0-98ea-da8ef6fefaf0",
@@ -1292,6 +1300,14 @@
                 "id": "b3fd6b8b-ca3f-4008-8641-ddb2636545a7",
                 "resourcePath": "rooms\\r_The_End\\r_The_End.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "9d1c7db3-e5d5-4c99-9b73-dc9bcb585d40",
+            "Value": {
+                "id": "667408fe-9109-4384-ad55-fb6af04dd8d5",
+                "resourcePath": "sprites\\sp_Junk_Variants_Mirrored\\sp_Junk_Variants_Mirrored.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
