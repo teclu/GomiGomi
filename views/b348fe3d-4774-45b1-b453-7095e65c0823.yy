@@ -10,7 +10,8 @@
         "f34e19dd-1bf0-469f-a256-64f734ac1f30",
         "0b07cb85-4158-4f64-a1ed-404969e0651a",
         "ce16387d-0b8d-4288-9ff1-f97795dde638",
-        "f077d489-58c0-4d06-9175-2b294a2d8657"
+        "f077d489-58c0-4d06-9175-2b294a2d8657",
+        "66060d31-358e-46f4-aff0-d3dc0870db1b"
     ],
     "filterType": "GMSprite",
     "folderName": "sp_Art",

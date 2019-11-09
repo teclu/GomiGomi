@@ -863,6 +863,14 @@
             }
         },
         {
+            "Key": "66060d31-358e-46f4-aff0-d3dc0870db1b",
+            "Value": {
+                "id": "993396c9-bb8a-42f2-b783-07fe6fb221bc",
+                "resourcePath": "sprites\\sp_Junk_Variants\\sp_Junk_Variants.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "66c59566-1914-4579-83e2-d1ba7921ea8c",
             "Value": {
                 "id": "5a97f912-3c7e-4107-b5da-5abc521cfe0b",
@@ -1964,6 +1972,14 @@
                 "id": "9f1296b7-96bf-4dac-b048-9beb8906ec0b",
                 "resourcePath": "sprites\\sp_Rail_Right\\sp_Rail_Right.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f3639819-65dc-4db2-9165-316a3f34b014",
+            "Value": {
+                "id": "0cade59d-ff1a-4e55-9c4b-b4e987e73e79",
+                "resourcePath": "tilesets\\ts_Junk\\ts_Junk.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
