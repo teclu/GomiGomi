@@ -1959,6 +1959,14 @@
             }
         },
         {
+            "Key": "e89138f1-9e4b-4ec2-8d0f-fa8ed81a39a9",
+            "Value": {
+                "id": "8a3ecd7a-3905-43c8-977d-b33d6c4d8102",
+                "resourcePath": "sprites\\sp_Grass\\sp_Grass.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e8d8a2ca-0450-4d3f-ba29-e8ee37c89494",
             "Value": {
                 "id": "9e45b08a-d24e-42b1-b5c7-63d2709e993a",
