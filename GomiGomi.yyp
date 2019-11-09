@@ -871,6 +871,14 @@
             }
         },
         {
+            "Key": "68416039-1ccb-4cc0-8ff9-f9f45cbc4230",
+            "Value": {
+                "id": "0a78a7ef-3e9a-45aa-93c1-1b3b3df5fbdf",
+                "resourcePath": "sprites\\sp_Wall_Lowsat\\sp_Wall_Lowsat.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "684438a3-ac0e-4ef4-b859-328f72eed697",
             "Value": {
                 "id": "27137479-be52-474e-b290-410cff91dc6e",
