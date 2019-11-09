@@ -519,6 +519,14 @@
             }
         },
         {
+            "Key": "3587b045-2061-485b-8c49-3ab1ea1b6dae",
+            "Value": {
+                "id": "ae373587-6852-4232-bde2-125f20dd2df5",
+                "resourcePath": "sprites\\sp_Prologue_Foreground\\sp_Prologue_Foreground.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37f33ea8-8bec-4095-b8fb-8e5c218a1756",
             "Value": {
                 "id": "5f9c613f-750d-4867-8918-c3fcd22daa21",
@@ -628,6 +636,14 @@
                 "id": "59053baa-6bee-473c-9c33-422179ca5fef",
                 "resourcePath": "views\\46774649-e0bc-4e6f-b6ff-d6fb93ecca1b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "467ce5d4-5945-418a-a0bb-3ca37fede9c3",
+            "Value": {
+                "id": "8df8e103-edc2-42e8-939c-1023d8e405b8",
+                "resourcePath": "sprites\\sp_Big_Grapple_Left\\sp_Big_Grapple_Left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -820,6 +836,14 @@
                 "id": "bcc57783-d0e3-4404-8334-822b81ec3d50",
                 "resourcePath": "objects\\o_Grapple\\o_Grapple.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "632dd8ff-22a5-4f0e-b4bc-5caacb88484e",
+            "Value": {
+                "id": "12803f65-7a83-4862-8eed-74fadb8ba3c0",
+                "resourcePath": "views\\632dd8ff-22a5-4f0e-b4bc-5caacb88484e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1060,6 +1084,14 @@
                 "id": "dc0a446b-a040-4941-8bd1-eabe50d4186c",
                 "resourcePath": "views\\7c9d3f1d-62f4-416f-ac23-b60fc300c841.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7fbf9a5d-0dea-4a27-9a23-6de93492af07",
+            "Value": {
+                "id": "c13f2c74-4ec6-405f-8812-36cc39857cb9",
+                "resourcePath": "sprites\\sp_Prologue_Background\\sp_Prologue_Background.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1428,6 +1460,14 @@
                 "id": "e602039a-2af8-4141-82bb-9ae1228ba1de",
                 "resourcePath": "scripts\\can_grapple_to\\can_grapple_to.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "adf7417c-84e1-47a1-84d1-7616bc669bdc",
+            "Value": {
+                "id": "775e9dd3-3ddc-4c07-b0a8-b58520bdf49e",
+                "resourcePath": "sprites\\sp_Big_Grapple_Right\\sp_Big_Grapple_Right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
