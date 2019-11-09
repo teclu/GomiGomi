@@ -2,7 +2,7 @@
     "id": "c665d932-0ddd-4849-a399-a06527c141d1",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_Sign",
+    "name": "o_Gas_Mask_Sign",
     "eventList": [
         
     ],

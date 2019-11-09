@@ -2,7 +2,7 @@
     "id": "9d3b611a-f873-4102-80c6-e8e165fe6670",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sp_test",
+    "name": "sp_Gas_Mask_Sign",
     "For3D": false,
     "HTile": false,
     "VTile": false,

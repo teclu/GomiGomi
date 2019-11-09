@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "295df55a-ad86-48ad-992e-c06080d4d9a1",
+            "Value": {
+                "id": "af255a4f-f10a-43bb-9ff9-130a42b4d898",
+                "resourcePath": "objects\\o_Corrosive_Sign\\o_Corrosive_Sign.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "29edc532-3acd-4dc4-91cf-370402688441",
             "Value": {
                 "id": "97d33015-a2bc-4851-bf1b-0305472add8b",
@@ -999,6 +1007,14 @@
             }
         },
         {
+            "Key": "6f48968c-b304-4d1e-a034-88649257002f",
+            "Value": {
+                "id": "4095b9ec-1f94-4901-91af-b159d2b9a9c6",
+                "resourcePath": "sprites\\sp_Corrosive_Sign\\sp_Corrosive_Sign.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "709a5197-d047-41d2-9732-4797d7aeb128",
             "Value": {
                 "id": "cbe6c5ad-2fa9-4297-afc5-be0f3af1278d",
@@ -1330,7 +1346,7 @@
             "Key": "9d3b611a-f873-4102-80c6-e8e165fe6670",
             "Value": {
                 "id": "670cc0da-1050-4215-a229-ec60faa53c9a",
-                "resourcePath": "sprites\\sp_test\\sp_test.yy",
+                "resourcePath": "sprites\\sp_Gas_Mask_Sign\\sp_Gas_Mask_Sign.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1380,6 +1396,14 @@
                 "id": "862a9d1a-19e2-4cd1-baae-9ee6d0413b2b",
                 "resourcePath": "sprites\\sp_Background\\sp_Background.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9f49d91d-80d7-4d44-9fd9-81dcf9cd434d",
+            "Value": {
+                "id": "38af90d1-c9c1-4a81-8a5a-09287782ab1d",
+                "resourcePath": "views\\9f49d91d-80d7-4d44-9fd9-81dcf9cd434d.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1714,7 +1738,7 @@
             "Key": "c665d932-0ddd-4849-a399-a06527c141d1",
             "Value": {
                 "id": "2b7574cc-9373-48ac-b2f0-6a01ccf3bc32",
-                "resourcePath": "objects\\o_Sign\\o_Sign.yy",
+                "resourcePath": "objects\\o_Gas_Mask_Sign\\o_Gas_Mask_Sign.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2084,6 +2108,14 @@
                 "id": "0cade59d-ff1a-4e55-9c4b-b4e987e73e79",
                 "resourcePath": "tilesets\\ts_Junk\\ts_Junk.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "f3828bf3-75e3-44c6-9f59-7093d744c713",
+            "Value": {
+                "id": "d1e4ce3a-f627-46d6-a93a-d978eee571f1",
+                "resourcePath": "views\\f3828bf3-75e3-44c6-9f59-7093d744c713.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
