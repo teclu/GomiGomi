@@ -75,7 +75,7 @@ if (mouse_left)
 		case "Start Game":
 		{
 			audio_play_sound(snd_Main_Menu_Select, 1, false);
-			room = r_Tutorial_Level_1_E;
+			room = r_Prologue_1;
 			game_started = true;
 			image_xscale = 0;
 		}

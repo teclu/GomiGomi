@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "0e3b8616-cdc8-4109-beff-2d212081da10",
+            "Value": {
+                "id": "2d2a021f-06bf-4f13-b509-e4bd2a0e16fb",
+                "resourcePath": "objects\\o_Player_Dummy\\o_Player_Dummy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0f4dc777-2f66-44af-adce-ea97ab881c9d",
             "Value": {
                 "id": "5379d4f4-1e4e-4096-86c8-e95d253ebc22",
@@ -791,6 +799,14 @@
             }
         },
         {
+            "Key": "587598a5-62ee-4019-bb4a-efe91f83be92",
+            "Value": {
+                "id": "cdfeaf15-091a-41a7-bed1-8608edfb4810",
+                "resourcePath": "objects\\o_Big_Grapple_Right\\o_Big_Grapple_Right.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "59893567-42f8-431e-b0ae-af258ef8b624",
             "Value": {
                 "id": "2317b520-9fb0-4c74-9037-78f673ec847f",
@@ -1159,6 +1175,14 @@
             }
         },
         {
+            "Key": "83a07e87-8cb6-45ae-a558-5b11da09bb82",
+            "Value": {
+                "id": "d14d8386-a7e1-4aa5-99f4-392468cdc24c",
+                "resourcePath": "objects\\o_Prologue_Movement\\o_Prologue_Movement.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "84527dbb-cef7-46f2-bea4-08fe8e5c277a",
             "Value": {
                 "id": "c7eeb112-5407-4740-aecc-bbf223ca7a8a",
@@ -1220,6 +1244,14 @@
                 "id": "75761f30-c532-4a1a-9e14-f0bf516e2a06",
                 "resourcePath": "sprites\\sp_Corrosive_Gas_Pool_Bottom\\sp_Corrosive_Gas_Pool_Bottom.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "89e53ee9-09bb-4dcb-b5fc-1727fa368812",
+            "Value": {
+                "id": "de460953-231f-4719-aa38-866cd547cb6e",
+                "resourcePath": "objects\\o_Big_Grapple_Left\\o_Big_Grapple_Left.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1739,6 +1771,14 @@
             "Value": {
                 "id": "831d8a29-3043-4c07-aaa8-5b4dd6a2dbfd",
                 "resourcePath": "views\\c1928825-2a3c-48bc-8031-03af303ea063.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c26c873e-1452-44f5-89dd-ac9013702f07",
+            "Value": {
+                "id": "bd29b3f2-be0f-4d5c-968a-f1a50d2c7607",
+                "resourcePath": "views\\c26c873e-1452-44f5-89dd-ac9013702f07.yy",
                 "resourceType": "GMFolder"
             }
         },
