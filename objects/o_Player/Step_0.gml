@@ -399,15 +399,18 @@ else if (mouse_x < x || key_left)
 }
 
 // If the player is standing on a moving platform or colliding from below, add the Moving Platform's speed.
-var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, true, true);
-if (movingPlatformStanding != noone)
+//var movingPlatformStanding = collision_point(x, y + 32, o_Moving_Platform, true, true);
+//if (movingPlatformStanding != noone)
+if (place_meeting(x, y + 1, o_Moving_Platform))
 {
+	var movingPlatformStanding = instance_place(x, y + 1, o_Moving_Platform);
 	var toTranslate = movingPlatformStanding.horizontal_direction * movingPlatformStanding.movespeed;
 	if (!is_solid_object_at_position(x + toTranslate, y))
 	{
 		x += toTranslate;
 	}
 }
+
 
 // If the player encounters any solid objects while moving horizontally, stop translation in that direction.
 if (is_solid_object_at_position(x + horizontalSpeed, y))

@@ -879,6 +879,14 @@
             }
         },
         {
+            "Key": "63554925-ad7f-4bcc-8b91-7ca7641af509",
+            "Value": {
+                "id": "2bc845f5-5c4b-4d8c-8a18-68661fbb26d9",
+                "resourcePath": "sprites\\sp_Pre_Boss_Stage_Backdrop\\sp_Pre_Boss_Stage_Backdrop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "635a1140-2142-4ca5-bba0-302e6e08cd15",
             "Value": {
                 "id": "a7137cda-0601-4e3a-83c1-4a8e5a348eca",
@@ -1703,6 +1711,14 @@
             }
         },
         {
+            "Key": "bfc5ace3-235b-4d81-91d5-2ed7866af177",
+            "Value": {
+                "id": "3ac2edb8-d6dc-4fbb-a277-ce20b64c7bdb",
+                "resourcePath": "views\\bfc5ace3-235b-4d81-91d5-2ed7866af177.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bfc7e639-bc0e-496d-8738-8c358fb0204e",
             "Value": {
                 "id": "65d2393f-4045-428f-a314-a4eabfbb76d6",
@@ -1732,6 +1748,14 @@
                 "id": "2b8ff6d6-8773-48c1-94da-25c7afee2bd0",
                 "resourcePath": "sprites\\sp_Grappable_Thing_Ring\\sp_Grappable_Thing_Ring.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c593a36d-dd53-4ad3-890d-97a5214506c7",
+            "Value": {
+                "id": "a1cd4ada-f614-4888-b99c-d72870611bbc",
+                "resourcePath": "objects\\o_Pre_Boss_Stage_Backdrop\\o_Pre_Boss_Stage_Backdrop.yy",
+                "resourceType": "GMObject"
             }
         },
         {
