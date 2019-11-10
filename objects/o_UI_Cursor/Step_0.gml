@@ -111,7 +111,21 @@ if (mouse_left)
 		{
 			audio_play_sound(snd_Main_Menu_Select, 1, false);
 			previous_room = room;
-			room = r_Credits;
+			room = r_Credits_1;
+		}
+		break;
+		
+		case ">":
+		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
+			room = r_Credits_2;
+		}
+		break;
+		
+		case "<":
+		{
+			audio_play_sound(snd_Main_Menu_Select, 1, false);
+			room = r_Credits_1;
 		}
 		break;
 		

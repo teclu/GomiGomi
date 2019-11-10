@@ -1,9 +1,9 @@
 switch (room)
 {
 	case r_Main_Menu:
-	case r_Level_Selector:
 	case r_Instructions:
-	case r_Credits:
+	case r_Credits_1:
+	case r_Credits_2:
 	{
 		if (!audio_is_playing(snd_Main_Menu_BGM))
 		{
