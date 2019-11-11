@@ -29,7 +29,7 @@ if (game_started)
 	}
 	
 	var key_pagedown = keyboard_check_pressed(vk_pagedown);
-	if (key_pagedown && room != r_Tutorial_Lv_1)
+	if (key_pagedown && room != r_Prologue)
 	{
 		room_persistent = false;
 		room_goto_previous();	

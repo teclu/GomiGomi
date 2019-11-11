@@ -5,16 +5,6 @@
     "name": "o_UI_Pause_Tint",
     "eventList": [
         {
-            "id": "dd33c3d2-6caa-4197-9196-dd1aa6cf4e05",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "584e2bb3-0e8f-43b4-a9a7-d1876236548d"
-        },
-        {
             "id": "933c535b-bba0-4035-b956-42253da276c8",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -27,7 +17,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "ff0631b2-68e2-4811-af07-66219d61877a",
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

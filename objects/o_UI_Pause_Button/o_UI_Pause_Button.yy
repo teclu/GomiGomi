@@ -5,16 +5,6 @@
     "name": "o_UI_Pause_Button",
     "eventList": [
         {
-            "id": "3e2affbd-d88a-4902-97b3-3ebcff77b15a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "183a9743-419a-4e62-af7e-edffcd6e3127"
-        },
-        {
             "id": "891d2df6-ea13-4973-a17e-a17a7614abe8",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -23,21 +13,11 @@
             "enumb": 0,
             "eventtype": 8,
             "m_owner": "183a9743-419a-4e62-af7e-edffcd6e3127"
-        },
-        {
-            "id": "0dff5087-8993-4f48-8511-9166dce15fb1",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "183a9743-419a-4e62-af7e-edffcd6e3127"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "ff0631b2-68e2-4811-af07-66219d61877a",
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

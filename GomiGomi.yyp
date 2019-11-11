@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "148a60d1-f4bf-4252-a364-c82d1c524d9e",
+            "Value": {
+                "id": "cbe88377-b4bc-40df-bc7b-1a1310066a37",
+                "resourcePath": "sounds\\snd_Grim_Idol\\snd_Grim_Idol.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "150c5318-12d1-40bb-9b31-45df6b3f7f6f",
             "Value": {
                 "id": "f0c00bb3-3a42-4f30-8add-61e4eac1a44b",
@@ -890,7 +898,7 @@
             "Key": "66c59566-1914-4579-83e2-d1ba7921ea8c",
             "Value": {
                 "id": "5a97f912-3c7e-4107-b5da-5abc521cfe0b",
-                "resourcePath": "sounds\\snd_Main_Menu_BGM\\snd_Main_Menu_BGM.yy",
+                "resourcePath": "sounds\\snd_Robobozo\\snd_Robobozo.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -1036,6 +1044,14 @@
                 "id": "d4b54027-a473-46a0-8a65-54b85d7b34a7",
                 "resourcePath": "sprites\\sp_BushThing\\sp_BushThing.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "78288683-edf7-4730-ac0e-87d83959215c",
+            "Value": {
+                "id": "4ea7e28c-082f-4757-bf76-cf304556081f",
+                "resourcePath": "sounds\\snd_Almost_New\\snd_Almost_New.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1554,7 +1570,7 @@
             "Key": "b99c5ae0-7e33-471e-b06b-831e73f28407",
             "Value": {
                 "id": "43bb6415-6c52-4c20-b839-09507e87d931",
-                "resourcePath": "sounds\\snd_Area_1\\snd_Area_1.yy",
+                "resourcePath": "sounds\\snd_Leaving_Home\\snd_Leaving_Home.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -2100,6 +2116,14 @@
                 "id": "9638e65b-bb2d-4103-bfc0-ce1f1fdf64ee",
                 "resourcePath": "fonts\\f_Consolas_Debug\\f_Consolas_Debug.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "ff0631b2-68e2-4811-af07-66219d61877a",
+            "Value": {
+                "id": "84075401-0b9d-4d72-8d21-221cac262e59",
+                "resourcePath": "objects\\o_UI_Pause\\o_UI_Pause.yy",
+                "resourceType": "GMObject"
             }
         }
     ],
