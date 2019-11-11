@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "1ac3e23d-fd15-41dc-8f6b-bc6b3d81b3ef",
+            "Value": {
+                "id": "99d96320-6ed4-4276-8481-aad56db294fa",
+                "resourcePath": "views\\1ac3e23d-fd15-41dc-8f6b-bc6b3d81b3ef.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1cde6ab2-d580-4074-a60d-a8d6a9de5600",
             "Value": {
                 "id": "46d945ae-9ab6-4a55-8381-6ebecdc763e2",
@@ -543,6 +551,14 @@
             }
         },
         {
+            "Key": "395e6659-ff3c-4469-9122-77ad3207e3ec",
+            "Value": {
+                "id": "de2e6e66-0376-4c09-86d9-437a48e47f4d",
+                "resourcePath": "sprites\\sp_Factory_Background\\sp_Factory_Background.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3a348c80-88e5-497b-9b2c-8a78adab0347",
             "Value": {
                 "id": "dba19837-c4ad-445e-844a-5d1bfdde3ca7",
@@ -588,6 +604,14 @@
                 "id": "8b9ba4e2-9877-4129-9d61-c73b1456cb1e",
                 "resourcePath": "objects\\o_Level_19\\o_Level_19.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "415c9e93-66c8-4e8a-a0a9-1d8797c92090",
+            "Value": {
+                "id": "d9174ae8-9a48-4909-b6be-e7fa77e4bcf8",
+                "resourcePath": "sprites\\sp_Grapple_Giver_With\\sp_Grapple_Giver_With.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1402,7 +1426,7 @@
             "Key": "9f264c31-e519-481e-a869-6d876c69b256",
             "Value": {
                 "id": "862a9d1a-19e2-4cd1-baae-9ee6d0413b2b",
-                "resourcePath": "sprites\\sp_Background\\sp_Background.yy",
+                "resourcePath": "sprites\\sp_Rock_Background\\sp_Rock_Background.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1652,6 +1676,14 @@
                 "id": "caa0c528-e57a-4353-88b8-f7d4c255a0dc",
                 "resourcePath": "rooms\\r_DCA_Lv_20\\r_DCA_Lv_20.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bd45b59c-e052-46dd-97c2-45d39fc696fa",
+            "Value": {
+                "id": "44733e46-6c79-4c6f-bff8-fab61d0cefd4",
+                "resourcePath": "sprites\\sp_Finale_Bg\\sp_Finale_Bg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2212,6 +2244,14 @@
                 "id": "59fec200-6cc6-4d17-8f9c-f21eeaffa691",
                 "resourcePath": "objects\\o_Level_6\\o_Level_6.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f946dffd-64ca-4673-b3ec-69cf70b53c83",
+            "Value": {
+                "id": "b3f44115-8e18-4384-9e76-b94e0234b410",
+                "resourcePath": "sprites\\sp_Grapple_Giver_Without\\sp_Grapple_Giver_Without.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
