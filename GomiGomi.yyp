@@ -1015,6 +1015,14 @@
             }
         },
         {
+            "Key": "7875b8d7-f762-476a-86df-d1a56b3234f6",
+            "Value": {
+                "id": "ff20208e-8faf-4caa-822c-5301e0f4a136",
+                "resourcePath": "objects\\o_Tutorial_Guide_3\\o_Tutorial_Guide_3.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "79000cba-40f0-4c0c-b897-02e97dd47585",
             "Value": {
                 "id": "ff295219-2085-4aed-b412-acb4eabe2d0a",
@@ -1487,6 +1495,14 @@
             }
         },
         {
+            "Key": "b398aa3d-eb9b-4677-ac91-32823d79536d",
+            "Value": {
+                "id": "bbc66e2d-3855-49cf-9da6-4e9c470f96aa",
+                "resourcePath": "objects\\o_Tutorial_Guide_4\\o_Tutorial_Guide_4.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b3c8c2b1-ac98-472f-aa9f-25cf479655b3",
             "Value": {
                 "id": "70341191-db1e-4172-bb08-7ad6aeffbb41",
@@ -1743,6 +1759,14 @@
             }
         },
         {
+            "Key": "d2c04b13-bfcf-4d77-9081-deb6f0ad04fe",
+            "Value": {
+                "id": "9a889a7c-7612-4b73-8053-cb9daf4ce794",
+                "resourcePath": "objects\\o_Tutorial_Guide_1\\o_Tutorial_Guide_1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d2f2c1ca-4263-4ca0-9259-21269a8e4aef",
             "Value": {
                 "id": "a40d1486-a45b-411a-b7bb-88b9d7dea235",
@@ -1783,10 +1807,26 @@
             }
         },
         {
+            "Key": "d4915081-ec7f-4f1b-bd21-aa5f9b792b39",
+            "Value": {
+                "id": "ffc089bb-5794-416f-a27b-c8b81a2a8e03",
+                "resourcePath": "objects\\o_Tutorial_Guide_2\\o_Tutorial_Guide_2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d54f1ece-8ddc-42b7-a2de-0b57f924d9f5",
             "Value": {
                 "id": "c62a39d3-e8d8-4237-8918-a1de399f6c98",
                 "resourcePath": "objects\\o_Level_4\\o_Level_4.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d66a9627-364e-421a-9cad-9e68fc62e677",
+            "Value": {
+                "id": "7e2efb2d-d581-4489-8293-17491d85b51f",
+                "resourcePath": "objects\\o_Tutorial_Guide_5\\o_Tutorial_Guide_5.yy",
                 "resourceType": "GMObject"
             }
         },
