@@ -1071,6 +1071,14 @@
             }
         },
         {
+            "Key": "77a5bb97-a5a2-460b-af20-f3dcbc681b13",
+            "Value": {
+                "id": "dc9c6e7d-5cd3-4e95-9804-7bd262e0fbb0",
+                "resourcePath": "views\\77a5bb97-a5a2-460b-af20-f3dcbc681b13.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "77e7a63e-2f2f-4fa8-ada9-9082f9a522d6",
             "Value": {
                 "id": "a6215690-8ef5-4c63-ba1c-a3b83adf1e21",
@@ -1970,7 +1978,7 @@
             "Key": "de503ac3-9f17-4877-916b-10cfd777a75c",
             "Value": {
                 "id": "83278078-8a84-4c06-af98-bb638d40d515",
-                "resourcePath": "objects\\o_Grapple_Item\\o_Grapple_Item.yy",
+                "resourcePath": "objects\\o_Grapple_Giver\\o_Grapple_Giver.yy",
                 "resourceType": "GMObject"
             }
         },

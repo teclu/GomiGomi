@@ -8,7 +8,7 @@
         "f946dffd-64ca-4673-b3ec-69cf70b53c83"
     ],
     "filterType": "GMSprite",
-    "folderName": "sp_Grapple_GIver",
+    "folderName": "sp_Grapple_Giver",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
