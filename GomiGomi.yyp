@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "03d03e4a-718b-4a21-bb18-c86c49926a95",
+            "Value": {
+                "id": "c3cdf3d3-b14d-4573-a1f0-d63f0950862f",
+                "resourcePath": "sprites\\sp_Gomi_Smile\\sp_Gomi_Smile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "04a91b02-cc70-41fb-a6b3-78cb202d4171",
             "Value": {
                 "id": "3206cf6b-fbc1-4e5e-958c-9c28a96c328c",
@@ -767,6 +775,14 @@
             }
         },
         {
+            "Key": "5766aa1b-7f7b-45dc-bbaf-8bc0606be3ea",
+            "Value": {
+                "id": "423a0535-64f5-468f-bf97-d326176a78c9",
+                "resourcePath": "views\\5766aa1b-7f7b-45dc-bbaf-8bc0606be3ea.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "584e2bb3-0e8f-43b4-a9a7-d1876236548d",
             "Value": {
                 "id": "706dd206-1119-4fdd-9e6e-2fb827d153d8",
@@ -1295,6 +1311,14 @@
             }
         },
         {
+            "Key": "96e5fefa-f6fe-42ed-a0c9-274a822c22df",
+            "Value": {
+                "id": "568ab423-b8f2-4581-b06b-bdf09e270d63",
+                "resourcePath": "objects\\o_Player_Smile\\o_Player_Smile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "97de4d25-fcfb-4f16-b252-490a43f35b83",
             "Value": {
                 "id": "30c17d6c-5d77-4030-a382-bbd97943b083",
@@ -1495,6 +1519,14 @@
             }
         },
         {
+            "Key": "ad7e2f5b-0bec-4c64-9b09-3d1d801a94c9",
+            "Value": {
+                "id": "f8708592-1547-4679-b862-4364a23401fd",
+                "resourcePath": "sprites\\sp_Gomi_Bounce\\sp_Gomi_Bounce.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "adf7417c-84e1-47a1-84d1-7616bc669bdc",
             "Value": {
                 "id": "775e9dd3-3ddc-4c07-b0a8-b58520bdf49e",
@@ -1692,6 +1724,14 @@
                 "id": "2b8ff6d6-8773-48c1-94da-25c7afee2bd0",
                 "resourcePath": "sprites\\sp_Grappable_Thing_Ring\\sp_Grappable_Thing_Ring.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c36ae629-fa0c-4569-9a19-28814fce9a0d",
+            "Value": {
+                "id": "f5ea3ceb-ed01-4af0-89b4-f1c7708b8a72",
+                "resourcePath": "objects\\o_Player_Bounce\\o_Player_Bounce.yy",
+                "resourceType": "GMObject"
             }
         },
         {
