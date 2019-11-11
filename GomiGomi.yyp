@@ -39,14 +39,6 @@
             }
         },
         {
-            "Key": "0161d75c-9e7e-4ece-8254-d269c32f0bc0",
-            "Value": {
-                "id": "115e6b91-8fc3-4b31-a3b7-199b97c54d2c",
-                "resourcePath": "objects\\o_Tutorial_End\\o_Tutorial_End.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "026ad976-1331-4dbd-9088-319cb863c793",
             "Value": {
                 "id": "fde4e9c2-efa2-4a53-8c5b-371d390e93f7",
@@ -244,14 +236,6 @@
                 "id": "92a9758f-57f7-45ea-b10d-a56d3ca2feea",
                 "resourcePath": "rooms\\r_End\\r_End.yy",
                 "resourceType": "GMRoom"
-            }
-        },
-        {
-            "Key": "1839a3d3-a21f-4b0c-91ed-77bfe0b39fb4",
-            "Value": {
-                "id": "43d8021b-1f86-4682-8906-0f055aa81729",
-                "resourcePath": "objects\\o_Tutorial_3\\o_Tutorial_3.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -556,14 +540,6 @@
                 "id": "91e2904d-b397-47f4-9ad2-5e174413ab29",
                 "resourcePath": "sprites\\sp_Menu_Window\\sp_Menu_Window.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "3bef8cfc-0e60-4fb8-94fb-e861394e38b5",
-            "Value": {
-                "id": "e185cecb-da80-4aa3-b44b-0c4bf71a9309",
-                "resourcePath": "objects\\o_Tutorial_2\\o_Tutorial_2.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -959,14 +935,6 @@
             }
         },
         {
-            "Key": "6bf1132f-8789-4d82-bc28-dbfc9cf01620",
-            "Value": {
-                "id": "726267bf-a65b-4c54-b3eb-978d49c5af13",
-                "resourcePath": "objects\\o_Ending_Text\\o_Ending_Text.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "6f21f629-cb85-4394-8ce3-96be46bccf2c",
             "Value": {
                 "id": "cb951981-bc23-4900-9a54-dda7feafa0af",
@@ -1011,14 +979,6 @@
             "Value": {
                 "id": "fd5ca7e5-d807-4434-8275-92361f91db55",
                 "resourcePath": "objects\\o_Level_25\\o_Level_25.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "72ae8dc5-782c-4f32-a770-29fabcd70d3c",
-            "Value": {
-                "id": "f83d5784-a7f3-4746-8a4d-31e122aed96f",
-                "resourcePath": "objects\\o_Tutorial_1\\o_Tutorial_1.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1596,14 +1556,6 @@
                 "id": "7579ccd7-d95e-40c0-bbda-a44fdbfae37b",
                 "resourcePath": "sprites\\sp_Corrosive_Gas_Pool\\sp_Corrosive_Gas_Pool.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "be4eb293-e068-4dbf-9e05-e6f80e29586a",
-            "Value": {
-                "id": "74943d64-d186-4347-98d5-cb0c7f5b77d2",
-                "resourcePath": "objects\\o_Tutorial_4\\o_Tutorial_4.yy",
-                "resourceType": "GMObject"
             }
         },
         {
