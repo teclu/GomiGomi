@@ -1,10 +1,19 @@
 {
-    "id": "7875b8d7-f762-476a-86df-d1a56b3234f6",
+    "id": "1117d794-65dd-455f-870a-590d904c406a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_Tutorial_Guide_3",
+    "name": "o_Tutorial_Guide_4_D",
     "eventList": [
-        
+        {
+            "id": "c010d187-f78e-4aaf-badf-cc29a39a7873",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "1117d794-65dd-455f-870a-590d904c406a"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
+    "spriteId": "24f22850-70d2-4a87-b576-4ddf53547c4a",
     "visible": true
 }
