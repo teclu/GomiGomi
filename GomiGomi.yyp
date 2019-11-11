@@ -146,7 +146,7 @@
             "Key": "0e3b8616-cdc8-4109-beff-2d212081da10",
             "Value": {
                 "id": "2d2a021f-06bf-4f13-b509-e4bd2a0e16fb",
-                "resourcePath": "objects\\o_Player_Dummy\\o_Player_Dummy.yy",
+                "resourcePath": "objects\\o_Player_Dummy_Prologue\\o_Player_Dummy_Prologue.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -244,14 +244,6 @@
                 "id": "74ef52f0-48dd-4a60-a775-25e7ee85bb2f",
                 "resourcePath": "objects\\o_Level_22\\o_Level_22.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "174457dd-572e-4ba6-84d0-64c5ea5d29ab",
-            "Value": {
-                "id": "92a9758f-57f7-45ea-b10d-a56d3ca2feea",
-                "resourcePath": "rooms\\r_End\\r_End.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -727,6 +719,14 @@
             }
         },
         {
+            "Key": "518f2edb-e992-40a3-9422-c0d9080260b3",
+            "Value": {
+                "id": "5b5d5325-ccc9-4240-b665-9d2b05e28700",
+                "resourcePath": "objects\\o_Player_Dummy_End\\o_Player_Dummy_End.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "522dc447-e7d6-4dc6-8017-c9f7bf20d8bb",
             "Value": {
                 "id": "d0c0eead-0ab1-4d78-9b29-540b58c4a623",
@@ -1180,6 +1180,14 @@
                 "id": "3963e4a4-ec50-4985-808b-2db28c5a61d5",
                 "resourcePath": "sounds\\snd_Main_Menu_Move\\snd_Main_Menu_Move.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "87abb273-e963-46b4-a587-88629e25e4fe",
+            "Value": {
+                "id": "7e88ae8e-7e38-4098-9235-da90d3fc126c",
+                "resourcePath": "rooms\\r_End\\r_End.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1828,6 +1836,14 @@
                 "id": "8349e186-ece6-44a1-8c7c-966d809e9dd7",
                 "resourcePath": "objects\\o_Level_1\\o_Level_1.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d39509fc-2b7e-42c7-8034-d96e02cf43b8",
+            "Value": {
+                "id": "1e9dbb8f-5c1b-4319-8b6a-153d5183c5ec",
+                "resourcePath": "views\\d39509fc-2b7e-42c7-8034-d96e02cf43b8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

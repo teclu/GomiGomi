@@ -1,0 +1,1 @@
+horizontalWalkSpeed = 6.5;
