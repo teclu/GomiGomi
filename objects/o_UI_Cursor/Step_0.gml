@@ -22,14 +22,14 @@ if (game_started)
 	
 	// For Developer Purposes; Skip Rooms
 	var key_pageup = keyboard_check_pressed(vk_pageup);
-	if (key_pageup)
+	if (key_pageup && room != r_End)
 	{
 		room_persistent = false;
 		room_goto_next();	
 	}
 	
 	var key_pagedown = keyboard_check_pressed(vk_pagedown);
-	if (key_pagedown && room != r_Tutorial_Level_1_E)
+	if (key_pagedown && room != r_Tutorial_Lv_1)
 	{
 		room_persistent = false;
 		room_goto_previous();	
@@ -75,7 +75,7 @@ if (mouse_left)
 		case "Start Game":
 		{
 			audio_play_sound(snd_Main_Menu_Select, 1, false);
-			room = r_Prologue_1;
+			room = r_Prologue;
 			game_started = true;
 			image_xscale = 0;
 		}

@@ -16,8 +16,7 @@
         "8d16631e-741f-4762-889f-0f99e0d5d08d",
         "bf485a60-2c23-4aab-a56d-02137b909df3",
         "1cde6ab2-d580-4074-a60d-a8d6a9de5600",
-        "514ee54d-6245-4e0f-9648-f779bd7c77a0",
-        "174457dd-572e-4ba6-84d0-64c5ea5d29ab"
+        "514ee54d-6245-4e0f-9648-f779bd7c77a0"
     ],
     "filterType": "GMRoom",
     "folderName": "Disposal Control Area (DCA)",
