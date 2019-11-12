@@ -10,7 +10,9 @@
         "c593a36d-dd53-4ad3-890d-97a5214506c7",
         "151d5149-e478-48d2-a3cd-b524b41facd2",
         "1cd11430-0b80-45f4-a3aa-f882a6265b07",
-        "80e64de2-c6da-4111-aca5-4d0e39ebf7b5"
+        "80e64de2-c6da-4111-aca5-4d0e39ebf7b5",
+        "1d6598f9-61a1-4a2b-b3f4-125594396c6f",
+        "1ca5c752-2828-490b-b512-32469516e39a"
     ],
     "filterType": "GMObject",
     "folderName": "o_Art",
