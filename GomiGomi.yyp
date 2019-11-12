@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "1cd11430-0b80-45f4-a3aa-f882a6265b07",
+            "Value": {
+                "id": "e847c6b6-d7c7-43c7-b9ea-7e71bac3faa0",
+                "resourcePath": "objects\\o_Fence_1\\o_Fence_1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1cde6ab2-d580-4074-a60d-a8d6a9de5600",
             "Value": {
                 "id": "46d945ae-9ab6-4a55-8381-6ebecdc763e2",
@@ -411,6 +419,14 @@
             "Value": {
                 "id": "962b2fad-a0c6-4f2d-b669-cba1d7138066",
                 "resourcePath": "objects\\o_Level_28b\\o_Level_28b.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2aa10b4c-ff7c-4e86-bd33-d0c750bbbc7b",
+            "Value": {
+                "id": "c867104e-a7f5-4ef3-af7b-2740c7550fba",
+                "resourcePath": "objects\\o_Corrosive_Danger_Sign\\o_Corrosive_Danger_Sign.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1127,11 +1143,27 @@
             }
         },
         {
+            "Key": "7eb3046c-bc22-45ae-bfb5-0c32d03eabb1",
+            "Value": {
+                "id": "51551cd1-a532-4bb0-95ed-b93234f116d6",
+                "resourcePath": "sprites\\sp_Corrosive_Danger_Sign\\sp_Corrosive_Danger_Sign.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7fbf9a5d-0dea-4a27-9a23-6de93492af07",
             "Value": {
                 "id": "c13f2c74-4ec6-405f-8812-36cc39857cb9",
                 "resourcePath": "sprites\\sp_Prologue_Background\\sp_Prologue_Background.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "80e64de2-c6da-4111-aca5-4d0e39ebf7b5",
+            "Value": {
+                "id": "77aa41c6-8ee0-4ddb-8119-4e5d8f1bbd00",
+                "resourcePath": "objects\\o_Fence_2\\o_Fence_2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1263,6 +1295,14 @@
             }
         },
         {
+            "Key": "935c0984-49b1-4213-b324-f92d26a449fb",
+            "Value": {
+                "id": "3c12a1c0-f8e6-45d8-b9fa-0d2247f48bba",
+                "resourcePath": "sprites\\sp_Fence_1\\sp_Fence_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "93bee4ba-0f89-4877-beaa-05826d752742",
             "Value": {
                 "id": "cbd22022-7d53-4e4a-a79a-5c5e4d256f3f",
@@ -1299,6 +1339,14 @@
             "Value": {
                 "id": "9a334d2d-9903-445c-a6ba-747f69efdb1c",
                 "resourcePath": "sprites\\sp_Red_Wall_Switch\\sp_Red_Wall_Switch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "992dc1ee-3c8c-42e9-9360-ee22ae7e843b",
+            "Value": {
+                "id": "5f7426b8-bb05-4a21-890b-83f0fc234fd9",
+                "resourcePath": "sprites\\sp_Fence_2\\sp_Fence_2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1756,6 +1804,14 @@
                 "id": "e8bbe3fc-a893-4b8f-a38a-418a99f98de2",
                 "resourcePath": "rooms\\r_Tutorial_Lv_3\\r_Tutorial_Lv_3.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "c9aaabe7-7030-4e5c-897f-5e3fe18b4fc1",
+            "Value": {
+                "id": "ef6b2142-03ac-4a47-a46b-dadfd96ac665",
+                "resourcePath": "views\\c9aaabe7-7030-4e5c-897f-5e3fe18b4fc1.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
