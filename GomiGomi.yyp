@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "03075f45-14b7-40f2-93b3-b967f5890a9c",
+            "Value": {
+                "id": "e71c3931-8aed-4c9a-8000-2e914759b8aa",
+                "resourcePath": "objects\\o_Exit_Sign\\o_Exit_Sign.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "03723972-97de-465d-aba5-88040971f00c",
             "Value": {
                 "id": "a5eceb6f-e09c-4100-b38c-a1a72f1ef327",
@@ -479,6 +487,14 @@
             }
         },
         {
+            "Key": "2d55a1c8-9657-4e00-95be-929444b3b6fa",
+            "Value": {
+                "id": "a43545d8-8814-4335-beb3-6a4fb694cb26",
+                "resourcePath": "objects\\o_Digital_Warning\\o_Digital_Warning.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2e620b47-ff53-4097-9eee-8bed6ee15acc",
             "Value": {
                 "id": "920bb484-83e1-4c0b-b0ed-ce16cd4fcbae",
@@ -639,6 +655,14 @@
             }
         },
         {
+            "Key": "41c312ae-3dd9-42ee-8954-435762aff493",
+            "Value": {
+                "id": "2077390f-6e1e-400d-b675-d0c142425627",
+                "resourcePath": "sprites\\sp_Exit_Sign\\sp_Exit_Sign.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "42d315cf-e422-488d-8854-4a095f4de637",
             "Value": {
                 "id": "3ca1a8c6-1742-4154-9c03-41ed65db7737",
@@ -788,6 +812,14 @@
                 "id": "500b635e-b049-4553-8aa5-e4c59de23270",
                 "resourcePath": "objects\\o_Level_26\\o_Level_26.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "53c52f80-f3bd-4ba0-a03b-40b4f434229f",
+            "Value": {
+                "id": "17ba2cba-d97e-4464-afc4-e35726bfd5c6",
+                "resourcePath": "sprites\\sp_Digital_Warning\\sp_Digital_Warning.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
