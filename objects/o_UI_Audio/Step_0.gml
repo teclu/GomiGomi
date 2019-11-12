@@ -1,5 +1,25 @@
 switch (room)
 {
+	case r_DCA_Lv_27:
+	{
+		if (audio_is_playing(snd_Robobozo))
+		{
+			audio_stop_sound(snd_Robobozo);	
+		}
+		if (audio_is_playing(snd_Leaving_Home))
+		{
+			audio_stop_sound(snd_Leaving_Home);	
+		}
+		if (audio_is_playing(snd_Almost_New))
+		{
+			audio_stop_sound(snd_Almost_New);	
+		}
+		if (audio_is_playing(snd_Grim_Idol))
+		{
+			audio_stop_sound(snd_Grim_Idol);	
+		}
+		break;	
+	}
 	case r_Main_Menu:
 	case r_Instructions:
 	case r_Credits_1:
