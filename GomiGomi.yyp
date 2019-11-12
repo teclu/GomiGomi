@@ -1727,6 +1727,14 @@
             }
         },
         {
+            "Key": "c73cf8b7-6866-4f1d-add5-d8f6a345a284",
+            "Value": {
+                "id": "0b0cbdf5-d64f-46c0-8a8a-9219dad9140f",
+                "resourcePath": "sprites\\sp_Flower\\sp_Flower.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c7d6c830-cfbe-49b3-9f73-98ed0747fc2e",
             "Value": {
                 "id": "d8882991-6527-4450-9aaa-b61e9f4bbe27",
@@ -1820,6 +1828,14 @@
                 "id": "eb39ce11-30da-4885-b3c3-8a826c2105bf",
                 "resourcePath": "sprites\\sp_Grappable_Thing_Right\\sp_Grappable_Thing_Right.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d0e81d5e-4e1f-4baa-804f-d9dae71f328e",
+            "Value": {
+                "id": "7388805c-3eea-47ce-b186-c28a4cdb8877",
+                "resourcePath": "objects\\o_Flower\\o_Flower.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2063,6 +2079,14 @@
             }
         },
         {
+            "Key": "ef1c0e65-46ea-4e0e-b1a0-68d4f5cb1607",
+            "Value": {
+                "id": "d956dd96-7e23-4fb7-9cfc-ef21ef0c8e49",
+                "resourcePath": "objects\\o_Stationary_Flower\\o_Stationary_Flower.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ef9a2ccf-ab39-476f-b0e2-b1e8bf3ede69",
             "Value": {
                 "id": "28e8b7c4-27b4-4bf4-b59b-120268af92a1",
@@ -2092,6 +2116,14 @@
                 "id": "c7cf287a-0803-4d64-abfc-9cea36adef11",
                 "resourcePath": "objects\\o_Level_27\\o_Level_27.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f263abcb-e32d-4c00-8a77-7704b16ee532",
+            "Value": {
+                "id": "f4127801-ab0f-48eb-8650-b57586a399a1",
+                "resourcePath": "sprites\\sp_Stationary_Flower\\sp_Stationary_Flower.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
