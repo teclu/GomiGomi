@@ -842,7 +842,7 @@
             "Key": "570b69c5-82d4-43a4-a170-2597185e016c",
             "Value": {
                 "id": "162bda72-3131-4fd3-8c21-d209c0a0fafe",
-                "resourcePath": "objects\\o_Level_24a\\o_Level_24a.yy",
+                "resourcePath": "objects\\o_Level_24\\o_Level_24.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2100,14 +2100,6 @@
                 "id": "03dd5202-d2cb-4a4f-a9dc-4b0e94eb6548",
                 "resourcePath": "views\\e39deee8-2b7b-4bba-acef-5671d8fdc6f7.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "e3ed86a9-6c5d-47c3-8824-911e1d1f6c64",
-            "Value": {
-                "id": "ef671aa6-6cb7-4049-a4ee-3ae9a18e5bb5",
-                "resourcePath": "objects\\o_Level_11b\\o_Level_11b.yy",
-                "resourceType": "GMObject"
             }
         },
         {
