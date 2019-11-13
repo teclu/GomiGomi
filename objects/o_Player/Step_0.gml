@@ -354,6 +354,7 @@ switch (playerState)
 		}
 		else
 		{
+			room_persistent = false;	
 			room_restart();
 		}
 		return;	
